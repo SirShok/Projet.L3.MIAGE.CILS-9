@@ -1,6 +1,8 @@
 import java.lang.Math;
 
 public class Combat {
+	//inflige les dégâts d'une attaque d'un individu
+	//à un autre individu
 	public static void combat (Individu p1, Individu p2, String type1, String type2, int degat) {
 		degat = faiblesse(type1, type2)*degat;
 		degat = Math.min(0, degat /*- p1.armure*/);
