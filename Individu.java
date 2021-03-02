@@ -1,8 +1,8 @@
 public class Individu {
 	public String nom;
-	public int pv, /*armure?,*/ agilite, force, constitution, sagesse, perception, charisme, chance;
+	public int pv, armure = 0, agilite, force, constitution, sagesse, perception, charisme, chance, argent = 0;
 	
-	public Individu(String n, /*int a (même raison que pour armure,*/ int ag, int f, int co, int s, int p, int ca, int ch) {
+	public Individu(String n, int ag, int f, int co, int s, int p, int ca, int ch) {
 		nom = n;
 		agilite = ag;
 		force = f;
