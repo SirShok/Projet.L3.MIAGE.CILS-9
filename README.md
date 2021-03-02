@@ -1,3 +1,6 @@
 # Projet.L3.MIAGE.CILS-9
-Enchanté je suis une patate
-Ceci est une branche de pommier
+Projet RPG to do list:
+  Liste des monstres
+  Liste des compétences
+  créer un .exe
+  Phrase pour le menu déroulant
