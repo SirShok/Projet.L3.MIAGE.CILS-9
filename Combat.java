@@ -9,6 +9,7 @@ public class Combat {
 		p1.pv = p1.pv - degat;
 	}
 
+	//prend deux types et renvoie le modificateur de dégâts correspondant
 	public static int faiblesse (String type1, String type2) {
 		switch(type1) {
 			case "Lumiere":	if(type2.equals("Lumiere")||type2.equals("Tenebres")) return 1;
