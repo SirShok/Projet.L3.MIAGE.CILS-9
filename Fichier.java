@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.lang.reflect.Field;
 
 
-public class fichier {
+public class Fichier {
 	//permet de créer un fichier si il n'existe pas
 	//puis de le lire
 	//voir si on laisse la méthode
