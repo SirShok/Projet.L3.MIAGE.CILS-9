@@ -4,10 +4,6 @@ import java.lang.reflect.Field;
 
 
 public class fichier {
-	public static void main(String[] args) throws Exception {
-		EcrireFichier(new Individu ("test", 9, 5, 7, 3, 6, 4, 1));
-	}
-
 	//permet de créer un fichier si il n'existe pas
 	//puis de le lire
 	public static void LireFichier() throws	 Exception {
