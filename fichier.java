@@ -8,6 +8,8 @@ public class fichier {
 		EcrireFichier(new Individu ("test", 9, 5, 7, 3, 6, 4, 1));
 	}
 
+	//permet de créer un fichier si il n'existe pas
+	//puis de le lire
 	public static void LireFichier() throws	 Exception {
 		String nomFichier="test.txt";
 			if(!new File(nomFichier).exists()) {
@@ -35,6 +37,7 @@ public class fichier {
 		}
 	}
 
+	//écrit dans un fichier dit "de sauvegarde" les caractétisques (juste les stats) de l'individu
 	public static void EcrireFichier(Individu i) {
 		Class cl = i.getClass();
 		Field[] fd = cl.getFields();
