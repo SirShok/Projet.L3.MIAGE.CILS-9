@@ -1,5 +1,5 @@
 Lord_Snork 150 100
-Seigeur_Laciopa 170 80
+Seigeur_Laciopa 160 90
 Animorph_1 30 10
 Animorph_2 25 15
 Chevalier 40 20
