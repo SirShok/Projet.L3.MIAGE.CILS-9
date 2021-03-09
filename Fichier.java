@@ -50,7 +50,7 @@ public class Fichier {
 			System.out.println("erreur avec le fichier de sauvegarde");
 		}
 	}
-	public static void RecupérationConfig(){
+	public static void RecuperationConfig(){
 		Path chemin = Paths.get("DossierConfig\\Config.txt");
 		FileReader fichier = new FileReader("DossierConfig\\Config.txt");
 		BufferedReader lecteurFichier = new BufferedReader(fichier);
