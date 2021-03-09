@@ -2,6 +2,7 @@ public class Individu {
 	//caractéristiques de l'individu
 	public String nom;
 	public int pv, mana, armurePhysique = 0, armureMagique = 0, agilite, force, constitution, sagesse, perception, charisme, chance, argent = 0;
+	//public /*classe équipement */ 
 	
 	public Individu(String n, int ag, int f, int co, int s, int p, int ca, int ch) {
 		nom = n;
@@ -23,4 +24,8 @@ public class Individu {
 	public int manaMax() {
 		return sagesse*2;
 	}
+	
+	/*public int attaqueNormaleForce() {
+		
+	}*/
 }
