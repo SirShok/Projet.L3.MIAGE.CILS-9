@@ -11,13 +11,13 @@ public class Fichier {
 	//voir si on laisse la méthode
 	public static void LireFichier() throws	 Exception {
 		String nomFichier="test.txt";
-			if(!new File(NomFichier).exists()) {
-				new File(NomFichier).createNewFile();
+			if(!new File(nomFichier).exists()) {
+				new File(nomFichier).createNewFile();
 			} else {
 				//System.out.println ("Ce fichier existe déjà");
 			}
 
-		FileReader f = new FileReader(NomFichier);
+		FileReader f = new FileReader(nomFichier);
 		//FileInputStream = new FileInputStream("test.txt");
 //		System.out.println(f.exists());
 /*		try {
