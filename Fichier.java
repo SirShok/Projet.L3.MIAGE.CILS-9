@@ -51,7 +51,6 @@ public class Fichier {
 		}
 	}
 	public static void RecuperationConfig(){
-		Path chemin = Paths.get("DossierConfig\\Config.txt");
 		FileReader fichier = new FileReader("DossierConfig\\Config.txt");
 		BufferedReader lecteurFichier = new BufferedReader(fichier);
 		String ligne;
