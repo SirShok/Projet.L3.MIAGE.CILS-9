@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Naration {
+public class Narration {
 
 	//main pour tester la fonction afficher
 	public static void main (String [] args)
