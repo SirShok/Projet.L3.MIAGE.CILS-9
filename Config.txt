@@ -1,3 +1,5 @@
-Nebula 44 55
-Nebula 44 58
-Patrick 47 86
+Lord_Snork 150 100
+Seigeur_Laciopa 170 80
+Animorph_1 30 10
+Animorph_2 25 15
+Chevalier 40 20
