@@ -1,7 +1,7 @@
 public class Individu {
 	//caractéristiques de l'individu
 	public String nom;
-	public int pv, armurePhysique = 0, armureMagique = 0, agilite, force, constitution, sagesse, perception, charisme, chance, argent = 0;
+	public int pv, mana, armurePhysique = 0, armureMagique = 0, agilite, force, constitution, sagesse, perception, charisme, chance, argent = 0;
 	
 	public Individu(String n, int ag, int f, int co, int s, int p, int ca, int ch) {
 		nom = n;
@@ -14,12 +14,13 @@ public class Individu {
 		chance = ch;
 	}
 
-	//retourne les pv max de l'invidu
+	//retourne les pv max de l'individu
 	public int pvMax() {
 		return constitution*2;
 	}
 	
-	public int pointMana() {
+	//retourne les points de mana max de l'individu
+	public int manaMax() {
 		return sagesse*2;
 	}
 }
