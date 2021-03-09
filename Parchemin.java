@@ -30,7 +30,7 @@ public class Parchemin extends JPanel{
 		texte.setEditable(false);
 		try {
 		    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-		    ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("images/nine0.ttf")));
+		    ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Autre/images/nine0.ttf")));
 		} catch (IOException e) {
 		    e.printStackTrace();
 		} catch(FontFormatException e) {
