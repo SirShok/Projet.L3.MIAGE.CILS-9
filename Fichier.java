@@ -24,7 +24,7 @@ public class Fichier {
 	//permet de récupérer le fichier de config
 	public static void RecuperationConfig(){
 		try {
-			String cheminFichier = "Autre\\DossierConfig\\Config.txt";
+			String cheminFichier = "Autre/DossierConfig/Config.txt";
 			Path chemin = Paths.get(cheminFichier);
 			FileReader fichier = new FileReader(cheminFichier);
 			BufferedReader lecteurFichier = new BufferedReader(fichier);
