@@ -1,4 +1,4 @@
 ici, on va marquer les tests de chaque personne
 
 Louison Crépin:
-Je me suis occupé de la fonction permettant d'écrire les informations dans un fichier, de pouvoir lire un fichier, et le crée si il n'existe pas, et j'ai également coder la classe Combat, Equipement et Individu. J'ai aussi gérer les erreurs pour la fonction RecupererConfig().
+Je me suis occupé de la fonction permettant d'écrire les informations dans un fichier, de pouvoir lire un fichier, et le crée si il n'existe pas, et j'ai également coder (ainsi que des tests pour vérifier qu'il n'y a pas de bugs) la classe Combat, Equipement et Individu. J'ai aussi gérer les erreurs pour la fonction RecupererConfig().
