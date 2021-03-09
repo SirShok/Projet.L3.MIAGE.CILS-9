@@ -8,36 +8,6 @@ import java.nio.file.Paths;
 
 
 public class Fichier {
-	//permet de créer un fichier si il n'existe pas
-	//puis de le lire
-	//voir si on laisse la méthode
-	public static void LireFichier() throws	 Exception {
-		String nomFichier="test.txt";
-			if(!new File(nomFichier).exists()) {
-				new File(nomFichier).createNewFile();
-			} else {
-				//System.out.println ("Ce fichier existe déjà");
-			}
-
-		FileReader f = new FileReader(nomFichier);
-		//FileInputStream = new FileInputStream("test.txt");
-//		System.out.println(f.exists());
-/*		try {
-//			PrintWriter writer = new PrintWriter(f);
-			Scanner scan = new Scanner(f);
-		} catch (FileNotFoundException e) {}*/
-		try {
-			char [] a = new char[2048];
-			f.read(a);   
-
-			for(char c : a) {
-				System.out.print(c);   
-			}
-		} finally {
-				f.close();
-		}
-	}
-
 	//écrit dans un fichier dit "de sauvegarde" les caractétisques (juste les stats) de l'individu
 	public static void EcrireFichier(Individu i) {
 		Class cl = i.getClass();
@@ -52,18 +22,30 @@ public class Fichier {
 			System.out.println("erreur avec le fichier de sauvegarde");
 		}
 	}
+	
+	//permet de récupérer le fichier de config
 	public static void RecuperationConfig(){
-		FileReader fichier = new FileReader("DossierConfig\\Config.txt");
-		BufferedReader lecteurFichier = new BufferedReader(fichier);
-		String ligne;
-		String[] mot;
-		ArrayList<Monstre> bestiaire = new ArrayList<Monstre>();
-		while(((ligne = lecteurFichier.readLine()) != null)) {
-			System.out.println(ligne);
-			mot=ligne.split(" ");
-			Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]));
-			bestiaire.add(m);
+		try {
+			String cheminFichier = "DossierConfig\\Config.txt";
+			Path chemin = Paths.get(cheminFichier);
+			FileReader fichier = new FileReader(cheminFichier);
+			BufferedReader lecteurFichier = new BufferedReader(fichier);
+			String ligne;
+			String[] mot;
+			ArrayList<Monstre> bestiaire = new ArrayList<Monstre>();
+			try {
+				while(((ligne = lecteurFichier.readLine()) != null)) {
+					System.out.println(ligne);
+					mot=ligne.split(" ");
+					Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]));
+					bestiaire.add(m);
+				}
+				lecteurFichier.close();
+			} catch(IOException e) {
+				System.out.println("erreur avec le fichier config");
+			}
+		} catch(FileNotFoundException fe) {
+				System.out.println("erreur: fichier config introuvable");
 		}
-		lecteurFichier.close();
-		}
+	}
 }
