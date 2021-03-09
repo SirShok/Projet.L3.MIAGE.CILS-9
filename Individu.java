@@ -1,11 +1,11 @@
 import java.util.Random;
 
 public class Individu {
-	public static tailleEquipement = 2;
+	public static int tailleEquipement = 2;
 	//caractéristiques de l'individu
 	public String nom;
 	public int pv, mana, armurePhysique = 0, armureMagique = 0, agilite, force, constitution, sagesse, perception, charisme, chance;
-	private Equipement[tailleEquipement] equipement, int nbMainL = 2; 	//désigne l'équipement et le nombre de main libres restantes
+	private Equipement[] equipement = new Equipement[tailleEquipement]; int nbMainL = 2; 	//désigne l'équipement et le nombre de main libres restantes
 	
 	public Individu(String n, int ag, int f, int co, int s, int p, int ca, int ch) {
 		nom = n;
@@ -28,6 +28,7 @@ public class Individu {
 		return sagesse*2;
 	}
 	
+	//permet d'équiper un équipement
 	public void equiper(Equipement e) {
 		if(nbMainL <= e.nbMain) {
 			nbMainL = nbMainL - e.nbMain;
@@ -35,34 +36,43 @@ public class Individu {
 		for(int i = 0; i < tailleEquipement; i++) {
 			if(equipement[i] == null) {
 				equipement[i] = e;
-				return
+				return;
 			}
 		}
 		System.out.println("erreur: impossible d'équiper l'équipement");
 		System.exit(-1);
 	}
 	
+	//permet de déséquiper un équipement
 	public void desequiper(Equipement e) {
 		for(int i = 0; i < tailleEquipement; i++) {
-			if(equipement[i].nom == e.nom) {
+			if((equipement[i] != null)&&(equipement[i].nom == e.nom)) {
 				equipement[i] = null;
 				nbMainL = nbMainL + e.nbMain;
-				return
+				return;
 			}
 		}
 		System.out.println("erreur: impossible de déséquiper l'équipement");
 		System.exit(-1);
 	}
 	
+	//permet de voir son équipement
 	public void afficherEquipement() {
+		int j = 1;
 		for(int i = 0; i < tailleEquipement; i++) {
-			System.out.println("Arme " + i + " : " + i.nom);
+			if(equipement[i] != null) {
+				System.out.println("Arme " + j + " : " + equipement[i].nom);
+				j++;
+			}				
+		}
+		if(j == 1) {
+			System.out.println("Vous n'avez pas d'armes");
 		}
 	}
 	
 	//attaque normale avec l'attribut force
-	public void attaqueF() {
-		degat = 0;
+	public int attaqueF() {
+		int degat = 0;
 		for(int i = 0; i < tailleEquipement; i++) {
 			if(equipement[i] != null) {
 				degat = degat + equipement[i].degatPhysique;
@@ -79,8 +89,8 @@ public class Individu {
 	}
 	
 	//attaque normale avec l'attribut agilité
-	public void attaqueA() {
-		degat = 0;
+	public int attaqueA() {
+		int degat = 0;
 		for(int i = 0; i < tailleEquipement; i++) {
 			if(equipement[i] != null) {
 				degat = degat + equipement[i].degatPhysique;
@@ -97,8 +107,8 @@ public class Individu {
 	}
 	
 	//attaque normale magique
-	public void attaqueM() {
-		degat = 0;
+	public int attaqueM() {
+		int degat = 0;
 		for(int i = 0; i < tailleEquipement; i++) {
 			if(equipement[i] != null) {
 				degat = degat + equipement[i].degatMagique;
