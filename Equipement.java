@@ -6,14 +6,16 @@ public class Equipement {
 	//indique le nombre d'armure ignorer par l'arme
 	public int perceArmure;
 	public int nbMain;
+	public int rang;
 
 
-	public Equipement(String n, int dP, int dM, int bS, int pA, int m) {
+	public Equipement(String n, int dP, int dM, int bS, int pA, int m, int r) {
 		nom = n;
 		degatPhysique = dP;
 		degatMagique = dM;
 		bonusSoin = bS;
 		perceArmure = pA;
 		nbMain = m;
+		rang = r;
 	}
 }
