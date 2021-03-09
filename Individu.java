@@ -1,4 +1,5 @@
 public class Individu {
+	//caractéristiques de l'individu
 	public String nom;
 	public int pv, armurePhysique = 0, armureMagique = 0, agilite, force, constitution, sagesse, perception, charisme, chance, argent = 0;
 	
@@ -13,6 +14,9 @@ public class Individu {
 		chance = ch;
 	}
 
-	public void pvMax() {} //en fonction de la constitution
+	//retourne les pv max de l'invidu
+	public void pvMax() {
+		return constitution*2;
+	}
 
 }
