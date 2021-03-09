@@ -20,10 +20,10 @@ public class EcranJeu extends JPanel{
 	
 	public EcranJeu(){
 		//Creation de la barre d'action en bas de l'ecran
-		////Récupère l'image de fond
+		////RÃ©cupÃ¨re l'image de fond
 		BufferedImage img = null;
 		try{
-			img=ImageIO.read(new File("images/cadre_orange.png"));
+			img=ImageIO.read(new File("Autre/images/cadre_orange.png"));
 		}catch(IOException ioe){
 			System.out.println("Unable to fetch image.");
 			ioe.printStackTrace();
@@ -39,7 +39,7 @@ public class EcranJeu extends JPanel{
 		misc=new JPanel();
 		misc.setPreferredSize(new Dimension(560,640));
 		misc.setBackground(Color.black);
-		JLabel barresup=new JLabel(new ImageIcon("images/Barre_orange_transparente.png"));
+		JLabel barresup=new JLabel(new ImageIcon("Autre/images/Barre_orange_transparente.png"));
 		misc.add(barresup);
 		
 		
