@@ -1,3 +1,5 @@
+//Estoc;1;FOR;1;1;5;Coup précis attaquant avec la pointe de la lame ignore 5 point d'armure.; exemple compétence type
+
 public class Competence {
     String nom = "";
     int rang;
