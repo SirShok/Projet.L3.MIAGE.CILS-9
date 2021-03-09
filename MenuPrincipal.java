@@ -24,14 +24,14 @@ public class MenuPrincipal extends JPanel{
 		titre.setForeground(Color.white);
 		
 		//Bouton "Nouvelle partie"
-		ImageIcon jou=new ImageIcon("images/new.png");
+		ImageIcon jou=new ImageIcon("Autre/images/new.png");
 		ngame=new JButton(jou);
 		ngame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
             	etat=1;
             	cpt++;
-            	nbClic.setText("Nb de boutons cliqué : "+cpt);
+            	nbClic.setText("Nb de boutons cliquÃ© : "+cpt);
             	System.out.println(etat);
             }
         });
@@ -41,14 +41,14 @@ public class MenuPrincipal extends JPanel{
 		ngame.setBounds(574, 250, jou.getIconWidth(), jou.getIconHeight());
 		
 		//Bouton "Charger partie"
-		ImageIcon loa=new ImageIcon("images/charger.png");
+		ImageIcon loa=new ImageIcon("Autre/images/charger.png");
 		lgame=new JButton(loa);
 		lgame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
             	etat=2;
             	cpt++;
-            	nbClic.setText("Nb de boutons cliqué : "+cpt);
+            	nbClic.setText("Nb de boutons cliquÃ© : "+cpt);
             	System.out.println(etat);
             }
         });
@@ -58,14 +58,14 @@ public class MenuPrincipal extends JPanel{
 		lgame.setBounds(574, 350, loa.getIconWidth(), loa.getIconHeight());
 		
 		//Bouton "Options"
-		ImageIcon opt=new ImageIcon("images/options.png");
+		ImageIcon opt=new ImageIcon("Autre/images/options.png");
 		options=new JButton(opt);
 		options.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
 				etat=3;
 				cpt++;
-				nbClic.setText("Nb de boutons cliqué : "+cpt);
+				nbClic.setText("Nb de boutons cliquÃ© : "+cpt);
 				System.out.println(etat);
 			}
 		});
@@ -83,7 +83,7 @@ public class MenuPrincipal extends JPanel{
 				etat=4;
 				cpt++;
 				f.dispose();
-				nbClic.setText("Nb de boutons cliqué : "+cpt);
+				nbClic.setText("Nb de boutons cliquÃ© : "+cpt);
 			}
 		});
 		quit.setBorder(BorderFactory.createEmptyBorder());
@@ -92,7 +92,7 @@ public class MenuPrincipal extends JPanel{
 		quit.setBounds(574, 550, jou.getIconWidth(), jou.getIconHeight());
 		
 		//TEST
-		nbClic=new JLabel("Nb de boutons cliqué :");
+		nbClic=new JLabel("Nb de boutons cliquÃ© :");
 		nbClic.setBounds(574, 800, 200, nbClic.getPreferredSize().height);
 		nbClic.setForeground(Color.white);
 		
