@@ -9,13 +9,13 @@ public class Fichier {
 	//voir si on laisse la méthode
 	public static void LireFichier() throws	 Exception {
 		String nomFichier="test.txt";
-			if(!new File(nomFichier).exists()) {
-				new File(nomFichier).createNewFile();
+			if(!new File(Config.txt).exists()) {
+				new File(Config.txt).createNewFile();
 			} else {
 				//System.out.println ("Ce fichier existe déjà");
 			}
 
-		FileReader f = new FileReader(nomFichier);
+		FileReader f = new FileReader(Config.txt);
 		//FileInputStream = new FileInputStream("test.txt");
 //		System.out.println(f.exists());
 /*		try {
@@ -48,4 +48,22 @@ public class Fichier {
 			System.out.println("erreur avec le fichier de sauvegarde");
 		}
 	}
+	public static void RecuparationConfig(){
+		Path chemin = Paths.get("DossierConfig\\Config.txt");
+		FileReader fichier = new FileReader("DossierConfig\\Config.txt");
+		BufferedReader lecteurFichier = new BufferedReader(fichier);
+		String ligne;
+		String[] mot;
+		ArrayList<Monstre> bestiaire = new ArrayList<Monstre>();
+		while(((ligne = lecteurFichier.readLine()) != null)) {
+			System.out.println(ligne);
+			mot=ligne.split(" ");
+			Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]));
+			bestiaire.add(m);
+		}
+		for (Monstre E : bestiaire) {
+			E.PrintMonstre(E);
+		}
+		lecteurFichier.close();
+		}
 }
