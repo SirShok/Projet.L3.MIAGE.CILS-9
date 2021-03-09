@@ -15,8 +15,11 @@ public class Individu {
 	}
 
 	//retourne les pv max de l'invidu
-	public void pvMax() {
+	public int pvMax() {
 		return constitution*2;
 	}
-
+	
+	public int pointMana() {
+		return sagesse*2;
+	}
 }
