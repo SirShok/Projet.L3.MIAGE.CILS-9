@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Individu {
 	public static tailleEquipement = 2;
 	//caractéristiques de l'individu
@@ -56,5 +58,59 @@ public class Individu {
 		for(int i = 0; i < tailleEquipement; i++) {
 			System.out.println("Arme " + i + " : " + i.nom);
 		}
+	}
+	
+	//attaque normale avec l'attribut force
+	public void attaqueF() {
+		degat = 0;
+		for(int i = 0; i < tailleEquipement; i++) {
+			if(equipement[i] != null) {
+				degat = degat + equipement[i].degatPhysique;
+			}
+		}
+		degat = degat + force/2;
+		Random random = new Random(); 
+		float f=random.nextFloat();
+		
+		if(f*100 < 5 + chance/5) {
+			return degat*2;
+		}
+		return degat;
+	}
+	
+	//attaque normale avec l'attribut agilité
+	public void attaqueA() {
+		degat = 0;
+		for(int i = 0; i < tailleEquipement; i++) {
+			if(equipement[i] != null) {
+				degat = degat + equipement[i].degatPhysique;
+			}
+		}
+		degat = degat + agilite/2;
+		Random random = new Random(); 
+		float f=random.nextFloat();
+		
+		if(f*100 < 5 + chance/5) {
+			return degat*2;
+		}
+		return degat;
+	}
+	
+	//attaque normale magique
+	public void attaqueM() {
+		degat = 0;
+		for(int i = 0; i < tailleEquipement; i++) {
+			if(equipement[i] != null) {
+				degat = degat + equipement[i].degatMagique;
+			}
+		}
+		degat = degat + sagesse/2;
+		Random random = new Random(); 
+		float f=random.nextFloat();
+		
+		if(f*100 < 5 + chance/5) {
+			return degat*2;
+		}
+		return degat;
 	}
 }
