@@ -63,9 +63,6 @@ public class Fichier {
 			Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]));
 			bestiaire.add(m);
 		}
-		for (Monstre E : bestiaire) {
-			E.PrintMonstre(E);
-		}
 		lecteurFichier.close();
 		}
 }
