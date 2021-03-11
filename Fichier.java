@@ -46,4 +46,36 @@ public class Fichier {
 				System.out.println("erreur: fichier config introuvable");
 		}
 	}
+//permet de récupérer les différents fichier de configuration des Compétences et de les introduire dans la base de donnée Java
+	public static void LectureCompetence() {
+		ArrayList<Competence> ListeCompetence = new ArrayList<Competence>();
+		try {
+			File initial = new File ("compétence/magique","magique");
+			for (File f : initial.listFiles()) {
+				FileReader fichier = new FileReader(f);
+				BufferedReader lecteurFichier = new BufferedReader(fichier);
+				String ligne;
+				while(((ligne = lecteurFichier.readLine()) != null)) {
+					Competence c = new Competence(ligne);
+					ListeCompetence.add(c);
+				}
+			}		
+		} catch(IOException e) {
+			System.out.println("erreur avec un des fichiers de compétence magique");
+		}
+		try {
+			File initial = new File ("compétence/physique","physique");
+			for (File f : initial.listFiles()) {
+				FileReader fichier = new FileReader(f);
+				BufferedReader lecteurFichier = new BufferedReader(fichier);
+				String ligne;
+				while(((ligne = lecteurFichier.readLine()) != null)) {
+					Competence c = new Competence(ligne);
+					ListeCompetence.add(c);
+				}
+			}		
+		} catch(IOException e) {
+			System.out.println("erreur avec un des fichiers de compétence physique");
+		}
+	}
 }
