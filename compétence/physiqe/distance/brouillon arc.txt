@@ -1,0 +1,11 @@
+rang 1 :
+	-Tire simple : tire infligeant des dégat normaux.
+
+	-tire précis : tire ignorant 5 point d'armure.
+
+rang 2 :
+	-Tire puissant : un tire dont les dégat sont augmenté de 20%
+
+	-Tire précis 2: tire ignorant 10 point d'armure.
+
+	-Tire multiple : tire 2 flèche la deuxième inflige 50% des dégats.
