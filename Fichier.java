@@ -33,7 +33,6 @@ public class Fichier {
 			ArrayList<Monstre> bestiaire = new ArrayList<Monstre>();
 			try {
 				while(((ligne = lecteurFichier.readLine()) != null)) {
-					System.out.println(ligne);
 					mot=ligne.split(" ");
 					Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]));
 					bestiaire.add(m);
