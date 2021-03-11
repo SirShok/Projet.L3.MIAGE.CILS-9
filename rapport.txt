@@ -6,3 +6,7 @@ Je me suis occupé de la fonction permettant d'écrire les informations dans un 
 
 Michael Pariche:
 Je me suis principalement occupé de l'interface graphique qui comporte les classes Fenetre, MenuPrincipal, EcranJeu, BarreAction, Parchemin, ImagePanel qui se chargent de l'interaction avec l'utilisateur
+
+
+Benjamin Combe:
+Je me suis chargé des fonctions permettant de lire un fichier txt, le décomposer et pouvoir créer des objets Java avec les données. J'ai également organisé le travail.
