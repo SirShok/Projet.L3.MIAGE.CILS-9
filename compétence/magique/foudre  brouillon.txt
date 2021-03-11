@@ -1,0 +1,8 @@
+rang 1 :
+	-Foudroiment : envoi un eclair foudroyant l'ennemi, inflige SAG/2 DM, coute 5PM.
+
+rang 2 :
+	-Foudroiment  : envoi une boule de feux brulant l'ennemi, inflige SAG + 10 DM, coute 10PM.
+
+	-Foudroiment multiple : envoi  eclair foudroyant l'ennemi, inflige SAG DM, coute PM.
+
