@@ -46,8 +46,8 @@ Estoc;8;FOR;1;1;40;Coup précis attaquant avec la pointe de la lame ignore 40 po
 Estoc;8;AGI;1;1;40;Coup précis attaquant avec la pointe de la lame ignore 40 point d'armure.;degat;1;
 Frappe puissante;9;FOR;1;2;0;Donne un coup puissant infligeant des dégat augmenté de 160%.;degat;2;
 Frappe précise;9;AGI;1;2;0;Donne un coup puissant infligeant des dégat augmenté de 160%.;degat;2;
-Déluge de cout;9;FOR;4;3;0;Donne 4 coup avec son arme, le quatrième inflige 20% de DM en moins.;degat;3;
-Déluge de cout;9;AGI;4;3;0;Donne 4 coup avec son arme, le quatrième inflige 20% de DM en moins.;degat;3;
+Déluge de coups;9;FOR;4;3;0;Donne 4 coup avec son arme, le quatrième inflige 20% de DM en moins.;degat;3;
+Déluge de coups;9;AGI;4;3;0;Donne 4 coup avec son arme, le quatrième inflige 20% de DM en moins.;degat;3;
 Estoc;9;FOR;1;1;45;Coup précis attaquant avec la pointe de la lame ignore 45 point d'armure.;degat;1;
 Estoc;9;AGI;1;1;45;Coup précis attaquant avec la pointe de la lame ignore 45 point d'armure.;degat;1;
 
