@@ -1,0 +1,7 @@
+rang 1 :
+	-Boule de feu : envoi une boule de feux brulant l'ennemi, inflige SAG/2 DM, coute 5PM.
+
+rang 2 :
+	-Boule de feu : envoi une boule de feux brulant l'ennemi, inflige SAG DM, coute 10PM.
+
+	-Pluie de feu : envoi 2 projectile de feux brulant l'ennemi, inflige SAG/2 DM, coute 10PM.

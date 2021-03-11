@@ -1,0 +1,103 @@
+rang 1 : 
+	-Balayage : Balaye les ennemis autour du combattant, leur infligeant à tous [Dégat de l'arme + Bonus de FOR]x0.5 DM.
+
+	-Estoc : Coup précis infligeant [Dé de l'arme + Bonus de FOR] DM avec la pointe de la lame ignore 5 point d'armure.
+	
+	-Coup simple : coup infligeant des dégat normaux
+
+rang 2 :
+	-Frappe puissante : Donne un coup puissant infligeant des dégat augmenté de 20%
+
+	-Attaque double : Donne 2 coup avec son arme, le second inflige 50% de DM en moins.
+
+	-Charge : renverse tous les ennemis ayant une valeur de CON aux moin inferieur a la CON du personage - 10
+
+	-Balayage 2: Balaye les ennemis autour du combattant, leur infligeant à tous [Dégat de l'arme + Bonus de FOR]x0.7 DM.
+
+	-Estoc 2: Coup précis infligeant [Dé de l'arme + Bonus de FOR] DM avec la pointe de la lame ignore 10 point d'armure.
+
+rang 3 :
+	-Frappe puissante 2: Donne un coup puissant infligeant des dégat augmenté de 40%
+
+	-Attaque double 2: Donne 2 coup avec son arme, le second inflige 20% de DM en moins.
+
+	-Charge 2: renverse tous les ennemis ayant une valeur de CON aux moin inferieur a la CON -10 du personage et leur inflige CON/6 DM en ignore armure.
+
+	-Balayage 3: Balaye les ennemis autour du combattant, leur infligeant à tous [Dégat de l'arme + Bonus de FOR] DM.
+
+	-Estoc 3: Coup précis infligeant [Dé de l'arme + Bonus de FOR] DM avec la pointe de la lame ignore 15 point d'armure.
+
+rang 4 :
+	-Frappe puissante 3: Donne un coup puissant infligeant des dégat augmenté de 60%
+
+	-Attaque double 3: Donne 2 coup avec son arme.
+
+	-Charge 3: renverse tous les ennemis ayant une valeur de CON aux moin inferieur a la CON du personage et leur inflige CON/6 DM en ignore armure.
+
+	-Balayage 4: Balaye les ennemis autour du combattant, leur infligeant des dégats augmenté de 20% DM.
+
+	-Estoc 4: Coup précis infligeant [Dé de l'arme + Bonus de FOR] DM avec la pointe de la lame ignore 20 point d'armure.
+
+rang 5 :
+	-Frappe puissante 4: Donne un coup puissant infligeant des dégat augmenté de 80%
+
+	-Attaque triple: Donne 3 coup avec son arme, le troisième inflige 50% de DM en moins.
+
+	-Charge 4: renverse tous les ennemis ayant une valeur de CON aux moin inferieur a la CON du personage et leur inflige CON/4 DM en ignore armure
+
+	-Balayage 5: Balaye les ennemis autour du combattant, leur infligeant des dégats augmenté de 40% DM.
+
+	-Estoc 5: Coup précis infligeant [Dé de l'arme + Bonus de FOR] DM avec la pointe de la lame ignore 25 point d'armure.
+
+
+rang 6 :
+	-Frappe puissante 5: Donne un coup puissant infligeant des dégat augmenté de 100%
+
+	-Attaque triple 2: Donne 3 coup avec son arme, le troisième inflige 20% de DM en moins.
+
+	-Charge 5: renverse tous les ennemis ayant une valeur de CON aux moin inferieur a la CON +10 du personage et leur inflige CON/4 DM en ignore armure
+
+	-Balayage 6: Balaye les ennemis autour du combattant, leur infligeant des dégats augmenté de 60% DM.
+
+	-Estoc 6: Coup précis infligeant [Dé de l'arme + Bonus de FOR] DM avec la pointe de la lame ignore 30 point d'armure.
+
+rang 7 :
+	-Frappe puissante 6: Donne un coup puissant infligeant des dégat augmenté de 120%
+
+	-Attaque triple 2: Donne 3 coup avec son arme
+
+	-Charge 6: renverse tous les ennemis ayant une valeur de CON aux moin inferieur a la CON +10 du personage et leur inflige CON/2 DM en ignore armure
+
+	-Balayage 7: Balaye les ennemis autour du combattant, leur infligeant des dégats augmenté de 80% DM.
+
+	-Estoc 7: Coup précis infligeant [Dé de l'arme + Bonus de FOR] DM avec la pointe de la lame ignore 35 point d'armure.
+
+rang 8 :
+	-Frappe puissante 7: Donne un coup puissant infligeant des dégat augmenté de 140%
+
+	-Déluge de cout: Donne 4 coup avec son arme, le quatrième inflige 50% de DM en moins.
+
+	-Charge 7: renverse tous les ennemis ayant une valeur de CON aux moin inferieur a la CON +20 du personage et leur inflige CON/2 DM en ignore armure
+
+	-Balayage 8: Balaye les ennemis autour du combattant, leur infligeant des dégats augmenté de 100% DM.
+
+	-Estoc 8: Coup précis infligeant [Dé de l'arme + Bonus de FOR] DM avec la pointe de la lame ignore 40 point d'armure.
+
+rang 9 :
+	-Frappe puissante 8: Donne un coup puissant infligeant des dégat augmenté de 160%
+
+	-Déluge de cout 2: Donne 4 coup avec son arme, le quatrième inflige 20% de DM en moins.
+
+	-Charge 8: renverse tous les ennemis ayant une valeur de CON aux moin inferieur a la CON +20 du personage et leur inflige CON DM en ignore armure
+
+	-Balayage 9: Balaye les ennemis autour du combattant, leur infligeant des dégats augmenté de 120% DM.
+
+	-Estoc 9: Coup précis infligeant [Dé de l'arme + Bonus de FOR] DM avec la pointe de la lame ignore 45 point d'armure.
+
+
+
+
+
+
+
+

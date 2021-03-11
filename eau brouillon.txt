@@ -1,0 +1,65 @@
+rang 1 :
+	-Projectile d'eau : envoi un projectile d'eau infligeant SAG/2 DM coute 5 PM
+
+	-Soint Hydro : vous soigne de SAG/2 PV coute 10 PM. 
+
+rang 2 :
+	-Projectile d'eau : envoi un projectile d'eau infligeant SAG DM coute 10 PM
+
+	-Soint Hydro : vous soigne de SAG PV coute 10 PM.
+
+	-Bombardement d'eau : envoi 2 projectile d'eau infligeant SAG/2 DM coute 10 PM
+
+rang 3 :
+	-Projectile d'eau : envoi un projectile d'eau infligeant SAGx1.5 DM coute 15 PM
+
+	-Soint Hydro : vous soigne de SAGx1.5 PV coute 15 PM. 
+
+	-Bombardement d'eau : envoi 3 projectile d'eau infligeant SAG/2 DM coute 15 PM
+
+rang 4 : 
+	-Projectile d'eau : envoi un projectile d'eau infligeant SAGx2 DM coute 20 PM
+
+	-Soint Hydro : vous soigne de SAGx2 PV coute 20 PM. 
+
+	-Bombardement d'eau : envoi 4 projectile d'eau infligeant SAG/2 DM coute 20 PM
+
+rang 5 :
+
+	-Projectile d'eau : envoi un projectile d'eau infligeant SAGx2.5 DM coute 25 PM
+
+	-Soint Hydro : vous soigne de SAGx2.5 PV coute 25 PM. 
+
+	-Bombardement d'eau : envoi 5 projectile d'eau infligeant SAG/2 DM coute 25 PM
+
+rang 6 :
+
+	-Projectile d'eau : envoi un projectile d'eau infligeant SAGx3 DM coute 30 PM
+
+	-Soint Hydro : vous soigne de SAGx3 PV coute 30 PM. 
+
+	-Bombardement d'eau : evnoi 6 projectile d'eau infligeant SAG/2 DM coute 30 PM
+
+rang 7 :
+
+	-Projectile d'eau : envoi un projectile d'eau infligeant SAGx3.5 DM coute 35 PM
+
+	-Soint Hydro : vous soigne de SAGx3.5 PV coute 35 PM. 
+
+	-Bombardement d'eau : envoi 7 projectile d'eau infligeant SAG/2 DM coute 35 PM 
+
+rang 8 :
+	
+	-Projectile d'eau : envoi un projectile d'eau infligeant SAGx4 DM coute 40 PM
+
+	-Soint Hydro : vous soigne de SAGx4 PV coute 40 PM.
+
+	-Bombardement d'eau : evoi 8 projectile d'eau infligeant SAG/2 DM coute 40 PM 
+
+rang 9 : 
+
+	-Projectile d'eau : envoi un projectile d'eau infligeant SAGx4.5 DM coute 45 PM
+
+	-Soint Hydro : vous soigne de SAGx4.5 PV coute 45 PM. 
+
+	-Bombardement d'eau : evoi 9 projectile d'eau infligeant SAG/2 DM coute 45 PM

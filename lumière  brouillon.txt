@@ -1,0 +1,6 @@
+rang 1 :
+	-Sacralisation : fais appels a la puissance de la lumière pour purifier l'ennemis, inflige SAG/2 DM, cout 5 PM.
+	-Soint sacré : fais appels a la puissance de la lumière pour restauré votre corps, soigne SAG/2 PV, cout 5 PM.
+
+rang 2 :
+	-deferlement de lumière : fais appels a la puissance de la lumière pour attaqué 2 fois l'ennemis, inflige SAG/2 DM, cout 10 PM.
