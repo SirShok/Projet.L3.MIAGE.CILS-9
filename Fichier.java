@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 
 public class Fichier {
-	//Ã©crit dans un fichier dit "de sauvegarde" les caractÃ©tisques (juste les stats) de l'individu
+	//écrit dans un fichier dit "de sauvegarde" les caractétisques (juste les stats) de l'individu
 	public static void EcrireFichier(Individu i) {
 		Class cl = i.getClass();
 		Field[] fd = cl.getFields();
@@ -21,7 +21,7 @@ public class Fichier {
 		}
 	}
 
-	//permet de rÃ©cupÃ©rer le fichier de config
+	//permet de récupérer le fichier de config
 	public static void RecuperationConfig(){
 		try {
 			String cheminFichier = "Projet.L3.MIAGE.CILS-9-main/Autre/DossierConfig/Config.txt";
@@ -44,7 +44,7 @@ public class Fichier {
 			System.out.println("erreur: fichier config introuvable");
 		}
 	}
-	//permet de rÃ©cupÃ©rer les diffÃ©rents fichier de configuration des CompÃ©tences et de les introduire dans la base de donnÃ©e Java
+	//permet de récupérer les différents fichier de configuration des Compétences et de les introduire dans la base de donnée Java
 	public static void LectureCompetence() {
 		ArrayList<Competence> ListeCompetence = new ArrayList<Competence>();
 		try {
@@ -65,7 +65,7 @@ public class Fichier {
 				}
 			}
 		} catch(IOException e) {
-			System.out.println("erreur avec un des fichiers de compÃ©tence magique");
+			System.out.println("erreur avec un des fichiers de compétence magique");
 		}
 		try {
 			File initial = new File ("Projet.L3.MIAGE.CILS-9-main/compétence/physique/distance");
@@ -85,7 +85,7 @@ public class Fichier {
 				}
 			}
 		} catch(IOException e) {
-			System.out.println("erreur avec un des fichiers de compÃ©tence physique distance");
+			System.out.println("erreur avec un des fichiers de compétence physique distance");
 		}
 		try {
 			File initial = new File ("Projet.L3.MIAGE.CILS-9-main/compétence/physique/mêlée");
@@ -103,7 +103,7 @@ public class Fichier {
 				}
 			}
 		} catch(IOException e) {
-			System.out.println("erreur avec un des fichiers de compÃ©tence physique mêlée");
+			System.out.println("erreur avec un des fichiers de compétence physique mêlée");
 		}
 	}
 }
