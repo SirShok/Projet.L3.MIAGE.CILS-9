@@ -20,12 +20,11 @@ public class Fichier {
 			System.out.println("erreur avec le fichier de sauvegarde");
 		}
 	}
-	
+
 	//permet de récupérer le fichier de config
 	public static void RecuperationConfig(){
 		try {
-			String cheminFichier = "Autre/DossierConfig/Config.txt";
-			Path chemin = Paths.get(cheminFichier);
+			String cheminFichier = "Projet.L3.MIAGE.CILS-9-main/Autre/DossierConfig/Config.txt";
 			FileReader fichier = new FileReader(cheminFichier);
 			BufferedReader lecteurFichier = new BufferedReader(fichier);
 			String ligne;
@@ -42,39 +41,69 @@ public class Fichier {
 				System.out.println("erreur avec le fichier config");
 			}
 		} catch(FileNotFoundException fe) {
-				System.out.println("erreur: fichier config introuvable");
+			System.out.println("erreur: fichier config introuvable");
 		}
 	}
-//permet de récupérer les différents fichier de configuration des Compétences et de les introduire dans la base de donnée Java
+	//permet de récupérer les différents fichier de configuration des Compétences et de les introduire dans la base de donnée Java
 	public static void LectureCompetence() {
 		ArrayList<Competence> ListeCompetence = new ArrayList<Competence>();
 		try {
-			File initial = new File ("compétence/magique","magique");
-			for (File f : initial.listFiles()) {
-				FileReader fichier = new FileReader(f);
-				BufferedReader lecteurFichier = new BufferedReader(fichier);
-				String ligne;
-				while(((ligne = lecteurFichier.readLine()) != null)) {
-					Competence c = new Competence(ligne);
-					ListeCompetence.add(c);
+			File initial = new File("Projet.L3.MIAGE.CILS-9-main/compétence/magique");
+			if (initial.isDirectory()) {
+				for (File f : initial.listFiles()) {
+					FileReader fichier = new FileReader(f);
+					BufferedReader lecteurFichier = new BufferedReader(fichier);
+					String ligne;
+					int i =0;
+					while(((ligne = lecteurFichier.readLine()) != null)) {
+						Competence c = new Competence(ligne); 
+						System.out.println("Impression de compétence magique "+ i +"  "+ c.nom);
+						ListeCompetence.add(c);
+						i++;
+					}
+					lecteurFichier.close();
 				}
-			}		
+			}
 		} catch(IOException e) {
 			System.out.println("erreur avec un des fichiers de compétence magique");
 		}
 		try {
-			File initial = new File ("compétence/physique","physique");
-			for (File f : initial.listFiles()) {
-				FileReader fichier = new FileReader(f);
-				BufferedReader lecteurFichier = new BufferedReader(fichier);
-				String ligne;
-				while(((ligne = lecteurFichier.readLine()) != null)) {
-					Competence c = new Competence(ligne);
-					ListeCompetence.add(c);
+			File initial = new File ("Projet.L3.MIAGE.CILS-9-main/compétence/physique/distance");
+			if(initial.isDirectory()) {
+				for (File f : initial.listFiles()) {
+					FileReader fichier = new FileReader(f);
+					BufferedReader lecteurFichier = new BufferedReader(fichier);
+					String ligne;
+					while(((ligne = lecteurFichier.readLine()) != null)) {
+						Competence c = new Competence(ligne);
+						int i=0;
+						System.out.println("Impression de compétence physique distance "+ i + "  " + c.nom);
+						ListeCompetence.add(c);
+						i++;
+					}
+					lecteurFichier.close();
 				}
-			}		
+			}
 		} catch(IOException e) {
-			System.out.println("erreur avec un des fichiers de compétence physique");
+			System.out.println("erreur avec un des fichiers de compétence physique distance");
+		}
+		try {
+			File initial = new File ("Projet.L3.MIAGE.CILS-9-main/compétence/physique/mêlée");
+			if(initial.isDirectory()) {
+				for (File f : initial.listFiles()) {
+					FileReader fichier = new FileReader(f);
+					BufferedReader lecteurFichier = new BufferedReader(fichier);
+					String ligne;
+					while(((ligne = lecteurFichier.readLine()) != null)) {
+						Competence c = new Competence(ligne);
+						System.out.println("Impression de compétence physique mêlée");
+						ListeCompetence.add(c);
+					}
+					lecteurFichier.close();
+				}
+			}
+		} catch(IOException e) {
+			System.out.println("erreur avec un des fichiers de compétence physique mêlée");
 		}
 	}
 }
