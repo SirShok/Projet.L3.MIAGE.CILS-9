@@ -1,8 +1,4 @@
-nom;rang;stat utilisé;nbCoup;dégat;perceArmure;description;effet(soint,degat...);id;
+nom;rang;stat utilisé;nbCoup;dégat;perceArmure;description;effet(soint,degat...);id;type;
 
-magie non terminé :
-          -ténèbre 
-          -terre
-          -vent
       
 sujet a changement
