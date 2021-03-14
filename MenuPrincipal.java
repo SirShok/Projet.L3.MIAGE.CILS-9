@@ -11,7 +11,6 @@ public class MenuPrincipal extends JPanel{
 	private JButton lgame;
 	private JButton options;
 	private JButton quit;
-	int etat=0;
 	
 	//TODO TEST DELETE LATER
 	int cpt=0;
@@ -25,13 +24,12 @@ public class MenuPrincipal extends JPanel{
 		//Bouton "Nouvelle partie"
 		ImageIcon jou=new ImageIcon("Autre/images/new.png");
 		ngame=new JButton(jou);
-		ngame.addActionListener(new ActionListener() {
+		ngame.addActionListener(new ActionListener(){
             @Override
-            public void actionPerformed(ActionEvent e) {
-            	etat=1;
+            public void actionPerformed(ActionEvent e){
             	cpt++;
-            	nbClic.setText("Nb de boutons cliqué : "+cpt);
-            	System.out.println(etat);
+				nbClic.setText("Nb de boutons cliqué : "+cpt);
+            	f.swicthToGame();
             }
         });
 		ngame.setBorder(BorderFactory.createEmptyBorder());
@@ -42,13 +40,12 @@ public class MenuPrincipal extends JPanel{
 		//Bouton "Charger partie"
 		ImageIcon loa=new ImageIcon("Autre/images/charger.png");
 		lgame=new JButton(loa);
-		lgame.addActionListener(new ActionListener() {
+		lgame.addActionListener(new ActionListener(){
             @Override
-            public void actionPerformed(ActionEvent e) {
-            	etat=2;
+            public void actionPerformed(ActionEvent e){
             	cpt++;
-            	nbClic.setText("Nb de boutons cliqué : "+cpt);
-            	System.out.println(etat);
+				nbClic.setText("Nb de boutons cliqué : "+cpt);
+            	f.swicthToGame();
             }
         });
 		lgame.setBorder(BorderFactory.createEmptyBorder());
@@ -62,10 +59,9 @@ public class MenuPrincipal extends JPanel{
 		options.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				etat=3;
 				cpt++;
 				nbClic.setText("Nb de boutons cliqué : "+cpt);
-				System.out.println(etat);
+				System.out.println("\"Options\" cliqué WIP");
 			}
 		});
 		options.setBorder(BorderFactory.createEmptyBorder());
@@ -74,15 +70,12 @@ public class MenuPrincipal extends JPanel{
 		options.setBounds(574, 450, opt.getIconWidth(), opt.getIconHeight());
 		
 		//Bouton "Quitter"
-		ImageIcon qui=new ImageIcon("images/quit.png");
+		ImageIcon qui=new ImageIcon("Autre/images/quit.png");
 		quit=new JButton(qui);
-		quit.addActionListener(new ActionListener() {
+		quit.addActionListener(new ActionListener(){
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				etat=4;
-				cpt++;
+			public void actionPerformed(ActionEvent e){
 				f.dispose();
-				nbClic.setText("Nb de boutons cliqué : "+cpt);
 			}
 		});
 		quit.setBorder(BorderFactory.createEmptyBorder());
@@ -96,7 +89,6 @@ public class MenuPrincipal extends JPanel{
 		nbClic.setForeground(Color.white);
 		
 		this.setLayout(null);
-		this.setAlignmentX(Component.CENTER_ALIGNMENT);
 		this.setBackground(Color.black);
 		this.add(titre);
 		this.add(ngame);
