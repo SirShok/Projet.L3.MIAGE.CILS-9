@@ -1,4 +1,4 @@
-nom;rang;stat;nbCoup;dégat;perceArmure;description;effet(soint,degat...);id;type;
+nom;rang;stat;nbCoup;dégat;perceArmure;description;effet;id;type;
 
 nom = nom de la competence
 
