@@ -64,7 +64,7 @@ public class Fichier {
 		} catch(IOException e) {
 			System.out.println("erreur avec un des fichiers de compétence magique");
 		}
-		// On réalise exactement la même chose pour les compétences de 
+		// On réalise exactement la même chose pour les compétences de type physique typé distance
 		try {
 			File initial = new File ("Projet.L3.MIAGE.CILS-9-main/compétence/physique/distance");
 			if(initial.isDirectory()) {
@@ -82,6 +82,7 @@ public class Fichier {
 		} catch(IOException e) {
 			System.out.println("erreur avec un des fichiers de compétence physique distance");
 		}
+		// On réalise exactement la même chose pour les les compétences de type physique typé mêlée
 		try {
 			File initial = new File ("Projet.L3.MIAGE.CILS-9-main/compétence/physique/mêlée");
 			if(initial.isDirectory()) {
