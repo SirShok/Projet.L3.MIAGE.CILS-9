@@ -1,8 +1,0 @@
-rang 1 :
-	-Projectile de glace : envoi un projectile glaçant, inflige SAG/2 DM, coute 5 PM.
-	-Bouclier de glace : créer un bouclier protegeant le lanceur contre un maximum de SAG/2 DM, coute 5 PM.
-
-rang 2 :
-	-Projectile de glace : envoi un projectile glaçant, inflige SAG DM, coute 10 PM.
-	-Bouclier de glace : créer un bouclier protegeant le lanceur contre un maximum de SAG DM, coute 10 PM.
-	-Deluge glacial : envoi 2 projectile glaçant, inflige SAG/2 DM, coute 10 PM.
