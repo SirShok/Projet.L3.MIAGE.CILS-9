@@ -56,7 +56,6 @@ public class Fichier {
 					String ligne;
 					while(((ligne = lecteurFichier.readLine()) != null)) {
 						Competence c = new Competence(ligne); 
-						System.out.println("Impression de compétence magique ");
 						ListeCompetence.add(c);
 					}
 					lecteurFichier.close();
@@ -74,7 +73,6 @@ public class Fichier {
 					String ligne;
 					while(((ligne = lecteurFichier.readLine()) != null)) {
 						Competence c = new Competence(ligne);
-						System.out.println("Impression de compétence physique distance ");
 						ListeCompetence.add(c);
 					}
 					lecteurFichier.close();
@@ -92,7 +90,6 @@ public class Fichier {
 					String ligne;
 					while(((ligne = lecteurFichier.readLine()) != null)) {
 						Competence c = new Competence(ligne);
-						System.out.println("Impression de compétence physique mêlée");
 						ListeCompetence.add(c);
 					}
 					lecteurFichier.close();
