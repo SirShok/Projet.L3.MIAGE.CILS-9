@@ -16,9 +16,9 @@ public class EcranJeu extends JPanel{
 	private BarreAction barreAction;
 	private JPanel misc;
 	
-	public EcranJeu(){
+	public EcranJeu(Fenetre f){
 		//Creation de la barre d'action en bas de l'ecran
-		////Récupère l'image de fond
+		////Recupere l'image de fond
 		BufferedImage img = null;
 		try{
 			img=ImageIO.read(new File("Autre/images/cadre_orange.png"));
@@ -26,7 +26,7 @@ public class EcranJeu extends JPanel{
 			System.out.println("Unable to fetch image.");
 			ioe.printStackTrace();
 		}
-		barreAction=new BarreAction(img);
+		barreAction=new BarreAction(img, f);
 		
 		
 		//Creation de la zone de texte scrollable
@@ -34,13 +34,9 @@ public class EcranJeu extends JPanel{
 		
 		
 		//Creation du panneau monstre et menu
-		misc=new JPanel();
-		misc.setPreferredSize(new Dimension(560,640));
-		misc.setBackground(Color.black);
-		JLabel barresup=new JLabel(new ImageIcon("Autre/images/Barre_orange_transparente.png"));
-		misc.add(barresup);
+		misc=new PanneauAdv();
 		
-		
+		//Reglages et ajout des composant
 		this.setLayout(new BorderLayout());
 		this.add(parchemin, BorderLayout.WEST);
 		this.add(misc, BorderLayout.EAST);
