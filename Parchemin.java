@@ -21,11 +21,12 @@ public class Parchemin extends JPanel{
 		
 		//Ajout et configuration de la zone de texte
 		texte=new JTextArea(lorem+lorem+lorem+lorem, 5, 30);
-		texte.setBorder(BorderFactory.createEmptyBorder(30,20,10,10));
+		texte.setBorder(BorderFactory.createEmptyBorder(30,20,10,30));
 		texte.setWrapStyleWord(true);
 		texte.setLineWrap(true);
 		texte.setFocusable(false);
 		texte.setEditable(false);
+		////Recuperation de la police d'ecriture
 		try {
 		    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		    ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Autre/images/nine0.ttf")));
@@ -45,6 +46,7 @@ public class Parchemin extends JPanel{
 		scroll.setBorder(null);
 		scroll.setPreferredSize(new Dimension(840, 640));
 		
+		//Reglages et ajout des composant
 		this.setBorder(null);
 		this.setBackground(Color.black);
 		this.add(scroll);
