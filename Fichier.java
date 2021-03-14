@@ -26,15 +26,15 @@ public class Fichier {
 		try {
 			String cheminFichier = "Projet.L3.MIAGE.CILS-9-main/Autre/DossierConfig/Config.txt";
 			FileReader fichier = new FileReader(cheminFichier);
-			BufferedReader lecteurFichier = new BufferedReader(fichier);
+			BufferedReader lecteurFichier = new BufferedReader(fichier); 
 			String ligne;
 			String[] mot;
-			ArrayList<Monstre> bestiaire = new ArrayList<Monstre>();
+			ArrayList<Monstre> bestiaire = new ArrayList<Monstre>(); //créer une liste d'objet de type monstre nommé Bestiaire. utilisé pour les combats etc.
 			try {
-				while(((ligne = lecteurFichier.readLine()) != null)) {
-					mot=ligne.split(" ");
-					Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]));
-					bestiaire.add(m);
+				while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier à une autre ligne 
+					mot=ligne.split(" "); //on sépare la ligne en mot 
+					Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1])); //on utilise les mots pour créer un objet de type monstre
+					bestiaire.add(m); //ajoute l'objet créé au bestiaire
 				}
 				lecteurFichier.close();
 			} catch(IOException e) {
@@ -49,21 +49,22 @@ public class Fichier {
 		ArrayList<Competence> ListeCompetence = new ArrayList<Competence>();
 		try {
 			File initial = new File("Projet.L3.MIAGE.CILS-9-main/compétence/magique");
-			if (initial.isDirectory()) {
-				for (File f : initial.listFiles()) {
-					FileReader fichier = new FileReader(f);
-					BufferedReader lecteurFichier = new BufferedReader(fichier);
+			if (initial.isDirectory()) {   //vérifie si le File est un Directory
+				for (File f : initial.listFiles()) { // Pour chaque fichier dans le dossier
+					FileReader fichier = new FileReader(f); 
+					BufferedReader lecteurFichier = new BufferedReader(fichier); //on prend un stream pour lire le fichier
 					String ligne;
-					while(((ligne = lecteurFichier.readLine()) != null)) {
-						Competence c = new Competence(ligne); 
-						ListeCompetence.add(c);
+					while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier à une autre ligne
+						Competence c = new Competence(ligne); //on renvoie la ligne au constructeur de Competence
+						ListeCompetence.add(c); //on ajoute la competence à la liste des competences
 					}
-					lecteurFichier.close();
+					lecteurFichier.close(); //on ferme le stream de lecture
 				}
 			}
 		} catch(IOException e) {
 			System.out.println("erreur avec un des fichiers de compétence magique");
 		}
+		// On réalise exactement la même chose pour les compétences de 
 		try {
 			File initial = new File ("Projet.L3.MIAGE.CILS-9-main/compétence/physique/distance");
 			if(initial.isDirectory()) {
