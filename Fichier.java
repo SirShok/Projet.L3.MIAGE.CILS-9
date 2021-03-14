@@ -22,14 +22,13 @@ public class Fichier {
 	}
 
 	//permet de récupérer le fichier de config
-	public static void RecuperationConfig(){
+	public static void RecuperationConfig(ArrayList<Monstre> bestiaire){
 		try {
 			String cheminFichier = "Projet.L3.MIAGE.CILS-9-main/Autre/DossierConfig/Config.txt";
 			FileReader fichier = new FileReader(cheminFichier);
 			BufferedReader lecteurFichier = new BufferedReader(fichier); 
 			String ligne;
 			String[] mot;
-			ArrayList<Monstre> bestiaire = new ArrayList<Monstre>(); //créer une liste d'objet de type monstre nommé Bestiaire. utilisé pour les combats etc.
 			try {
 				while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier à une autre ligne 
 					mot=ligne.split(" "); //on sépare la ligne en mot 
@@ -45,7 +44,7 @@ public class Fichier {
 		}
 	}
 	//permet de récupérer les différents fichier de configuration des Compétences et de les introduire dans la base de donnée Java
-	public static void LectureCompetence() {
+	public static void LectureCompetence(ArrayList<Competence> ListeCompetence) {
 		ArrayList<Competence> ListeCompetence = new ArrayList<Competence>();
 		try {
 			File initial = new File("Projet.L3.MIAGE.CILS-9-main/compétence/magique");
