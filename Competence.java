@@ -13,7 +13,7 @@ public class Competence {
     int cout = 0;
     String type = "";
 
-    public Competence (String c, Individu ind){
+    public Competence (String c, Individu ind){ // prend en entré un string du mème type que se dans le fichier competence et remplie un type compètence avec
         int i = 0;
         int j = 0;
         String degat = "";
@@ -62,8 +62,8 @@ public class Competence {
         perca = Integer.parseInt(per);
     }
 
-    public List<Integer> Degat(int d, String s, int r, Individu ind, int c){
-        List<Integer> degat = new ArrayList<Integer>();
+    public List<Integer> Degat(int d, String s, int r, Individu ind, int c){ // comme on ne peux pas stocker de fonction dans un String, on attribus un chiffre a chacune 
+        List<Integer> degat = new ArrayList<Integer>();                      // des fonctions exixtante puis via cette fonction on calcul les degat en fonction de se chiffre
         switch(d){
             case 1:
                 if(s == "FOR"){
