@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
 	public static void main(String[] args) {
 		Equipement[] equipement  = {new Equipement("baton usé", 0, 4, 4, 0, 2, 1), new Equipement("baguette usé", 0, 2, 2, 0, 1, 1), new Equipement("épée rouillé", 4, 0, 0, 0, 1, 1),
