@@ -1,3 +1,5 @@
+package testInterface;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -14,13 +16,14 @@ public class Parchemin extends JPanel{
 	
 	private JTextArea texte;
 	private JScrollPane scroll;
+	private BarreAction ba;
 	
 	public Parchemin(){
 		//TODO TEST DELETE LATER
 		String lorem="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 		
 		//Ajout et configuration de la zone de texte
-		texte=new JTextArea(lorem+lorem+lorem+lorem, 5, 30);
+		texte=new JTextArea(lorem, 5, 30);
 		texte.setBorder(BorderFactory.createEmptyBorder(30,20,10,30));
 		texte.setWrapStyleWord(true);
 		texte.setLineWrap(true);
@@ -51,5 +54,9 @@ public class Parchemin extends JPanel{
 		this.setBackground(Color.black);
 		this.add(scroll);
 		this.setVisible(true);
+	}
+	
+	public JTextArea getTextArea(){
+		return texte;
 	}
 }
