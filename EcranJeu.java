@@ -41,6 +41,6 @@ public class EcranJeu extends JPanel{
 		this.add(parchemin, BorderLayout.WEST);
 		this.add(misc, BorderLayout.EAST);
 		this.add(barreAction, BorderLayout.PAGE_END);
-		this.setBackground(Color.cyan);	
+		this.setBackground(Color.black);	
 	}
 }
