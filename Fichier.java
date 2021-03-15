@@ -47,7 +47,7 @@ public class Fichier {
 	public static void LectureCompetence(ArrayList<Competence> ListeCompetence) {
 		ArrayList<Competence> ListeCompetence = new ArrayList<Competence>();
 		try {
-			File initial = new File("Projet.L3.MIAGE.CILS-9-main/compétence/magique");
+			File initial = new File("Projet.L3.MIAGE.CILS-9-main/competence/magique");
 			if (initial.isDirectory()) {   //vérifie si le File est un Directory
 				for (File f : initial.listFiles()) { // Pour chaque fichier dans le dossier
 					FileReader fichier = new FileReader(f); 
@@ -65,7 +65,7 @@ public class Fichier {
 		}
 		// On réalise exactement la même chose pour les compétences de type physique typé distance
 		try {
-			File initial = new File ("Projet.L3.MIAGE.CILS-9-main/compétence/physique/distance");
+			File initial = new File ("Projet.L3.MIAGE.CILS-9-main/competence/physique/distance");
 			if(initial.isDirectory()) {
 				for (File f : initial.listFiles()) {
 					FileReader fichier = new FileReader(f);
@@ -83,7 +83,7 @@ public class Fichier {
 		}
 		// On réalise exactement la même chose pour les les compétences de type physique typé mêlée
 		try {
-			File initial = new File ("Projet.L3.MIAGE.CILS-9-main/compétence/physique/mêlée");
+			File initial = new File ("Projet.L3.MIAGE.CILS-9-main/competence/physique/mêlée");
 			if(initial.isDirectory()) {
 				for (File f : initial.listFiles()) {
 					FileReader fichier = new FileReader(f);
