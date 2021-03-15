@@ -37,7 +37,7 @@ public class BarreAction extends ImagePanel{
 		cap1.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				//Ta méthode
+				par.append("Ta methode qui renvoie un string");
 				System.out.println("Coup Simple");
 			}
 		});
