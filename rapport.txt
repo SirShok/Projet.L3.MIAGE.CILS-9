@@ -17,4 +17,4 @@ Je me suis chargé de créer le system de jeux (les differente caractéristique,
 
 
 Maxime Avrillon-Thade
-Je me suis occupé de réalisé la maquette de l'interface graphique du rpg. \n J'ai également travaillé sur le fichier Narration.java qui a pour but d'interagir avec la console de l'interface graphique permettant d'afficher les évenements tout au long de la partie. De plus j'ai créé les différents monstres et adversaires du jeu dans le fichier monstre.txt.
+Je me suis occupé de réalisé la maquette de l'interface graphique du rpg. J'ai également travaillé sur le fichier Narration.java qui a pour but d'interagir avec la console de l'interface graphique permettant d'afficher les évenements tout au long de la partie. De plus j'ai créé les différents monstres et adversaires du jeu dans le fichier monstre.txt.
