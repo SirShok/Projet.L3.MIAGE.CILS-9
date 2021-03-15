@@ -19,7 +19,7 @@ public class PanneauAdv extends JPanel{
 		//Barre orange verticale cosmetique sur le cote
 		JLabel barresup=new JLabel(new ImageIcon("Autre/images/Barre_orange_transparente.png"));
 		barresup.setBorder(BorderFactory.createEmptyBorder());
-		barresup.setBounds(15, 60, barresup.getPreferredSize().width, barresup.getPreferredSize().height);
+		barresup.setBounds(20, 60, barresup.getPreferredSize().width, barresup.getPreferredSize().height);
 		
 		//Recuperation de l'image de fond pour le panneau stat de l'adversaire
 		BufferedImage img = null;
