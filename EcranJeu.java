@@ -17,6 +17,10 @@ public class EcranJeu extends JPanel{
 	private JPanel misc;
 	
 	public EcranJeu(Fenetre f){
+		//Creation de la zone de texte scrollable
+		parchemin=new Parchemin();
+		
+		
 		//Creation de la barre d'action en bas de l'ecran
 		////Recupere l'image de fond
 		BufferedImage img = null;
@@ -26,11 +30,7 @@ public class EcranJeu extends JPanel{
 			System.out.println("Unable to fetch image.");
 			ioe.printStackTrace();
 		}
-		barreAction=new BarreAction(img, f);
-		
-		
-		//Creation de la zone de texte scrollable
-		parchemin=new Parchemin();
+		barreAction=new BarreAction(img, f, parchemin);
 		
 		
 		//Creation du panneau monstre et menu
