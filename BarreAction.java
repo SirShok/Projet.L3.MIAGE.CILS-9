@@ -1,3 +1,5 @@
+package testInterface;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -37,7 +39,8 @@ public class BarreAction extends ImagePanel{
 		cap1.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.append("Ta methode qui renvoie un string");
+				//Ta méthode
+				par.getTextArea().append("\n J'ai mal");
 				System.out.println("Coup Simple");
 			}
 		});
