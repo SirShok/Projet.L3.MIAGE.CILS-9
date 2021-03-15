@@ -107,20 +107,20 @@ public class Individu {
 	}
 	
 	//attaque normale magique
-	public int attaqueM() {
-		int degat = 0;
+	public ArrayList attaqueM(ArrayList l) {
 		for(int i = 0; i < tailleEquipement; i++) {
 			if(equipement[i] != null) {
-				degat = degat + equipement[i].degatMagique;
+				l.set(0, l.get(0) + equipement[i].degatMagique);
 			}
 		}
-		degat = degat + sagesse/2;
 		Random random = new Random(); 
 		float f=random.nextFloat();
 		
-		if(f*100 < 5 + chance/5) {
-			return degat*2;
+		for(int i = 0; i < l.size(); i++) {
+			if(f*100 < 5 + chance/5) {
+				l.set(i, l.get(0) * 2);
+			}
 		}
-		return degat;
+		return l;
 	}
 }
