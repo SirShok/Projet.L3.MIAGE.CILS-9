@@ -1,3 +1,5 @@
+package testInterface;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,7 +22,7 @@ public class EcranJeu extends JPanel{
 		//Creation de la zone de texte scrollable
 		parchemin=new Parchemin();
 		
-		
+				
 		//Creation de la barre d'action en bas de l'ecran
 		////Recupere l'image de fond
 		BufferedImage img = null;
@@ -35,6 +37,7 @@ public class EcranJeu extends JPanel{
 		
 		//Creation du panneau monstre et menu
 		misc=new PanneauAdv();
+		
 		
 		//Reglages et ajout des composant
 		this.setLayout(new BorderLayout());
