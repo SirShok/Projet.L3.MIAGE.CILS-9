@@ -27,55 +27,7 @@ public class Competence {
         id = Integer.parseInt(tab[8]);
         type = tab[9];
         
-        /*int i = 0;
-        int j = 0;
-        String degat = "";
-        String per = "";
-        while (j != 10){
-            if (c.charAt(i) == ';'){
-                j++;
-            }else{
-                if(j == 0){
-                    nom = nom+c.charAt(i);
-                }
-                if(j == 1){
-                    rang = Integer.parseInt(Character.toString(c.charAt(i)));
-                }
-                if(j == 2){
-                    stat = stat+c.charAt(i);
-                }
-                if(j == 3){
-                    nbCoup = Integer.parseInt(Character.toString(c.charAt(i)));
-                }
-                if(j == 4){
-                    degat = degat+c.charAt(i);
-                }
-                if(j == 5){
-                    per = per+c.charAt(i);
-                }
-                if(j == 6){
-                    description = description+c.charAt(i);
-                }
-                if(j == 7){
-                    effet = effet+c.charAt(i);
-                }
-                if(j == 8){
-                    id = id+c.charAt(i);
-                }
-                if(j == 9){
-                    type = type+c.charAt(i);
-                }
-            }
-            i++;
-        }
-        if(stat == "SAG"){
-            cout = rang*5;
-        }
-        DM = Integer.parseInt(degat);
-        perca = Integer.parseInt(per);*/
-    }
-
-    public void Degat(Individu ind){                    // comme on ne peux pas stocker de fonction dans un String, on attribus un chiffre a chacune 
+      public void Degat(Individu ind){                    // comme on ne peux pas stocker de fonction dans un String, on attribus un chiffre a chacune 
         List<Integer> degat = new ArrayList<Integer>(); // des fonctions exixtante puis via cette fonction on calcul les degat en fonction de se chiffre
         int d = this.degat;
         String s = this.stat;
