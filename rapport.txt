@@ -9,7 +9,7 @@ Je me suis principalement occupé de l'interface graphique qui comporte les clas
 
 
 Benjamin Combe:
-Je me suis chargé des fonctions permettant de lire un fichier txt, le décomposer et pouvoir créer des objets Java avec les données. J'ai également organisé le travail. J'ai également réalise la fonction RecupCompetence, qui part chercher tous les fichiers txt dans un répertoire et leur applique des fonctions. Quelques corrections de bug dans le fichier Fichier.java. Egalement, une inspection des différents fichiers du projet pour vérifier qu'ils fonctionnent tous de manière indépendante.
+Je me suis chargé des fonctions permettant de lire un fichier txt, le décomposer et pouvoir créer des objets Java avec les données. J'ai également organisé le travail. J'ai également réalise la fonction RecupCompetence, qui part chercher tous les fichiers txt dans un répertoire et leur applique des fonctions. Quelques corrections de bug dans le fichier Fichier.java. Egalement, une inspection des différents fichiers du projet pour vérifier qu'ils fonctionnent tous de manière indépendante. Je me suis également penché sur la queston de la serialization des objets.
 
 
 Quentin Pavy:
