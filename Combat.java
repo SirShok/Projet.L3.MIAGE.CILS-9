@@ -6,7 +6,7 @@ public class Combat {
 	//on peut, peut-être, à la place de prendre un montant de perce-armure, prendre un individu ou autre chose pour le perce-armure
 	public static void combat (Individu p1, /*Individu p2,*/ int perceArmure, String type1, String type2, int degat) {
 		degat = faiblesse(type1, type2)*degat;
-		degat = Math.min(0, degat - Math.min(0, p1.armure - perceArmure); //on peut toujours appliquer armure et le perce-armure autre part
+		degat = Math.min(0, degat - Math.min(0, p1.armure - perceArmure)); //on peut toujours appliquer armure et le perce-armure autre part
 		p1.pv = p1.pv - degat;
 	}
 
