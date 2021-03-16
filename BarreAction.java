@@ -1,3 +1,5 @@
+package testInterface;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -23,7 +25,7 @@ public class BarreAction extends ImagePanel{
 	private int parmure;
 	
 	
-	public BarreAction(BufferedImage img, Fenetre f){
+	public BarreAction(BufferedImage img, Fenetre f, Parchemin par){
 		super(img);
 		ImageIcon bouton=new ImageIcon("Autre/images/bouton.png");
 		Dimension dimBouton=new Dimension(bouton.getIconWidth(), bouton.getIconHeight());
@@ -34,6 +36,14 @@ public class BarreAction extends ImagePanel{
 		cap1.setContentAreaFilled(false);
 		cap1.setSize(dimBouton);
 		cap1.setBounds(50, 27, bouton.getIconWidth(), bouton.getIconHeight());
+		cap1.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				//Ta méthode
+				par.getTextArea().append("\n J'ai mal");
+				System.out.println("Coup Simple");
+			}
+		});
 		
 		cap2=new JButton(new ImageIcon("Autre/images/estoc.png"));
 		cap2.setBorder(BorderFactory.createEmptyBorder());
