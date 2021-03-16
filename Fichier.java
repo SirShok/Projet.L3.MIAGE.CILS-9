@@ -53,9 +53,9 @@ public class Fichier {
 				String[] mot;
 				try {
 					while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier Ã  une autre ligne 
-						mot=ligne.split(" "); //on sÃ©pare la ligne en mot 
+						mot=ligne.split(" "); //on sépare la ligne en mot 
 						Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]),Integer.parseInt(mot[2])); //on utilise les mots pour crÃ©er un objet de type monstre
-						bestiaire.add(m); //ajoute l'objet crÃ©Ã© au bestiaire
+						bestiaire.add(m); //ajoute l'objet créé au bestiaire
 					}
 					int i=0;
 					for (Monstre b : bestiaire) {
@@ -166,7 +166,7 @@ public class Fichier {
 				}
 			}
 		} catch(IOException e) {
-			System.out.println("erreur avec un des fichiers de compÃ©tence physique mÃªlÃ©e");
+			System.out.println("erreur avec un des fichiers de compétence physique mélée");
 		}
 	}
 
