@@ -26,7 +26,7 @@ public class Competence {
         effet = tab[7];
         id = Integer.parseInt(tab[8]);
         type = tab[9];
-        
+    }
       public void Degat(Individu ind){                    // comme on ne peux pas stocker de fonction dans un String, on attribus un chiffre a chacune 
         List<Integer> degat = new ArrayList<Integer>(); // des fonctions exixtante puis via cette fonction on calcul les degat en fonction de se chiffre
         int d = this.degat;
