@@ -50,7 +50,7 @@ public class Individu {
 			System.exit(-1);
 		}
 		else if(e.type == "armure") {
-			if(equipArmure == "true") {
+			if(equipArmure == true) {
 				System.out.println("erreur: impossible d'équiper l'équipement");
 				System.exit(-1);
 			} else {
