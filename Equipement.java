@@ -15,7 +15,7 @@ public class Equipement {
       		nom = tab[0];
 		degatPhysique = Integer.parseInt(tab[1]);
 		degatMagique = Integer.parseInt(tab[2]);
-		armure = Integer.parsInt(tab[3]);
+		armure = Integer.parseInt(tab[3]);
 		perceArmure = Integer.parseInt(tab[4]);
 		nbMain = Integer.parseInt(tab[5]);
 		rang = Integer.parseInt(tab[6]);
