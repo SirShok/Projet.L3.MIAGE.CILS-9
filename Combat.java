@@ -13,7 +13,7 @@ public class Combat {
 					return 1/2;
 			case "tenebres":	if(type2.equals("lumiere")||type2.equals("tenebres")||type2.equals("physique")) return 1;
 						return 2;
-			case "feu":	if(type2.equals("air")||type2.equals("tenebres")) return 2;
+			case "feu":	if(type2.equals("vent")||type2.equals("tenebres")) return 2;
 					if(type2.equals("lumiere")||type2.equals("eau")) return 1/2;
 					return 1;
 					break;
@@ -25,7 +25,7 @@ public class Combat {
 					if(type2.equals("lumiere")||type2.equals("feu")) return 1/2;
 					return 1;
 					break;
-			case "air":	if(type2.equals("terre")||type2.equals("tenebres")) return 2;
+			case "vent":	if(type2.equals("terre")||type2.equals("tenebres")) return 2;
 					if(type2.equals("lumiere")||type2.equals("feu")) return 1/2;
 					return 1;
 					break;
