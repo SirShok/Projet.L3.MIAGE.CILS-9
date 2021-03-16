@@ -52,9 +52,9 @@ public class Fichier {
 				String ligne;
 				String[] mot;
 				try {
-					while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier Ã  une autre ligne 
+					while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier à une autre ligne 
 						mot=ligne.split(" "); //on sépare la ligne en mot 
-						Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]),Integer.parseInt(mot[2])); //on utilise les mots pour crÃ©er un objet de type monstre
+						Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]),Integer.parseInt(mot[2])); //on utilise les mots pour créer un objet de type monstre
 						bestiaire.add(m); //ajoute l'objet créé au bestiaire
 					}
 					int i=0;
