@@ -96,7 +96,7 @@ public class Individu {
 		for(int i = 0; i < tailleEquipement; i++) {
 			if(equipement[i] != null) {
 				if(equipement[i].type == "arme") {
-					r = r + "Arme " " : " + equipement[i].nom + "\n";
+					r = r + "Arme : " + equipement[i].nom + "\n";
 				} else if (equipement[i].type == "armure") {
 					r = r + "Armure : " +equipement[i].nom + "\n";
 				} else {
