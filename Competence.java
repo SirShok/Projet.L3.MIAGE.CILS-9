@@ -93,32 +93,4 @@ public class Competence {
         }
         this.DM =  degat;
     }
-
-    public String getNom(){
-        return nom;
-    }
-
-    public int getRang(){
-        return rang;
-    }
-
-    public String getStat(){
-        return stat;
-    }
-
-    public int getNbCoup(){
-        return nbCoup;
-    }
-
-    public List<Integer> getDM(){
-        return DM;
-    }
-
-    public int getPerca(){
-        return perca;
-    }
-
-    public String getDescription(){
-        return description;
-    }
 }
