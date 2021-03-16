@@ -20,20 +20,16 @@ public class Combat {
 			case "feu":	if(type2.equals("vent")||type2.equals("tenebres")) return 2;
 					if(type2.equals("lumiere")||type2.equals("eau")) return 1/2;
 					return 1;
-					break;
 			case "eau":	if(type2.equals("feu")||type2.equals("tenebres")) return 2;
 					if(type2.equals("lumiere")||type2.equals("terre")) return 1/2;
 					return 1;
-					break;
 			case "terre":	if(type2.equals("eau")||type2.equals("tenebres")) return 2;
 					if(type2.equals("lumiere")||type2.equals("feu")) return 1/2;
 					return 1;
-					break;
 			case "vent":	if(type2.equals("terre")||type2.equals("tenebres")) return 2;
 					if(type2.equals("lumiere")||type2.equals("feu")) return 1/2;
 					return 1;
-					break;
-			case "physique": return 1; break;
+			case "physique": return 1;
 		}
 		return 1;
 	}
