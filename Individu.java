@@ -92,6 +92,7 @@ public class Individu {
 	
 	//permet de voir son équipement
 	public String afficherEquipement() {
+		String s = null;
 		int j = 1; String r = "";
 		for(int i = 0; i < tailleEquipement; i++) {
 			if(equipement[i] != null) {
