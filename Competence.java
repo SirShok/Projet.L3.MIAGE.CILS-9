@@ -5,7 +5,7 @@ public class Competence {
     int rang;
     String stat = "";
     int nbCoup;
-    List<Integer> DM = new ArrayList<Integer>();
+    ArrayList<Integer> DM = new ArrayList<Integer>();
     int perca;
     String description = "";
     int effet;
