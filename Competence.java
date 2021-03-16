@@ -14,7 +14,9 @@ public class Competence {
     int cout = 0;
     String type = "";
 
-    public Competence (String c){ // prend en entré un string du mème type que se dans le fichier competence et remplie un type compètence avec ! ne calcula pas les dégat
+    // prend en entrée un string dans le fichier competence.txt et remplie une instance de classe Competence
+    //attention! Cette classe ne calculeraa pas les dégâts, elle prendra justes ceux définies par la compétence
+    public Competence (String c){
         String[] tab = c.split(";");
         nom = tab[0];
         rang = Integer.parseInt(tab[1]);
@@ -27,8 +29,11 @@ public class Competence {
         id = Integer.parseInt(tab[8]);
         type = tab[9];
     }
-      public void Degat(Individu ind){                    // comme on ne peux pas stocker de fonction dans un String, on attribus un chiffre a chacune 
-        ArrayList<Integer> degat = new ArrayList<Integer>(); // des fonctions exixtante puis via cette fonction on calcul les degat en fonction de se chiffre
+    
+    // comme on ne peut pas stocker des fonctions dans un String, on attribue un chiffre à chacune 
+    // des fonctions existantes puis via cette fonction on calcule les dégâts en fonction de ce chiffre
+      public void Degat(Individu ind){
+        ArrayList<Integer> degat = new ArrayList<Integer>();
         int d = this.degat;
         String s = this.stat;
         int c = this.cout;
