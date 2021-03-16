@@ -7,7 +7,7 @@ public class Individu {
 	public String nom;
 	public int pv, mana, armure = 0, agilite, force, constitution, sagesse, perception, charisme, chance;
 	private Equipement[] equipement = new Equipement[tailleEquipement]; int nbMainL = 2; 	//désigne l'équipement et le nombre de main libres restantes
-	private boolean armure = false;	//indique si l'individu porte une armure
+	private boolean equipArmure = false;	//indique si l'individu porte une armure
 	
 	public Individu(String n, int ag, int f, int co, int s, int p, int ca, int ch) {
 		nom = n;
@@ -50,11 +50,11 @@ public class Individu {
 			System.exit(-1);
 		}
 		else if(e.type == "armure") {
-			if(armure == "true") {
+			if(equipArmure == "true") {
 				System.out.println("erreur: impossible d'équiper l'équipement");
 				System.exit(-1);
 			} else {
-				armure = true;
+				equipArmure = true;
 				for(int i = 0; i < tailleEquipement; i++) {
 					if(equipement[i] == null) {
 						equipement[i] = e;
@@ -82,7 +82,7 @@ public class Individu {
 					nbMainL = nbMainL + e.nbMain;
 					return;
 				} else if(tmp == "armure") {
-					armure = false;
+					equipArmure = false;
 					return;
 				} else {
 					System.out.println("type d'équipement incorrect");
