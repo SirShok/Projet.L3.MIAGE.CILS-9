@@ -90,26 +90,25 @@ public class Individu {
 		System.exit(-1);
 	}
 	
-	//permet de voir son équipement
+	//permet de voir son équipement ainsi que son type
 	public String afficherEquipement() {
-		int j = 1; String r = "";
+		String r = "";
 		for(int i = 0; i < tailleEquipement; i++) {
 			if(equipement[i] != null) {
 				if(equipement[i].type == "arme") {
-					s = s + "Arme " + j + " : " + equipement[i].nom + "\n";
-					j++;
+					r = r + "Arme " " : " + equipement[i].nom + "\n";
 				} else if (equipement[i].type == "armure") {
-					s = s + "Armure : " +equipement[i].nom + "\n";
+					r = r + "Armure : " +equipement[i].nom + "\n";
 				} else {
 					System.out.println("type d'équipement incorrect");
 					System.exit(-1);
 				}
 			}				
 		}
-		if(j == 1) {
-			s = "Vous n'avez pas d'armes";
+		if(r == "") {
+			r = "Vous n'avez pas d'armes";
 		}
-		return s;
+		return r;
 	}
 	
 	//attaque normale avec l'attribut force
