@@ -21,6 +21,6 @@ soin hydro;7;SAG;1;1;0;vous soigne de SAGx3.5 PV coûte 35 PM;soin;9;eau;
 bombardement d'eau;8;SAG;8;2;999;envoie 8 projectiles d'eau infligeant SAG/2 dégâts coûte 40 PM;degat;10;eau;
 projectile d'eau;8;SAG;1;1;999;envoie un projectile d'eau infligeant SAGx4 dégâts coûte 40 PM;degat;8;eau;
 soin hydro;8;SAG;1;1;0;vous soigne de SAGx4 PV coûte 40 PM;soin;9;eau;
-bombardement d'eau;9;SAG;9;2;999;envoie 2 projectiles d'eau infligeant SAG/2 dégâts coûte 45 PM;degat;10;eau;
+bombardement d'eau;9;SAG;9;2;999;envoie 9 projectiles d'eau infligeant SAG/2 dégâts coûte 45 PM;degat;10;eau;
 projectile d'eau;9;SAG;1;1;999;envoie un projectile d'eau infligeant SAGx4.5 dégâts coûte 45 PM;degat;8;eau;
 soin hydro;9;SAG;1;1;0;vous soigne de SAGx4.5 PV coûte 45 PM;soin;9;eau;
