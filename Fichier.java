@@ -96,7 +96,7 @@ public class Fichier {
 						String ligne;
 						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier à une autre ligne
 							Competence c = new Competence(ligne); //on renvoie la ligne au constructeur de Competence
-							ListeCompetence.add(c); //on ajoute la competence Ã  la liste des competences
+							ListeCompetence.add(c); //on ajoute la competence à la liste des competences
 						}
 						int i=0;
 						for (Competence b : ListeCompetence) {
