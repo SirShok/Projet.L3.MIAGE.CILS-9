@@ -14,6 +14,7 @@ public class Competence {
     int cout = 0;
     String type = "";
 
+
     // prend en entrée un string dans le fichier competence.txt et remplie une instance de classe Competence
     //attention! Cette classe ne calculeraa pas les dégâts, elle prendra justes ceux définies par la compétence
     public Competence (String c){

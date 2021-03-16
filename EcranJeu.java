@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +16,7 @@ public class EcranJeu extends JPanel{
 	
 	private Parchemin parchemin;
 	private BarreAction barreAction;
-	private JPanel misc;
+	private JPanel misc=new JPanel();
 	
 	public EcranJeu(Fenetre f){
 		//Creation de la zone de texte scrollable
@@ -33,15 +35,20 @@ public class EcranJeu extends JPanel{
 		barreAction=new BarreAction(img, f, parchemin);
 		
 		
-		//Creation du panneau monstre et menu
-		misc=new PanneauAdv();
-		
-		
 		//Reglages et ajout des composant
 		this.setLayout(new BorderLayout());
 		this.add(parchemin, BorderLayout.WEST);
+		this.add(barreAction, BorderLayout.SOUTH);
 		this.add(misc, BorderLayout.EAST);
-		this.add(barreAction, BorderLayout.PAGE_END);
-		this.setBackground(Color.black);	
+		this.setBackground(Color.black);
+	}
+	
+	//creation et affichage d'un panneau monstre
+	public void monsterEncounter(Monstre m){
+		this.remove(misc);
+		misc=new PanneauAdv(m);
+		this.add(misc);
+		this.revalidate();
+		this.setVisible(true);
 	}
 }

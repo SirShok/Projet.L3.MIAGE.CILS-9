@@ -1,5 +1,3 @@
-
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
@@ -14,8 +12,9 @@ import javax.swing.JPanel;
 public class PanneauAdv extends JPanel{
 	private int test;
 	private StatAdv statAdv;
+	private Monstre monstre;
 	
-	public PanneauAdv(){
+	public PanneauAdv(Monstre m){
 		//Barre orange verticale cosmetique sur le cote
 		JLabel barresup=new JLabel(new ImageIcon("Autre/images/Barre_orange_transparente.png"));
 		barresup.setBorder(BorderFactory.createEmptyBorder());
@@ -29,7 +28,7 @@ public class PanneauAdv extends JPanel{
 			System.out.println("Unable to fetch image.");
 			ioe.printStackTrace();
 		}
-		statAdv=new StatAdv(img);
+		statAdv=new StatAdv(img, m);
 		statAdv.setBounds(115, 20, statAdv.getPreferredSize().width, statAdv.getPreferredSize().height);
 		
 		//Reglages et ajout des composant
@@ -39,5 +38,10 @@ public class PanneauAdv extends JPanel{
 		this.add(statAdv);
 		this.add(barresup);
 		this.setBorder(null);
+	}
+	
+	//fait disparaître le panneau quand le monstre meurt
+	public void monsterIsDead(){
+		this.setVisible(false);
 	}
 }
