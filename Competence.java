@@ -19,7 +19,7 @@ public class Competence {
         rang = Integer.parseInt(tab[1]);
         stat = tab[2];
         nbCoup = Integer.parseInt(tab[3]);
-        DM = Integer.parseInt(tab[4]);
+        DM.add(Integer.parseInt(tab[4]));
         perca = Integer.parseInt(tab[5]);
         description = tab[6];
         effet = tab[7];
