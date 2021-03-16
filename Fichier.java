@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 
 public class Fichier {
-	//écrit dans un fichier dit "de sauvegarde" les caractÃ©tisques (juste les stats) de l'individu
+	//écrit dans un fichier dit "de sauvegarde" les caractéristiques (juste les stats) de l'individu
 	public static void EcrireFichier(Individu i) {
 		Class cl = i.getClass();
 		Field[] fd = cl.getFields();
