@@ -18,6 +18,6 @@ public class Equipement {
 		perceArmure = Integer.parseInt(tab[3]);
 		nbMain = Integer.parseInt(tab[4]);
 		rang = Integer.parseInt(tab[5]);
-		type = tab[6]
+		type = tab[6];
 	}
 }
