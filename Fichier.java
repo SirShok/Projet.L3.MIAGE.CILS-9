@@ -21,9 +21,30 @@ public class Fichier {
 		}
 	}
 
-	//permet de récupérer le fichier de config
-	public static void RecuperationConfig(ArrayList<Monstre> bestiaire){
-		try {
+	public static boolean isEmpty(File file) throws IOException {
+		Path path = Paths.get(file.getPath());
+		if(Files.list(path).findAny().isPresent()){
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	
+	//permet de rÃ©cupÃ©rer le fichier de config
+	public static void RecuperationConfig(ArrayList<Monstre> bestiaire) throws FileNotFoundException, IOException, ClassNotFoundException{
+		File dossierSer = new File("Autre/DossierConfig/ObjetSerializer");
+		if( dossierSer.exists() && dossierSer.isDirectory() && isEmpty(dossierSer)) {
+			for (File f : dossierSer.listFiles()) {
+				ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+				Monstre m = (Monstre)ois.readObject();
+				System.out.println("lecture d'un objet serializer "+m.Nom);
+				bestiaire.add(m);
+				ois.close();
+			}
+		} else {
+
+			try {
 			String cheminFichier = "Projet.L3.MIAGE.CILS-9-main/Autre/DossierConfig/Config.txt";
 			FileReader fichier = new FileReader(cheminFichier);
 			BufferedReader lecteurFichier = new BufferedReader(fichier); 
