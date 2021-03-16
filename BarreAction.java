@@ -28,7 +28,7 @@ public class BarreAction extends ImagePanel{
 		ImageIcon bouton=new ImageIcon("Autre/images/bouton.png");
 		Dimension dimBouton=new Dimension(bouton.getIconWidth(), bouton.getIconHeight());
 		
-		//Boutons de capacités
+		//Boutons de capacite
 		cap1=new JButton(new ImageIcon("Autre/images/coupS.png"));
 		cap1.setBorder(BorderFactory.createEmptyBorder());
 		cap1.setContentAreaFilled(false);
@@ -37,7 +37,7 @@ public class BarreAction extends ImagePanel{
 		cap1.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				//Ta méthode
+				//Ta methode
 				par.getTextArea().append("\n J'ai mal");
 				System.out.println("Coup Simple");
 			}
@@ -90,7 +90,7 @@ public class BarreAction extends ImagePanel{
 		
 		Font caligraphieSmall=new Font("Nine By Five NBP", Font.PLAIN, 32);
 		
-		JLabel agil=new JLabel("Agilité :");
+		JLabel agil=new JLabel("Agilit� :");
 		agil.setFont(caligraphieSmall);
 		agil.setForeground(Color.white);
 		agil.setBounds(800, 70, agil.getPreferredSize().width, agil.getPreferredSize().height);
@@ -135,7 +135,7 @@ public class BarreAction extends ImagePanel{
 			@Override
             public void actionPerformed(ActionEvent e){
             	f.switchToMenu();
-            	System.out.println("Cliqué");
+            	System.out.println("Cliqu�");
             }
 		});
 		

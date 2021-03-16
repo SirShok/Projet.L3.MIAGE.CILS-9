@@ -6,7 +6,7 @@ public class Individu {
 	//caractÃ©ristiques de l'individu
 	public String nom;
 	public int pv, mana, armure = 0, agilite, force, constitution, sagesse, perception, charisme, chance;
-	private Equipement[] equipement = new Equipement[tailleEquipement]; int nbMainL = 2; 	//dÃ©signe l'Ã©quipement et le nombre de main libres restantes
+	private Equipement[] equipement = new Equipement[tailleEquipement]; int nbMainL = 2; 	//désigne l'équipement et le nombre de main libres restantes
 	private boolean equipArmure = false;	//indique si l'individu porte une armure
 	
 	public Individu(String n, int ag, int f, int co, int s, int p, int ca, int ch) {
@@ -32,9 +32,9 @@ public class Individu {
 		return sagesse*2;
 	}
 	
-	//permet d'Ã©quiper un Ã©quipement selon plusieurs conditions:
-	//- si c'est un arme, on va vÃ©rifier qu'il peut la porter
-	//- si c'est une armure, on va vÃ©rifier qu'il n'en a pas dÃ©jÃ 
+	//permet d'équiper un équipement selon plusieurs conditions:
+	//- si c'est un arme, on va vérifier qu'il peut la porter
+	//- si c'est une armure, on va vérifier qu'il n'en a pas déjà
 	public void equiper(Equipement e) {
 		if(e.type == "arme") {
 			if(nbMainL <= e.nbMain) {
@@ -46,12 +46,12 @@ public class Individu {
 					return;
 				}
 			}
-			System.out.println("erreur: impossible d'Ã©quiper l'Ã©quipement");
+			System.out.println("erreur: impossible d'équiper l'équipement");
 			System.exit(-1);
 		}
 		else if(e.type == "armure") {
 			if(equipArmure == true) {
-				System.out.println("erreur: impossible d'Ã©quiper l'Ã©quipement");
+				System.out.println("erreur: impossible d'équiper l'équipement");
 				System.exit(-1);
 			} else {
 				equipArmure = true;
@@ -61,18 +61,18 @@ public class Individu {
 						return;
 					}
 				}
-				System.out.println("erreur: impossible d'Ã©quiper l'Ã©quipement");
+				System.out.println("erreur: impossible d'équiper l'équipement");
 				System.exit(-1);
 			}	
 			
 		} else {
-			System.out.println("type d'Ã©quipement incorrect");
+			System.out.println("type d'équipement incorrect");
 			System.exit(-1);
 		}
 
 	}
 	
-	//permet de dÃ©sÃ©quiper un Ã©quipement
+	//permet de déséquiper un équipement
 	public void desequiper(Equipement e) {
 		for(int i = 0; i < tailleEquipement; i++) {
 			if((equipement[i] != null)&&(equipement[i].nom == e.nom)) {
@@ -85,16 +85,16 @@ public class Individu {
 					equipArmure = false;
 					return;
 				} else {
-					System.out.println("type d'Ã©quipement incorrect");
+					System.out.println("type d'équipement incorrect");
 					System.exit(-1);
 				}
 			}
 		}
-		System.out.println("erreur: impossible de dÃ©sÃ©quiper l'Ã©quipement");
+		System.out.println("erreur: impossible de déséquiper l'équipement");
 		System.exit(-1);
 	}
 	
-	//permet de voir son Ã©quipement ainsi que son type
+	//permet de voir son équipement ainsi que son type
 	public String afficherEquipement() {
 		String r = "";
 		for(int i = 0; i < tailleEquipement; i++) {
@@ -104,7 +104,7 @@ public class Individu {
 				} else if (equipement[i].type == "armure") {
 					r = r + "Armure : " + equipement[i].nom + "\n";
 				} else {
-					System.out.println("type d'Ã©quipement incorrect");
+					System.out.println("type d'équipement incorrect");
 					System.exit(-1);
 				}
 			}				

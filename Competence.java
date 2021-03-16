@@ -14,7 +14,7 @@ public class Competence {
     int cout = 0;
     String type = "";
 
-    public Competence (String c){ // prend en entrÃ© un string du mÃ¨me type que se dans le fichier competence et remplie un type compÃ¨tence avec ! ne calcula pas les dÃ©gat
+    public Competence (String c){ // prend en entrée un string du même type que celui dans le fichier competence et remplie un type compétence avec ! ne calcule pas les dégât
         String[] tab = c.split(";");
         nom = tab[0];
         rang = Integer.parseInt(tab[1]);

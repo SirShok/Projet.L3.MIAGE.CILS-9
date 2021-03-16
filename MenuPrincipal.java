@@ -28,7 +28,7 @@ public class MenuPrincipal extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e){
             	cpt++;
-				nbClic.setText("Nb de boutons cliquÃ© : "+cpt);
+				nbClic.setText("Nb de boutons cliqué : "+cpt);
             	f.swicthToGame();
             }
         });
@@ -44,7 +44,7 @@ public class MenuPrincipal extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e){
             	cpt++;
-				nbClic.setText("Nb de boutons cliquÃ© : "+cpt);
+				nbClic.setText("Nb de boutons cliqué : "+cpt);
             	f.swicthToGame();
             }
         });
@@ -60,8 +60,8 @@ public class MenuPrincipal extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e){
 				cpt++;
-				nbClic.setText("Nb de boutons cliquÃ© : "+cpt);
-				System.out.println("\"Options\" cliquÃ© WIP");
+				nbClic.setText("Nb de boutons cliqué : "+cpt);
+				System.out.println("\"Options\" cliqué WIP");
 			}
 		});
 		options.setBorder(BorderFactory.createEmptyBorder());
@@ -84,7 +84,7 @@ public class MenuPrincipal extends JPanel{
 		quit.setBounds(574, 550, jou.getIconWidth(), jou.getIconHeight());
 		
 		//TEST
-		nbClic=new JLabel("Nb de boutons cliquÃ© :");
+		nbClic=new JLabel("Nb de boutons cliqué :");
 		nbClic.setBounds(574, 800, 200, nbClic.getPreferredSize().height);
 		nbClic.setForeground(Color.white);
 		
