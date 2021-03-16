@@ -11,39 +11,13 @@ public class Equipement {
 
 
 	public Equipement(String equ) {
-		String perc = "";
-		int bonusP,bonusM
-		int i = 0;
-		while(i != 7){
-			if(equ.charAt(i) != ';'){
-				switch{
-					case 0:
-						nom = nom+equ.charAt(i);
-						breaks;
-					case 1:
-						bonusP = bonusP+equ.charAt(i);
-						breaks;
-					case 2:
-						bonusM = bonusP+equ.charAt(i);
-					case 3:
-						perc = perc+equ.charAt(i);
-						breaks;
-					case 4:
-						nbMain = Integer.parseInt(equ.charAt(i));
-						breaks;
-					case 5:
-						rang = Integer.parseInt(equ.charAt(i));
-						breaks;
-					case 6:
-						type = type+equ.charAt(i);
-						breaks;
-				}
-			}else{
-				i++;
-			}
-		}
-		degatPhysique = Integer.parseInt(bonusP);
-		degatMagique = Integer.parseInt(bonusM);
-		perceArmure = Integer.parseInt(perc);
+		String[] tab = equ.split(";");
+      		nom = tab[0];
+		degatPhysique = tab[1];
+		degatMagique = tab[2];
+		perceArmure = tab[3];
+		nbMain = tab[4];
+		rang = tab[5];
+		type = tab[6]
 	}
 }
