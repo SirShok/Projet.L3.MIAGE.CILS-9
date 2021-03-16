@@ -94,7 +94,7 @@ public class Fichier {
 						FileReader fichier = new FileReader(f); 
 						BufferedReader lecteurFichier = new BufferedReader(fichier); //on prend un stream pour lire le fichier
 						String ligne;
-						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier Ã  une autre ligne
+						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier à une autre ligne
 							Competence c = new Competence(ligne); //on renvoie la ligne au constructeur de Competence
 							ListeCompetence.add(c); //on ajoute la competence Ã  la liste des competences
 						}
