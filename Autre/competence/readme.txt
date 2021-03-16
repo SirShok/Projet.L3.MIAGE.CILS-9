@@ -4,9 +4,9 @@ nom = nom de la competence
 
 rang = rang de la competence, de 1 a 9
 
-stat = la statistique utilisé pour lance la compétence (FOR,AGI,SAG)
+stat = la statistique utilisé pour lancer la compétence (FOR,AGI,SAG)
 
-nbCoup = le nonbre de coup qu'effectu la competence
+nbCoup = le nombre de coups qu'effectue la competence
 
 degat = chiffre permetant d'obtenir le calcul des dégats
 
@@ -14,10 +14,10 @@ perceArmure = nombre de point d'armure suplementaire ignore par la competence
 
 description = description de la competence
 
-effet = si la compentence soigne, fais des degat ou pose un bouclier
+effet = si la compentence soigne, fais des degâts ou pose un bouclier
 
 id = chiffre permetant de savoir qu'elle competence sont identique mais a un rang different
 
-type = si la competence inflige des degats de physique, feux, eau,...
+type = si la competence inflige des degats de physique, feu, eau,...
       
 sujet a changement
