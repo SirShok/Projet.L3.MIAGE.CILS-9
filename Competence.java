@@ -6,6 +6,7 @@ public class Competence {
     String stat = "";
     int nbCoup;
     List<Integer> DM = new ArrayList<Integer>();
+    int degat;
     int perca;
     String description = "";
     int effet;
@@ -19,7 +20,7 @@ public class Competence {
         rang = Integer.parseInt(tab[1]);
         stat = tab[2];
         nbCoup = Integer.parseInt(tab[3]);
-        DM.add(Integer.parseInt(tab[4]));
+        degat = Integer.parseInt(tab[4]);
         perca = Integer.parseInt(tab[5]);
         description = tab[6];
         effet = tab[7];
@@ -76,9 +77,9 @@ public class Competence {
 
     public void Degat(Individu ind){                    // comme on ne peux pas stocker de fonction dans un String, on attribus un chiffre a chacune 
         List<Integer> degat = new ArrayList<Integer>(); // des fonctions exixtante puis via cette fonction on calcul les degat en fonction de se chiffre
-        d = this.DM;
-        s = this.stat;
-        c = this.cout;
+        int d = this.degat;
+        String s = this.stat;
+        int c = this.cout;
         switch(d){
             case 1:
                 if(s == "FOR"){
