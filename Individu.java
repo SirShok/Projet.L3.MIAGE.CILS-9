@@ -119,7 +119,7 @@ public class Individu {
 		
 		for(int i = 0; i < l.size(); i++) {
 			if(f*100 < 5 + chance/5) {
-				l.set(i, l.get(0) * 2);
+				l.set(i, (l.get(0))*2);
 			}
 		}
 		return l;

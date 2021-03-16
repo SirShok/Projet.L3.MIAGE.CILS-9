@@ -45,7 +45,6 @@ public class Fichier {
 	}
 	//permet de récupérer les différents fichier de configuration des Compétences et de les introduire dans la base de donnée Java
 	public static void LectureCompetence(ArrayList<Competence> ListeCompetence) {
-		ArrayList<Competence> ListeCompetence = new ArrayList<Competence>();
 		try {
 			File initial = new File("Projet.L3.MIAGE.CILS-9-main/competence/magique");
 			if (initial.isDirectory()) {   //vérifie si le File est un Directory

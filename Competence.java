@@ -13,7 +13,7 @@ public class Competence {
     int cout = 0;
     String type = "";
 
-    public Competence (String c, Individu ind){ // prend en entré un string du mème type que se dans le fichier competence et remplie un type compètence avec
+    public Competence (String c){ // prend en entré un string du mème type que se dans le fichier competence et remplie un type compètence avec
         int i = 0;
         int j = 0;
         String degat = "";
@@ -58,7 +58,6 @@ public class Competence {
         if(stat == "SAG"){
             cout = rang*5;
         }
-        DM = Degat(degat, stat, rang, ind, nbCoup);
         perca = Integer.parseInt(per);
     }
 
