@@ -79,7 +79,7 @@ public class Individu {
 					return;
 				} else if(tmp == "armure") {
 					armure = false;
-					return
+					return;
 				} else {
 					System.out.println("type d'équipement incorrect");
 					System.exit(-1);
@@ -142,10 +142,10 @@ public class Individu {
 	}
 	
 	//attaque normale magique
-	public ArrayList attaqueM(ArrayList l) {
+	public ArrayList<Integer> attaqueM(ArrayList<Integer> l) {
 		for(int i = 0; i < tailleEquipement; i++) {
 			if(equipement[i] != null) {
-				l.set(0, l.get(0) + equipement[i].degatMagique);
+				l.set(0, (l.get(0)+equipement[i].degatMagique));
 			}
 		}
 		Random random = new Random(); 
