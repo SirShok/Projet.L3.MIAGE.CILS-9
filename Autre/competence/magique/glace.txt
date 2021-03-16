@@ -1,4 +1,4 @@
-glace;Projectile de glace;1;SAG;1;1;999;envoi un projectile glaçant, inflige SAG/2 DM, coute 5 PM.;degat;15;glace;
+Projectile de glace;1;SAG;1;1;999;envoi un projectile glaçant, inflige SAG/2 DM, coute 5 PM.;degat;15;glace;
 Bouclier de glace;1;SAG;1;1;0;créer un bouclier protegeant le lanceur contre un maximum de SAG/2 DM, coute 5 PM.;bouclier;17;glace;
 Projectile de glace;2;SAG;1;1;999;envoi un projectile glaçant, inflige SAG DM, coute 10 PM.;degat;15;glace;
 Bouclier de glace;2;SAG;1;1;0;créer un bouclier protegeant le lanceur contre un maximum de SAG DM, coute 10 PM.;bouclier;17;glace;
