@@ -5,9 +5,9 @@ public class Individu {
 	public static int tailleEquipement = 3;
 	//caractéristiques de l'individu
 	public String nom;
-	public int pv, mana, armurePhysique = 0, armureMagique = 0, agilite, force, constitution, sagesse, perception, charisme, chance;
+	public int pv, mana, armure = 0, agilite, force, constitution, sagesse, perception, charisme, chance;
 	private Equipement[] equipement = new Equipement[tailleEquipement]; int nbMainL = 2; 	//désigne l'équipement et le nombre de main libres restantes
-	boolean armure = false;
+	private boolean armure = false;	//indique si l'individu porte une armure
 	
 	public Individu(String n, int ag, int f, int co, int s, int p, int ca, int ch) {
 		nom = n;
@@ -18,6 +18,8 @@ public class Individu {
 		p = perception;
 		charisme = ca;
 		chance = ch;
+		pv = pvMax();
+		mana = manaMax();
 	}
 
 	//retourne les pv max de l'individu
@@ -30,7 +32,9 @@ public class Individu {
 		return sagesse*2;
 	}
 	
-	//permet d'équiper un équipement
+	//permet d'équiper un équipement selon plusieurs conditions:
+	//- si c'est un arme, on va vérifier qu'il peut la porter
+	//- si c'est une armure, on va vérifier qu'il n'en a pas déjà
 	public void equiper(Equipement e) {
 		if(e.type == "arme") {
 			if(nbMainL <= e.nbMain) {
@@ -98,7 +102,7 @@ public class Individu {
 				if(equipement[i].type == "arme") {
 					r = r + "Arme : " + equipement[i].nom + "\n";
 				} else if (equipement[i].type == "armure") {
-					r = r + "Armure : " +equipement[i].nom + "\n";
+					r = r + "Armure : " + equipement[i].nom + "\n";
 				} else {
 					System.out.println("type d'équipement incorrect");
 					System.exit(-1);
@@ -106,7 +110,7 @@ public class Individu {
 			}				
 		}
 		if(r == "") {
-			r = "Vous n'avez pas d'armes";
+			r = "Vous n'avez ni arme ni armure";
 		}
 		return r;
 	}
