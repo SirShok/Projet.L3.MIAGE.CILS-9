@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 
 public class Fichier {
-	//Ã©crit dans un fichier dit "de sauvegarde" les caractÃ©tisques (juste les stats) de l'individu
+	//écrit dans un fichier dit "de sauvegarde" les caractÃ©tisques (juste les stats) de l'individu
 	public static void EcrireFichier(Individu i) {
 		Class cl = i.getClass();
 		Field[] fd = cl.getFields();
@@ -32,7 +32,7 @@ public class Fichier {
 	}
 
 
-	//permet de rÃ©cupÃ©rer le fichier de config
+	//permet de récupérer le fichier de config
 	public static void RecuperationConfig(ArrayList<Monstre> bestiaire) throws FileNotFoundException, IOException, ClassNotFoundException{
 		File dossierSer = new File("Autre/DossierConfig/ObjetSerializer");
 		if( dossierSer.exists() && dossierSer.isDirectory() && isEmpty(dossierSer)) {
@@ -75,7 +75,7 @@ public class Fichier {
 			}
 		}
 	}
-	//permet de rÃ©cupÃ©rer les diffÃ©rents fichier de configuration des CompÃ©tences et de les introduire dans la base de donnÃ©e Java
+	//permet de récupérer les différents fichier de configuration des Compétences et de les introduire dans la base de donnée Java
 	public static void LectureCompetence(ArrayList<Competence> ListeCompetence) throws ClassNotFoundException, IOException {
 		try {
 			File dossierCompSer = new File("Autre/DossierConfig/competence/competenceSerializer");
@@ -89,7 +89,7 @@ public class Fichier {
 				}
 			} else {
 				File initial = new File("Autre/competence/magique");
-				if (initial.isDirectory()) {   //vÃ©rifie si le File est un Directory
+				if (initial.isDirectory()) {   //vérifie si le File est un Directory
 					for (File f : initial.listFiles()) { // Pour chaque fichier dans le dossier
 						FileReader fichier = new FileReader(f); 
 						BufferedReader lecteurFichier = new BufferedReader(fichier); //on prend un stream pour lire le fichier
@@ -114,7 +114,7 @@ public class Fichier {
 		} catch(IOException e) {
 			System.out.println("erreur avec un des fichiers de competence magique");
 		}
-		// On rÃ©alise exactement la mÃªme chose pour les compÃ©tences de type physique typÃ© distance
+		// On réalise exactement la même chose pour les compétences de type physique à distance
 		try {
 			File initial = new File ("Autre/competence/physique/distance");
 			if(initial.isDirectory()) {
@@ -141,7 +141,7 @@ public class Fichier {
 		} catch(IOException e) {
 			System.out.println("erreur avec un des fichiers de compÃ©tence physique distance");
 		}
-		// On rÃ©alise exactement la mÃªme chose pour les les compÃ©tences de type physique typÃ© mÃªlÃ©e
+		// On réalise exactement la même chose pour les compétences de type physique à mélée
 		try {
 			File initial = new File ("Autre/competence/physique/melee");
 			if(initial.isDirectory()) {
