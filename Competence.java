@@ -24,7 +24,7 @@ public class Competence {
         description = tab[6];
         effet = tab[7];
         id = Integer.parseInt(tab[8]);
-        type = tab[9]
+        type = tab[9];
         
         /*int i = 0;
         int j = 0;
