@@ -9,7 +9,7 @@ public class Competence {
     int degat;
     int perca;
     String description = "";
-    int effet;
+    String effet;
     int id;
     int cout = 0;
     String type = "";
