@@ -1,51 +1,61 @@
 import java.util.*;
 
-public class Narration {
+public class Naration {
 
 	//main pour tester la fonction afficher
 	public static void main (String [] args)
 	{
 		/*
 		String p = "Patrick";
-		List<String> nomAttaque = Arrays.asList(new String[]{"charge", "estoc", "feinte", "frappe_puissante" });
-		String nomAtt = nomAttaque.get(new Random().nextInt(nomAttaque.size()));
-		affiche(p, nomAtt);
+		List<String> evenements = Arrays.asList(new String[]{"estoc", "attaque_simple", "attaque_double", "boule_de_feu", "victoire" });
+		String nomAtt = evenements.get(new Random().nextInt(evenements.size()));
+		System.out.println(affiche(p, nomAtt, 10));
 		*/
+		
     }
 	
-	public static void affiche (String nom, String nomAttaque)  {
-		if (nomAttaque == "estoc") {
+	public static  String affiche (String nom, String nomE, int DM)  {
+		if (nomE == "estoc") {
 			//Creation de la liste estoc contenant les phrases à afficher
 			List<String> estoc = Arrays.asList(new String[]{
-					nom  + " place un coup précit avec son épée !\n" + "Il lui inflige : 10 de dégats",
-					"Zbla ! " +nom+  " lui plante le bout de son épée !\n" + "Il inflige 10 de dégats à son adversaire "});
+					nom  + " place un coup précit avec son épée !\n" + "Il lui inflige : " + DM + " de dégats \n",
+					"Zbla ! " +nom+  " lui plante le bout de son épée !\n" + "Il inflige " + DM + " de dégats à son adversaire \n"});
 			String select = estoc.get(new Random().nextInt(estoc.size()));	//selectionne aleatoirement une phrase
 			System.out.println("estoc\n");
-			System.out.print(select);
+			return select;
 		}
-		if (nomAttaque == "charge") {
-			List<String> charge = Arrays.asList(new String[]{
-					nom  + " effectue une charge !\n" + "Il lui inflige : 15 de dégats pv à son adversaire ",
-					"Et bim ! " +nom+  " rentre dans son adversaire !\n" + "Il inflige 15 de dégats "});
-			String select = charge.get(new Random().nextInt(charge.size()));									
-			System.out.println("charge\n");
-			System.out.print(select);
+		if (nomE == "attaque_simple") {
+			List<String> attaque_simple = Arrays.asList(new String[]{
+					nom  + " met un coup d'épée !\n" + "Son adversaire perd " + DM + " de pv \n",
+					"Bien joue ! " +nom+  " place une attaque simple !\n" + "Ce coup inflige " + DM + " de dégats \n"});
+			String select = attaque_simple.get(new Random().nextInt(attaque_simple.size()));									
+			System.out.println("attaque simple\n");
+			return select;
 		}
-		if (nomAttaque == "feinte") {
-			List<String> feinte = Arrays.asList(new String[]{
-					nom  + " fait une feinte !\n" + "Son adversaire perd 5 de dégats ",
-					"Bien joue ! " +nom+  " divertit son adversaire et l'attaque en douce !\n" + "Cette feinte inflige 5 de dégats "});
-			String select = feinte.get(new Random().nextInt(feinte.size()));
-			System.out.println("Feinte\n");
-			System.out.print(select);
+		if (nomE == "attaque_double") {
+			List<String> attaque_double = Arrays.asList(new String[]{
+					nom  + " effectue une double attaque !\n" + "Il lui inflige : " + DM + " de dégats pv à son adversaire \n",
+					"Et bim ! " +nom+  " fait une attaque double à son adversaire !\n" + "Il inflige " + DM + " de dégats \n"});
+			String select = attaque_double.get(new Random().nextInt(attaque_double.size()));
+			System.out.println("attaque double\n");
+			return select;
 		}
-		if (nomAttaque == "frappe_puissante") {
-			List<String> frappe_puissante = Arrays.asList(new String[]{
-					nom  + " effectue une frappe puissante ! *rire diabolique*\n" + "Il lui inflige : 20 de dégats",
-					"Doux jesus ! " +nom+  " place une attaque puissante avec son épée !\n" + "Il inflige 20 de dégats à son adversaire "});
-			String select = frappe_puissante.get(new Random().nextInt(frappe_puissante.size()));
-			System.out.println("Frappe puissante\n");
-			System.out.print(select);
+		if (nomE == "boule_de_feu") {
+			List<String> boule_de_feu = Arrays.asList(new String[]{
+					nom  + " envoit une boule de feu ! *rire diabolique*\n" + "Il lui inflige : " + DM + " de dégats \n",
+					"Doux jesus ! " +nom+  " fait jaillir une boule de feu et l'envoie sur son adversaire !\n" + "Il inflige " + DM + " de dégats à son adversaire \n"});
+			String select = boule_de_feu.get(new Random().nextInt(boule_de_feu.size()));
+			System.out.println("boule de feu\n");
+			return select;
 		}
+		if (nomE == "victoire") {
+			List<String> victoire = Arrays.asList(new String[]{
+					"Bravo, " +nom+ " ! \n" + "Vous avez gagné \n",
+					"Damn ! " +nom+  " a éclaté son adversaire !\n" + "Vous etes l'heureux gagnant de ce combat \n"});
+			String select = victoire.get(new Random().nextInt(victoire.size()));
+			System.out.println("victoire\n");
+			return select;
+		}
+		return null;
 	}
 }
