@@ -36,7 +36,7 @@ public class Fichier {
 	public static void RecuperationConfig(ArrayList<Monstre> bestiaire) throws FileNotFoundException, IOException, ClassNotFoundException{
 		File dossierSer = new File("Autre/DossierConfig/ObjetSerializer");
 		if( dossierSer.exists() && dossierSer.isDirectory() && isEmpty(dossierSer)) {
-			for (File f : dossierSer.listFiles()) {
+			for (File f : dossierSer.listFiles()) {		//à enlever
 				ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
 				Monstre m = (Monstre)ois.readObject();
 				System.out.println("lecture d'un objet serializer "+m.Nom);
