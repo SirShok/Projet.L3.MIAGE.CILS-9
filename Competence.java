@@ -28,7 +28,7 @@ public class Competence {
         type = tab[9];
     }
       public void Degat(Individu ind){                    // comme on ne peux pas stocker de fonction dans un String, on attribus un chiffre a chacune 
-        List<Integer> degat = new ArrayList<Integer>(); // des fonctions exixtante puis via cette fonction on calcul les degat en fonction de se chiffre
+        ArrayList<Integer> degat = new ArrayList<Integer>(); // des fonctions exixtante puis via cette fonction on calcul les degat en fonction de se chiffre
         int d = this.degat;
         String s = this.stat;
         int c = this.cout;
@@ -110,7 +110,7 @@ public class Competence {
         return nbCoup;
     }
 
-    public ArrayList getDM(){
+    public List<Integer> getDM(){
         return DM;
     }
 
