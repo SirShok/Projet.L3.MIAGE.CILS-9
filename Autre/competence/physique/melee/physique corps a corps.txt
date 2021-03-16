@@ -33,7 +33,7 @@ attaque triple;6;AGI;3;3;0;donne 3 coups avec son arme, le troisième inflige 20
 estoc;6;FOR;1;1;30;coup précis attaquant avec la pointe de la lame, ignore 30 points d'armure;degat;1;physique;
 estoc;6;AGI;1;1;30;coup précis attaquant avec la pointe de la lame, ignore 30 points d'armure;degat;1;physique;
 frappe puissante;7;FOR;1;2;0;donne un coup puissant infligeant des dégâts augmentés de 120%;degat;2;physique;
-frappe précise;7;AGI;1;2;0;donne un coup puissant infligeant des dégâts augmentés de 120%;degat;2;
+frappe précise;7;AGI;1;2;0;donne un coup puissant infligeant des dégâts augmentés de 120%;degat;2;physique;
 attaque triple;7;FOR;3;3;0;donne 3 coups avec son arme;degat;3;physique;
 attaque triple;7;AGI;3;3;0;donne 3 coups avec son arme;degat;3;physique;
 estoc;7;FOR;1;1;35;coup précis attaquant avec la pointe de la lame, ignore 35 points d'armure;degat;1;physique;
