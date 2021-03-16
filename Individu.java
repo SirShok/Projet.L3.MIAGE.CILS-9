@@ -92,12 +92,18 @@ public class Individu {
 	
 	//permet de voir son équipement
 	public String afficherEquipement() {
-		String s = null;
 		int j = 1; String r = "";
 		for(int i = 0; i < tailleEquipement; i++) {
 			if(equipement[i] != null) {
-				s = s + "Arme " + j + " : " + equipement[i].nom;
-				j++;
+				if(equipement[i].type == "arme") {
+					s = s + "Arme " + j + " : " + equipement[i].nom + "\n";
+					j++;
+				} else if (equipement[i].type == "armure") {
+					s = s + "Armure : " +equipement[i].nom + "\n";
+				} else {
+					System.out.println("type d'équipement incorrect");
+					System.exit(-1);
+				}
 			}				
 		}
 		if(j == 1) {
