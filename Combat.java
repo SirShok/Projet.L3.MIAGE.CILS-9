@@ -33,7 +33,7 @@ public class Combat {
 					if(type2.equals("lumiere")||type2.equals("feu")) return 1/2;
 					return 1;
 					break;
-			case "physique"; return 1; break;
+			case "physique": return 1; break;
 		}
 		return 1;
 	}
