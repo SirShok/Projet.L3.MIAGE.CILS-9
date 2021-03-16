@@ -1,33 +1,35 @@
 import java.lang.Math;
 
 public class Combat {
-	//inflige les dégâts d'une attaque d'un individu
-	//à un autre individu
-	public static void combat (Individu p1, Individu p2, String type1, String type2, int degat, int perceArmure) {
+	public static void combat (Individu p1, Individu p2, String type1, String type2, int degat) {
 		degat = faiblesse(type1, type2)*degat;
-		degat = Math.min(1, degat - Math.min(0, (p1.armure - perceArmure));
+		degat = Math.min(0, degat /*- p1.armure*/);
 		p1.pv = p1.pv - degat;
 	}
 
-	//prend deux types et renvoie le modificateur de dégâts correspondant
 	public static int faiblesse (String type1, String type2) {
 		switch(type1) {
-			case "Lumiere":	if(type2.equals("Lumiere")||type2.equals("Tenebres")) return 1;
+			case "lumiere":	if(type2.equals("lumiere")||type2.equals("tenebres")||type2.equals("physique")) return 1;
 					return 1/2;
-			case "Tenebres":	if(type2.equals("Lumiere")||type2.equals("Tenebres")) return 1;
+			case "tenebres":	if(type2.equals("lumiere")||type2.equals("tenebres")||type2.equals("physique")) return 1;
 						return 2;
-			case "Feu":	if(type2.equals("Air")||type2.equals("Tenebres")) return 2;
-					if(type2.equals("Lumiere")||type2.equals("Eau")) return 1/2;
+			case "Feu":	if(type2.equals("air")||type2.equals("tenebres")) return 2;
+					if(type2.equals("lumiere")||type2.equals("eau")) return 1/2;
+					return 1;
 					break;
-			case "Eau":	if(type2.equals("Feu")||type2.equals("Tenebres")) return 2;
+			case "eau":	if(type2.equals("Feu")||type2.equals("Tenebres")) return 2;
 					if(type2.equals("Lumiere")||type2.equals("Terre")) return 1/2;
+					return 1;
 					break;
-			case "Terre":	if(type2.equals("Eau")||type2.equals("Tenebres")) return 2;
+			case "terre":	if(type2.equals("Eau")||type2.equals("Tenebres")) return 2;
 					if(type2.equals("Lumiere")||type2.equals("Feu")) return 1/2;
+					return 1;
 					break;
-			case "Air":	if(type2.equals("Terre")||type2.equals("Tenebres")) return 2;
+			case "air":	if(type2.equals("Terre")||type2.equals("Tenebres")) return 2;
 					if(type2.equals("Lumiere")||type2.equals("Feu")) return 1/2;
+					return 1;
 					break;
+			case "physique"; return 1; break;
 		}
 		return 1;
 	}
