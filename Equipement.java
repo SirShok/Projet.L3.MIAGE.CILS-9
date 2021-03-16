@@ -13,11 +13,11 @@ public class Equipement {
 	public Equipement(String equ) {
 		String[] tab = equ.split(";");
       		nom = tab[0];
-		degatPhysique = tab[1];
-		degatMagique = tab[2];
-		perceArmure = tab[3];
-		nbMain = tab[4];
-		rang = tab[5];
+		degatPhysique = Integer.parseInt(tab[1]);
+		degatMagique = Integer.parseInt(tab[2]);
+		perceArmure = Integer.parseInt(tab[3]);
+		nbMain = Integer.parseInt(tab[4]);
+		rang = Integer.parseInt(tab[5]);
 		type = tab[6]
 	}
 }
