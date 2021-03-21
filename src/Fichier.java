@@ -79,7 +79,7 @@ public class Fichier {
 		}
 	}
 	//permet de rÃ©cupÃ©rer les diffÃ©rents fichier de configuration des CompÃ©tences et de les introduire dans la base de donnÃ©e Java
-	public static void LectureCompetenceMagique(ArrayList<Competence> ListeCompetence) throws ClassNotFoundException, IOException, FileNotFoundException {
+	public static void LectureCompetence(ArrayList<Competence> ListeCompetence) throws ClassNotFoundException, IOException, FileNotFoundException {
 		try {
 			File dossierCompSer = new File("Autre/DossierConfig/competence/competenceSerializer");
 			if( dossierCompSer.exists() && dossierCompSer.isDirectory() && isEmpty(dossierCompSer)) {
