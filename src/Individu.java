@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Individu {
 	public static int tailleEquipement = 3;
-	//caractÃ©ristiques de l'individu
+	//caractéristiques de l'individu
 	public String nom;
 	public int pv, mana, armure = 0, agilite, force, constitution, sagesse, perception, charisme, chance;
 	private Equipement[] equipement = new Equipement[tailleEquipement]; int nbMainL = 2; 	//désigne l'équipement et le nombre de main libres restantes
