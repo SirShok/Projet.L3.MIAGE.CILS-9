@@ -1,7 +1,7 @@
 import java.lang.Math;
 
 public class Combat {
-	//prend un deux types et un individu, un montant de dÃ©dégâts¢ts et un montant de perce-armure
+	//prend un deux types et un individu, un montant de dégâts et un montant de perce-armure
 	//puis applique les dégâts selon les faiblesses
 	//on peut, peut-être, à la place de prendre un montant de perce-armure, prendre un individu ou autre chose pour le perce-armure
 	public static void combat (Individu p1, /*Individu p2,*/ int perceArmure, String type1, String type2, int degat) {
