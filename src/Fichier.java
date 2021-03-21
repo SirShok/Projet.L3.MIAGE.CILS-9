@@ -103,7 +103,7 @@ public class Fichier {
 								while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier a une autre ligne
 									Competence c = new Competence(ligne); //on renvoie la ligne au constructeur de Competence
 									ListeCompetence.add(c); //on ajoute la competence à la liste des competences
-									System.out.println("lecture d'une compÃ©tence serializer "+c.nom);
+									System.out.println("lecture d'une compétence serializer "+c.nom);
 								}
 								int i=0;
 								for (Competence b : ListeCompetence) {
