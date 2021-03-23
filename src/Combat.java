@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.util.ArrayList;
 
 public class Combat {
 	//prend un deux types et un individu, un montant de dÃ©dégâts¢ts et un montant de perce-armure

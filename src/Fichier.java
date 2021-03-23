@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 public class Fichier {
 
-	//Ã©crit dans un fichier dit "de sauvegarde" les caractÃ©ristiques (juste les stats) de l'individu
+	//écrit dans un fichier dit "de sauvegarde" les caractéristiques (juste les stats) de l'individu
 	public static void EcrireFichier(Individu i) {
 		Class cl = i.getClass();
 		Field[] fd = cl.getFields();
@@ -31,11 +31,11 @@ public class Fichier {
 			return false;
 		}
 	}
-	//permet de rÃ©cupÃ©rer le fichier de config
+	//permet de récupérer le fichier de config
 	public static void RecuperationConfig(ArrayList<Monstre> bestiaire) throws FileNotFoundException, IOException, ClassNotFoundException{
 		File dossierSer = new File("Autre/DossierConfig/ObjetSerializer");
 		if( dossierSer.exists() && dossierSer.isDirectory() && isEmpty(dossierSer)) {
-			for (File f : dossierSer.listFiles()) {		//Ã  enlever
+			for (File f : dossierSer.listFiles()) {		//à enlever
 				ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
 				Monstre m = (Monstre)ois.readObject();
 				System.out.println("lecture d'un objet serializer "+m.Nom);
@@ -51,10 +51,10 @@ public class Fichier {
 				String ligne;
 				String[] mot;
 				try {
-					while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier Ã  une autre ligne 
-						mot=ligne.split(" "); //on sÃ©pare la ligne en mot 
-						Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]),Integer.parseInt(mot[2])); //on utilise les mots pour crÃ©er un objet de type monstre
-						bestiaire.add(m); //ajoute l'objet crÃ©Ã© au bestiaire
+					while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier à une autre ligne 
+						mot=ligne.split(" "); //on sépare la ligne en mot 
+						Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]),Integer.parseInt(mot[2])); //on utilise les mots pour créer un objet de type monstre
+						bestiaire.add(m); //ajoute l'objet créé au bestiaire
 					}
 					int i=0;
 					for (Monstre b : bestiaire) {
@@ -74,7 +74,7 @@ public class Fichier {
 			}
 		}
 	}
-	//permet de rÃ©cupÃ©rer les diffÃ©rents fichier de configuration des CompÃ©tences et de les introduire dans la base de donnÃ©e Java
+	//permet de récupérer les différents fichier de configuration des Compétences et de les introduire dans la base de donnée Java
 	public static void LectureCompetence(ArrayList<Competence> ListeCompetence) throws ClassNotFoundException, IOException {
 		try {
 			File dossierCompSer = new File("Autre/DossierConfig/competence/competenceSerializer");
@@ -82,20 +82,20 @@ public class Fichier {
 				for (File f : dossierCompSer.listFiles()) {
 					ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
 					Competence m = (Competence)ois.readObject();
-					System.out.println("lecture d'une compÃ©tence serializer "+m.nom);
+					System.out.println("lecture d'une compétence serializer "+m.nom);
 					ListeCompetence.add(m);
 					ois.close();
 				}
 			} else {
 				File initial = new File("Autre/competence/magique");
-				if (initial.isDirectory()) {   //vÃ©rifie si le File est un Directory
+				if (initial.isDirectory()) {   //vérifie si le File est un Directory
 					for (File f : initial.listFiles()) { // Pour chaque fichier dans le dossier
 						FileReader fichier = new FileReader(f); 
 						BufferedReader lecteurFichier = new BufferedReader(fichier); //on prend un stream pour lire le fichier
 						String ligne;
-						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier Ã  une autre ligne
+						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier à une autre ligne
 							Competence c = new Competence(ligne); //on renvoie la ligne au constructeur de Competence
-							ListeCompetence.add(c); //on ajoute la competence Ã  la liste des competences
+							ListeCompetence.add(c); //on ajoute la competence à la liste des competences
 						}
 						int i=0;
 						for (Competence b : ListeCompetence) {
@@ -113,7 +113,7 @@ public class Fichier {
 		} catch(IOException e) {
 			System.out.println("erreur avec un des fichiers de competence magique");
 		}
-		// On rÃ©alise exactement la mÃªme chose pour les compÃ©tences de type physique Ã  distance
+		// On réalise exactement la même chose pour les compétences de type physique à distance
 		try {
 			File initial = new File ("Autre/competence/physique/distance");
 			if(initial.isDirectory()) {
@@ -138,9 +138,9 @@ public class Fichier {
 				}
 			}
 		} catch(IOException e) {
-			System.out.println("erreur avec un des fichiers de compÃƒÂ©tence physique distance");
+			System.out.println("erreur avec un des fichiers de compÃ©tence physique distance");
 		}
-		// On rÃ©alise exactement la mÃªme chose pour les compÃ©tences de type physique Ã  mÃ©lÃ©e
+		// On réalise exactement la même chose pour les compétences de type physique à mélée
 		try {
 			File initial = new File ("Autre/competence/physique/melee");
 			if(initial.isDirectory()) {
@@ -165,7 +165,7 @@ public class Fichier {
 				}
 			}
 		} catch(IOException e) {
-			System.out.println("erreur avec un des fichiers de compÃ©tence physique mÃ©lÃ©e");
+			System.out.println("erreur avec un des fichiers de compétence physique mélée");
 		}
 	}
 
