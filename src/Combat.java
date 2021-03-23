@@ -23,6 +23,7 @@ public class Combat {
 					return 1;
 			case "physique": return 1;
 		}
+		System.out.println("erreur avec les types");
 		return 0;
 	}
 	
