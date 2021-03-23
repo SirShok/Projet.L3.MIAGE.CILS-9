@@ -30,39 +30,69 @@ public class BarreAction extends ImagePanel{
 		Combat c=new Combat();
 		
 		//Boutons de capacite
-		JButton capBouton1=new JButton("Estoc");
+		JButton capBouton1=new JButton("Coup simple");
 		capBouton1.setBorder(BorderFactory.createLineBorder(Color.white));
 		capBouton1.setForeground(Color.white);
+		capBouton1.setFont(caligraphie);
 		capBouton1.setContentAreaFilled(false);
 		capBouton1.setSize(dimBouton);
 		capBouton1.setBounds(50, 27, bouton.getIconWidth(), bouton.getIconHeight());
 		capBouton1.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				//Ta methode
-				par.getTextArea().append("\n Comp Simple");
-				c.combat(i, padv.getMonster(), cap1);
+				par.getTextArea().append("\nComp Simple");
+				//c.combat(i, padv.getMonster(), cap1);
 				System.out.println("Coup Simple");
 			}
 		});
 		
-		JButton capBouton2=new JButton(new ImageIcon("Autre/images/estoc.png"));
-		capBouton2.setBorder(BorderFactory.createEmptyBorder());
+		JButton capBouton2=new JButton("Estoc");
+		capBouton2.setBorder(BorderFactory.createLineBorder(Color.white));
+		capBouton2.setForeground(Color.white);
+		capBouton2.setFont(caligraphie);
 		capBouton2.setContentAreaFilled(false);
 		capBouton2.setSize(dimBouton);
 		capBouton2.setBounds(320, 27, bouton.getIconWidth(), bouton.getIconHeight());
+		capBouton2.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				par.getTextArea().append("\nEstoc");
+				//c.combat(i, padv.getMonster(), cap2);
+				System.out.println("Estoc");
+			}
+		});
 		
-		JButton capBouton3=new JButton(new ImageIcon("Autre/images/attaqueD.png"));
-		capBouton3.setBorder(BorderFactory.createEmptyBorder());
+		JButton capBouton3=new JButton("Attaque double");
+		capBouton3.setBorder(BorderFactory.createLineBorder(Color.white));
+		capBouton3.setForeground(Color.white);
+		capBouton3.setFont(caligraphie);
 		capBouton3.setContentAreaFilled(false);
 		capBouton3.setSize(dimBouton);
 		capBouton3.setBounds(50, 117, bouton.getIconWidth(), bouton.getIconHeight());
+		capBouton3.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				par.getTextArea().append("\nAttaque double");
+				//c.combat(i, padv.getMonster(), cap3);
+				System.out.println("Attaque double");
+			}
+		});
 		
-		JButton capBouton4=new JButton(new ImageIcon("Autre/images/attaqueT.png"));
-		capBouton4.setBorder(BorderFactory.createEmptyBorder());
+		JButton capBouton4=new JButton("Attaque triple");
+		capBouton4.setBorder(BorderFactory.createLineBorder(Color.white));
+		capBouton4.setForeground(Color.white);
+		capBouton4.setFont(caligraphie);
 		capBouton4.setContentAreaFilled(false);
 		capBouton4.setSize(dimBouton);
 		capBouton4.setBounds(320, 117, bouton.getIconWidth(), bouton.getIconHeight());
+		capBouton4.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				par.getTextArea().append("\nAttaque triple");
+				//c.combat(i, padv.getMonster(), cap4);
+				System.out.println("Attaque triple");
+			}
+		});
 		
 		//Etat personnage
 		JLabel vie=new JLabel(new ImageIcon("Autre/images/point_de_vie.png"));
