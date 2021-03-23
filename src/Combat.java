@@ -39,13 +39,15 @@ public class Combat {
 		if(c.effet == "degat"){
 			int degat;
 			for(Equipement e: ind.armeEquip()){
-				PA = m.PA-(c.perca+(e.perceArmure));
-				if(PA < 0) PA = 0;
-				for(int i = 0; i<n; i++){
-					if(0 < DM.get(i)-PA){
-						degat = DM.get(i)-PA;
+				if(e != null){
+					PA = m.PA-(c.perca+(e.perceArmure));
+					if(PA < 0) PA = 0;
+					for(int i = 0; i<n; i++){
+						if(0 < DM.get(i)-PA){
+							degat = DM.get(i)-PA;
+						}
+						DM.remove(i);
 					}
-					DM.remove(i);
 				}
 			}
 			degat = degat*faiblesse(c.type,m.Affinite);
@@ -78,3 +80,4 @@ public class Combat {
 		return(res);
 	}
 }
+
