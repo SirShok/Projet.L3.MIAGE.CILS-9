@@ -32,7 +32,7 @@ public class Monstre implements Serializable {
 		return PD;
 	}
 	public String getAffinite(){
-		retun Affinite;
+		return Affinite;
 	}
 	
 	
