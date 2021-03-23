@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.lang.Math;
 
 public class Combat {
 	//prend deux types et renvoie le facteur de dégâts correspondant
@@ -23,26 +23,53 @@ public class Combat {
 			case "physique": return 1;
 		}
 		System.out.println("erreur avec les types");
-		return 0;
+		return ;
 	}
 	
 	// permet de d'appliquer les dégâts subit en un tour (ne prend pas la res élémentaire car les monstre n'en ont pas)
-	public static ArrayList<String> combat(Individu ind, Monstre m, Competence c){
+	public static String combat(Individu ind, Monstre m, Competence c){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(ind,c);
 		int n = DM.size()/2;
-		for(Equipement e: Individu.armeEquip(ind)){
-			for(int i = 0; i<n; i++){
-				if(0 < DM.get(i)-(m.PA-(c.perca+(e.perceArmure)))){
-					m.HP = m.HP-(DM.get(i)-(m.PA-(c.perca+(e.perceArmure))));
+		String res;
+		ind.mana = ind.mana - c.cout;
+		if(c.type == "degat"){
+			for(Equipement e: Individu.armeEquip(ind)){
+				for(int i = 0; i<n; i++){
+					if(0 < DM.get(i)-(m.PA-(c.perca+(e.perceArmure)))){
+						int degat = DM.get(i)-(m.PA-(c.perca+(e.perceArmure)));
+					}
 					DM.remove(i);
 				}
 			}
+			m.HP = m.HP-degat;
+			res = Naration.affiche(ind.nom, c.nom, degat);
+			if (m.HP <= 0){
+				res = res+"\n"+Naration.affiche(ind.nom, victoire, degat);
+				return(res);
+			}
+		}
+		if(c.type == "soin"){
+			ArrayList<Integer> soin = new ArrayList<Integer>();
+			soin = Competence.Degat(ind,c);
+			ind.pv += soin.get(0);
+			if(ind.pv > ind.pvMax()){
+				ind.pv = ind.pvMax();
+			}								//rajouter phrase soin dans natation
+		}
+		if(c.type == "bouclier"){
+			ArrayList<Integer> soin = new ArrayList<Integer>();
+			soin = Competence.Degat(ind,c);
+			ind.pv += soin.get(0);			//rajouter phrase bouclier dans natation
 		}
 		if(m.PD-ind.armure > 0){
-			ind.pv = ind.pv-(m.PD-ind.armure);
+			ind.pv = ind.pv-(m.PD-ind.armure);	//rajouter phrase attaque monstre dans natation
 		}
-		ArrayList<String> res = new ArrayList<String>();
+		if (ind.pv <= 0){
+			res = res+"\n"+Naration.affiche(ind.nom, defaite, degat);	//rajouter phrase defaite dans natation
+		}
 		return(res);
 	}
+}
+
 }
