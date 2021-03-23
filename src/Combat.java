@@ -2,23 +2,25 @@ import java.lang.Math;
 
 public class Combat {
 	//prend deux types et renvoie le facteur de dégâts correspondant
-	public static int faiblesse (String type1, String type2) {
-		switch(type1) {
-			case "lumiere":	if(type2.equals("lumiere")||type2.equals("tenebres")||type2.equals("physique")) return 1;
+	//typeO désigne le type de l'attaquant (type offensif)
+	//typeD désigne le type du défenseur (type défensif)
+	public static int faiblesse (String typeO, String typeD) {
+		switch(typeO) {
+			case "lumiere":	if(typeD.equals("lumiere")||typeD.equals("tenebres")||typeD.equals("physique")) return 1;
 					return 1/2;
-			case "tenebres":	if(type2.equals("lumiere")||type2.equals("tenebres")||type2.equals("physique")) return 1;
+			case "tenebres":	if(typeD.equals("lumiere")||typeD.equals("tenebres")||typeD.equals("physique")) return 1;
 						return 2;
-			case "feu":	if(type2.equals("vent")||type2.equals("tenebres")) return 2;
-					if(type2.equals("lumiere")||type2.equals("eau")) return 1/2;
+			case "feu":	if(typeD.equals("vent")||typeD.equals("tenebres")) return 2;
+					if(typeD.equals("lumiere")||typeD.equals("eau")) return 1/2;
 					return 1;
-			case "eau":	if(type2.equals("feu")||type2.equals("tenebres")) return 2;
-					if(type2.equals("lumiere")||type2.equals("terre")) return 1/2;
+			case "eau":	if(typeD.equals("feu")||typeD.equals("tenebres")) return 2;
+					if(typeD.equals("lumiere")||typeD.equals("terre")) return 1/2;
 					return 1;
-			case "terre":	if(type2.equals("eau")||type2.equals("tenebres")) return 2;
-					if(type2.equals("lumiere")||type2.equals("feu")) return 1/2;
+			case "terre":	if(typeD.equals("eau")||typeD.equals("tenebres")) return 2;
+					if(typeD.equals("lumiere")||typeD.equals("feu")) return 1/2;
 					return 1;
-			case "vent":	if(type2.equals("terre")||type2.equals("tenebres")) return 2;
-					if(type2.equals("lumiere")||type2.equals("feu")) return 1/2;
+			case "vent":	if(typeD.equals("terre")||typeD.equals("tenebres")) return 2;
+					if(typeD.equals("lumiere")||typeD.equals("feu")) return 1/2;
 					return 1;
 			case "physique": return 1;
 		}
