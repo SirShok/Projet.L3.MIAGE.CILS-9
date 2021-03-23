@@ -80,7 +80,9 @@ public class Combat {
 		}
 		return(res);
 	}
-
+	
+	//methode qui recupere et retourne un monstre en fonction du nombres
+	//de combat gagne et du nombre de combat maximal
 	public static Monstre SelectM(ArrayList<Monstre> m, int n, int nt) {
 		if (n == nt/2) {
 			Monstre select = m.get(5 + new Random().nextInt(7 - 5));
