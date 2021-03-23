@@ -14,9 +14,9 @@ public class Narration {
 		
     }
 	
-	public static  String affiche (String nom, String nomE, int DM)  {
+	public static  String affiche (String nom, String nomE, int DM, int SOIN)  {
 		if (nomE == "estoc") {
-			//Creation de la liste estoc contenant les phrases à  afficher
+			//Creation de la liste estoc contenant les phrases à afficher
 			List<String> estoc = Arrays.asList(new String[]{
 					nom  + " place un coup précit avec son épée !\n" + "Il lui inflige : " + DM + " de dégats \n",
 					"Zbla ! " +nom+  " lui plante le bout de son épée !\n" + "Il inflige " + DM + " de dégats à son adversaire \n"});
@@ -51,10 +51,38 @@ public class Narration {
 		if (nomE == "victoire") {
 			List<String> victoire = Arrays.asList(new String[]{
 					"Bravo, " +nom+ " ! \n" + "Vous avez gagné \n",
-					"Damn ! " +nom+  " a d�fait son adversaire !\n" + "Vous etes l'heureux gagnant de ce combat \n"});
+					"Damn ! " +nom+  " a éclaté son adversaire !\n" + "Vous etes l'heureux gagnant de ce combat \n"});
 			String select = victoire.get(new Random().nextInt(victoire.size()));
 			System.out.println("victoire\n");
 			return select;
+			
+		}
+		if (nomE == "defaite") {
+			List<String> defaite = Arrays.asList(new String[]{
+					"Mince " +nom+ " ! \n" + "Vous avez perdu... \n",
+					"Zut ! " + " Vous avez été vaincu...\n" + "Devenez plus fort !\n"});
+			String select = defaite.get(new Random().nextInt(defaite.size()));
+			System.out.println("defaite\n");
+			return select;
+			
+		}
+		if (nomE == "soin") {
+			List<String> soin = Arrays.asList(new String[]{
+					"Abracadabra ! \n" +nom+ " recupere " + SOIN + " de pv !\n",
+					"Parfait ! \n" + "Vous recuperez " + SOIN + " de pv !\n"});
+			String select = soin.get(new Random().nextInt(soin.size()));
+			System.out.println("soin\n");
+			return select;
+			
+		}
+		if (nomE == "bouclier") {
+			List<String> bouclier = Arrays.asList(new String[]{
+					"Bien joué, \n" +nom+ " gagne un bouclier et ses pv augmentent de  " + SOIN + " !\n",
+					"Incroyable ! \n" + "Vous obtenez un bouclier qui vous donne " + SOIN + " de pv !\n"});
+			String select = bouclier.get(new Random().nextInt(bouclier.size()));
+			System.out.println("bouclier\n");
+			return select;
+			
 		}
 		return null;
 	}
