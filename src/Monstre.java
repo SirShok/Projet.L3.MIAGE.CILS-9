@@ -9,7 +9,7 @@ public class Monstre implements Serializable {
 	int HP;
 	int PA;
 	int PD;
-	String Affinite
+	String Affinite;
 	
 	Monstre(String m, int pv, int pa,int pd,String aff){
 		this.Nom = m;
