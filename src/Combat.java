@@ -36,9 +36,9 @@ public class Combat {
 		int n = DM.size()/2;
 		String res;
 		int PA;
-		int degat;
 		ind.mana = ind.mana - c.cout;
 		if(c.effet == "degat"){
+			int degat;
 			for(Equipement e: ind.armeEquip()){
 				if(e != null){
 					PA = m.PA-(c.perca+(e.perceArmure));
@@ -65,6 +65,7 @@ public class Combat {
 			ind.pv += soin.get(0);
 			if(ind.pv > ind.pvMax()){
 				ind.pv = ind.pvMax();
+				res = "\n"+Narration.affiche(ind.getNom, "soin", 0,soin)
 			}								//rajouter phrase soin dans natation
 		}
 		if(c.effet == "bouclier"){
@@ -81,77 +82,5 @@ public class Combat {
 		return(res);
 	}
 	
-	public static  String affiche (String nom, String nomE, int DM, int SOIN)  {
-		if (nomE == "estoc") {
-			//Creation de la liste estoc contenant les phrases à afficher
-			List<String> estoc = Arrays.asList(new String[]{
-					nom  + " place un coup précit avec son épée !\n" + "Il lui inflige : " + DM + " de dégats \n",
-					"Zbla ! " +nom+  " lui plante le bout de son épée !\n" + "Il inflige " + DM + " de dégats à son adversaire \n"});
-			String select = estoc.get(new Random().nextInt(estoc.size()));	//selectionne aleatoirement une phrase
-			System.out.println("estoc\n");
-			return select;
-		}
-		if (nomE == "attaque_simple") {
-			List<String> attaque_simple = Arrays.asList(new String[]{
-					nom  + " met un coup d'épée !\n" + "Son adversaire perd " + DM + " de pv \n",
-					"Bien joue ! " +nom+  " place une attaque simple !\n" + "Ce coup inflige " + DM + " de dégats \n"});
-			String select = attaque_simple.get(new Random().nextInt(attaque_simple.size()));									
-			System.out.println("attaque simple\n");
-			return select;
-		}
-		if (nomE == "attaque_double") {
-			List<String> attaque_double = Arrays.asList(new String[]{
-					nom  + " effectue une double attaque !\n" + "Il lui inflige : " + DM + " de dégats pv à son adversaire \n",
-					"Et bim ! " +nom+  " fait une attaque double à son adversaire !\n" + "Il inflige " + DM + " de dégats \n"});
-			String select = attaque_double.get(new Random().nextInt(attaque_double.size()));
-			System.out.println("attaque double\n");
-			return select;
-		}
-		if (nomE == "boule_de_feu") {
-			List<String> boule_de_feu = Arrays.asList(new String[]{
-					nom  + " envoit une boule de feu ! *rire diabolique*\n" + "Il lui inflige : " + DM + " de dégats \n",
-					"Doux jesus ! " +nom+  " fait jaillir une boule de feu et l'envoie sur son adversaire !\n" + "Il inflige " + DM + " de dégats à son adversaire \n"});
-			String select = boule_de_feu.get(new Random().nextInt(boule_de_feu.size()));
-			System.out.println("boule de feu\n");
-			return select;
-		}
-		if (nomE == "victoire") {
-			List<String> victoire = Arrays.asList(new String[]{
-					"Bravo, " +nom+ " ! \n" + "Vous avez gagné \n",
-					"Damn ! " +nom+  " a éclaté son adversaire !\n" + "Vous etes l'heureux gagnant de ce combat \n"});
-			String select = victoire.get(new Random().nextInt(victoire.size()));
-			System.out.println("victoire\n");
-			return select;
-			
-		}
-		if (nomE == "defaite") {
-			List<String> defaite = Arrays.asList(new String[]{
-					"Mince " +nom+ " ! \n" + "Vous avez perdu... \n",
-					"Zut ! " + " Vous avez été vaincu...\n" + "Devenez plus fort !\n"});
-			String select = defaite.get(new Random().nextInt(defaite.size()));
-			System.out.println("defaite\n");
-			return select;
-			
-		}
-		if (nomE == "soin") {
-			List<String> soin = Arrays.asList(new String[]{
-					"Abracadabra ! \n" +nom+ " recupere " + SOIN + " de pv !\n",
-					"Parfait ! \n" + "Vous recuperez " + SOIN + " de pv !\n"});
-			String select = soin.get(new Random().nextInt(soin.size()));
-			System.out.println("soin\n");
-			return select;
-			
-		}
-		if (nomE == "bouclier") {
-			List<String> bouclier = Arrays.asList(new String[]{
-					"Bien joué, \n" +nom+ " gagne un bouclier et ses pv augmentent de  " + SOIN + " !\n",
-					"Incroyable ! \n" + "Vous obtenez un bouclier qui vous donne " + SOIN + " de pv !\n"});
-			String select = bouclier.get(new Random().nextInt(bouclier.size()));
-			System.out.println("bouclier\n");
-			return select;
-			
-		}
-		return null;
-	}
 }
 
