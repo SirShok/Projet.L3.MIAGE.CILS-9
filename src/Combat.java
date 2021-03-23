@@ -1,4 +1,4 @@
-import java.lang.Math;
+import java.util.*;
 
 public class Combat {
 	//prend deux types et renvoie le facteur de dégâts correspondant
