@@ -19,9 +19,11 @@ public class Main {
 		Individu ind = null;
 		int nbCombat = 1; //numéro de combat
 		//déroulement du jeu
-		while((ind.pv >= 0)&&(nbCombat < 12)) {
+		while(nbCombat < 12) {
 			Monstre m = SelectM(bestiaire, nbCombat);
-			//selection compétence
-			f.getParchemin().getTextArea().append(Combat.combat(ind, m, c))*/
-		}
+			while(ind.pv > 0) {
+				//selection compétence
+				f.getParchemin().getTextArea().append(Combat.combat(ind, m, c))
+			}
+		}*/
 	}
