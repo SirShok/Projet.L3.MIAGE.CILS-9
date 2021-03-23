@@ -11,9 +11,7 @@ public class Main {
 		Fichier.LectureCompetence(listeCompetence);
     
 		Fenetre f=new Fenetre();
-		Monstre m1 = new Monstre("test", 1, 2, 3);
-		System.out.println(m1.Nom);
-		int nbCombT = 4; //nombre de combat total à laisser?
+		/*int nbCombT = 4; //nombre de combat total à laisser?
 		Individu ind = null;
 		int nbCombat = 1; //numéro de combat
 		//déroulement du jeu
@@ -21,6 +19,6 @@ public class Main {
 			Monstre m = SelectM(bestiaire, nbCombat);
 			//selection compétence
 			f.getParchemin().getTextArea().append(Combat.combat(ind, m, c));
-		}
+		}*/
 	}
 }
