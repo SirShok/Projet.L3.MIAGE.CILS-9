@@ -11,8 +11,5 @@ public class Main {
 		Fichier.LectureCompetence(listeCompetence);
     
 		Fenetre f=new Fenetre();
-
 	}
-	
-	
 }
