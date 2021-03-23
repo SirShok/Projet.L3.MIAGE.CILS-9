@@ -34,7 +34,7 @@ public class Combat {
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(ind,c);
 		int n = DM.size()/2;
-		String res;
+		String res = null;
 		int PA;
 		ind.mana = ind.mana - c.cout;
 		if(c.effet == "degat"){
@@ -65,14 +65,14 @@ public class Combat {
 			ind.pv += soin.get(0);
 			if(ind.pv > ind.pvMax()){
 				ind.pv = ind.pvMax();
-				res = res + "\n"+Narration.affiche(ind.Nom, "soin", 0,soin.get(0));
+				res = res + "\n"+Narration.affiche(ind.nom, "soin", 0,soin.get(0));
 			}								//rajouter phrase soin dans natation
 		}
 		if(c.effet == "bouclier"){
 			ArrayList<Integer> soin = new ArrayList<Integer>();
 			soin = Competence.Degat(ind,c);
 			ind.pv += soin.get(0); 
-			res = res + "\n"+Narration.affiche(ind.Nom, "bouclier", 0,soin.get(0)); //rajouter phrase bouclier dans natation
+			res = res + "\n"+Narration.affiche(ind.nom, "bouclier", 0,soin.get(0)); //rajouter phrase bouclier dans natation
 		}
 		if(m.PD-ind.armure > 0){
 			ind.pv = ind.pv-(m.PD-ind.armure);	//rajouter phrase attaque monstre dans natation
@@ -82,6 +82,31 @@ public class Combat {
 			res = res+"\n"+Narration.affiche(ind.nom, "defaite", 0,0);	//rajouter phrase defaite dans natation
 		}
 		return(res);
+	}
+	
+	public static Monstre SelectM(ArrayList<Monstre> m, int n, int nt) {
+		if (n == nt/2) {
+			Monstre select = m.get(5 + new Random().nextInt(7 - 5));
+			return select;
+		}
+		if (n == nt) {
+			Monstre select = m.get(10 + new Random().nextInt(12 - 10));
+			return select;
+		}
+		if (n == 1) {
+			Monstre select = m.get(new Random().nextInt(n+2));
+			return select;
+		}
+		if (n >= (m.size())-2) {
+			Monstre select = m.get(new Random().nextInt(m.size()));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		} else {
+			Monstre select = m.get(new Random().nextInt(n));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		}
+		
 	}
 	
 }
