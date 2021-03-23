@@ -20,7 +20,7 @@ public class Monstre implements Serializable {
 	}
 	
 	public String getName(){
-		return nom;
+		return Nom;
 	}
 	public int getHP(){
 		return HP;
