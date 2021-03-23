@@ -53,9 +53,9 @@ public class Combat {
 			}
 			degat = degat*faiblesse(c.type,m.Affinite);
 			m.HP = m.HP-degat;
-			res = Narration.affiche(ind.nom, c.nom, degat);
+			res = Narration.affiche(ind.nom, c.nom, degat, 0);
 			if (m.HP <= 0){
-				res = res+"\n"+Narration.affiche(ind.nom, "victoire", degat);
+				res = res+"\n"+Narration.affiche(ind.nom, "victoire", 0,0);
 				return(res);
 			}
 		}
@@ -65,19 +65,21 @@ public class Combat {
 			ind.pv += soin.get(0);
 			if(ind.pv > ind.pvMax()){
 				ind.pv = ind.pvMax();
-				res = "\n"+Narration.affiche(ind.getNom, "soin", 0,soin)
+				res = res + "\n"+Narration.affiche(ind.Nom, "soin", 0,soin.get(0));
 			}								//rajouter phrase soin dans natation
 		}
 		if(c.effet == "bouclier"){
 			ArrayList<Integer> soin = new ArrayList<Integer>();
 			soin = Competence.Degat(ind,c);
-			ind.pv += soin.get(0);			//rajouter phrase bouclier dans natation
+			ind.pv += soin.get(0); 
+			res = res + "\n"+Narration.affiche(ind.Nom, "bouclier", 0,soin.get(0)); //rajouter phrase bouclier dans natation
 		}
 		if(m.PD-ind.armure > 0){
 			ind.pv = ind.pv-(m.PD-ind.armure);	//rajouter phrase attaque monstre dans natation
+			
 		}
 		if (ind.pv <= 0){
-			res = res+"\n"+Narration.affiche(ind.nom, "defaite", degat);	//rajouter phrase defaite dans natation
+			res = res+"\n"+Narration.affiche(ind.nom, "defaite", 0,0);	//rajouter phrase defaite dans natation
 		}
 		return(res);
 	}
