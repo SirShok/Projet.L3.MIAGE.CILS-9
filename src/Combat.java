@@ -68,9 +68,9 @@ public class Combat {
 			}								//rajouter phrase soin dans natation
 		}
 		if(c.effet == "bouclier"){
-			ArrayList<Integer> soin = new ArrayList<Integer>();
-			soin = Competence.Degat(ind,c);
-			ind.pv += soin.get(0);			//rajouter phrase bouclier dans natation
+			ArrayList<Integer> bouclier = new ArrayList<Integer>();
+			bouclier = Competence.Degat(ind,c);
+			ind.pv += bouclier.get(0);			//rajouter phrase bouclier dans natation
 		}
 		if(m.PD-ind.armure > 0){
 			ind.pv = ind.pv-(m.PD-ind.armure);	//rajouter phrase attaque monstre dans natation
