@@ -1,6 +1,10 @@
 import java.util.*;
 
-public class Competence {
+public class Competence implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1675753638838475097L;
     String nom = "";
     int rang;
     String stat = "";

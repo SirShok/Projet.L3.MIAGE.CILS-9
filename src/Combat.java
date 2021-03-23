@@ -2,15 +2,6 @@ import java.lang.Math;
 import java.util.ArrayList;
 
 public class Combat {
-	//prend un deux types et un individu, un montant de dÃ©dégâts¢ts et un montant de perce-armure
-	//puis applique les dégâts selon les faiblesses
-	//on peut, peut-être, à la place de prendre un montant de perce-armure, prendre un individu ou autre chose pour le perce-armure
-	public static void combat (Individu p1, /*Individu p2,*/ int perceArmure, String type1, String type2, int degat) {
-		degat = faiblesse(type1, type2)*degat;
-		degat = Math.min(0, degat - Math.min(0, p1.armure - perceArmure)); //on peut toujours appliquer armure et le perce-armure autre part
-		p1.pv = p1.pv - degat;
-	}
-
 	//prend deux types et renvoie le facteur de dégâts correspondant
 	public static int faiblesse (String type1, String type2) {
 		switch(type1) {
@@ -32,10 +23,11 @@ public class Combat {
 					return 1;
 			case "physique": return 1;
 		}
-		return 1;
+		System.out.println("erreur avec les types");
+		return ;
 	}
 	
-	// permet de d'apliquer les dégat subit en un tour (ne prend pas la res élémentaire car les monstre n'en on pas)
+	// permet de d'appliquer les dégâts subit en un tour (ne prend pas la res élémentaire car les monstre n'en ont pas)
 	public static ArrayList<String> combat(Individu ind, Monstre m, Competence c){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(ind,c);
