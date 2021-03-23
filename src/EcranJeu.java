@@ -51,4 +51,9 @@ public class EcranJeu extends JPanel{
 		this.revalidate();
 		this.setVisible(true);
 	}
+	
+	//retourne le parchemin (là où est affiché le texte)
+	public Parchemin getParchemin(){
+		return parchemin;
+	}
 }
