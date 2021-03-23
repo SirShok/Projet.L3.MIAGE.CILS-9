@@ -80,20 +80,35 @@ public class Combat {
 		}
 		return(res);
 	}
-
-	//methode qui selectionne le monstre pour un combat en fonction de
-	//la liste de montres, et le nombres de combats effectué
-	public static Monstre SelectM(ArrayList<Monstre> m, int n) {
+	
+	//methode qui recupere et retourne un monstre en fonction du nombres
+	//de combat gagne et du nombre de combat maximal
+	public static Monstre SelectM(ArrayList<Monstre> m, int n, int nt) {
+		if (n == nt/2) {
+			Monstre select = m.get(5 + new Random().nextInt(7 - 5));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		}
+		if (n == nt) {
+			Monstre select = m.get(10 + new Random().nextInt(12 - 10));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		}
+		if (n == 1) {
+			Monstre select = m.get(new Random().nextInt(n+2));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		}
 		if (n >= (m.size())-2) {
 			Monstre select = m.get(new Random().nextInt(m.size()));
 			System.out.println("Monstre selectionne\n");
 			return select;
 		} else {
-			Monstre select = m.get(new Random().nextInt(n+2));
+			Monstre select = m.get(new Random().nextInt(n));
 			System.out.println("Monstre selectionne\n");
 			return select;
 		}
-
+		
 	}
 }
 
