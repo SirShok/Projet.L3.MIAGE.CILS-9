@@ -22,7 +22,8 @@ public class Combat {
 					return 1;
 			case "physique": return 1;
 		}
-		return 1;
+		System.out.println("erreur avec les types");
+		return ;
 	}
 	
 	// permet de d'appliquer les dégâts subit en un tour (ne prend pas la res élémentaire car les monstre n'en ont pas)
