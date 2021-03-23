@@ -14,18 +14,5 @@ public class Main {
 
 	}
 	
-	//methode qui selectionne le monstre pour un combat en fonction de
-	//la liste de montres, et le nombres de combats effectué
-	public static Monstre SelectM(ArrayList<Monstre> m, int n) {
-		if (n >= (m.size())-2) {
-			Monstre select = m.get(new Random().nextInt(m.size()));
-			System.out.println("Monstre selectionne\n");
-			return select;
-		} else {
-			Monstre select = m.get(new Random().nextInt(n+2));
-			System.out.println("Monstre selectionne\n");
-			return select;
-		}
-		
-	}
+	
 }
