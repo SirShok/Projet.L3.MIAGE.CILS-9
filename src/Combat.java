@@ -34,16 +34,21 @@ public class Combat {
 		DM = Competence.Degat(ind,c);
 		int n = DM.size()/2;
 		String res;
+		int PA;
 		ind.mana = ind.mana - c.cout;
-		if(c.type == "degat"){
-			for(Equipement e: Individu.armeEquip(ind)){
+		if(c.effet == "degat"){
+			int degat;
+			for(Equipement e: ind.armeEquip()){
+				PA = m.PA-(c.perca+(e.perceArmure));
+				if(PA < 0) PA = 0;
 				for(int i = 0; i<n; i++){
-					if(0 < DM.get(i)-(m.PA-(c.perca+(e.perceArmure)))){
-						int degat = DM.get(i)-(m.PA-(c.perca+(e.perceArmure)));
+					if(0 < DM.get(i)-PA){
+						degat = DM.get(i)-PA;
 					}
 					DM.remove(i);
 				}
 			}
+			degat = degat*faiblesse(c.type,m.Affinite);
 			m.HP = m.HP-degat;
 			res = Naration.affiche(ind.nom, c.nom, degat);
 			if (m.HP <= 0){
@@ -51,7 +56,7 @@ public class Combat {
 				return(res);
 			}
 		}
-		if(c.type == "soin"){
+		if(c.tyeffetpe == "soin"){
 			ArrayList<Integer> soin = new ArrayList<Integer>();
 			soin = Competence.Degat(ind,c);
 			ind.pv += soin.get(0);
@@ -59,7 +64,7 @@ public class Combat {
 				ind.pv = ind.pvMax();
 			}								//rajouter phrase soin dans natation
 		}
-		if(c.type == "bouclier"){
+		if(c.effet == "bouclier"){
 			ArrayList<Integer> soin = new ArrayList<Integer>();
 			soin = Competence.Degat(ind,c);
 			ind.pv += soin.get(0);			//rajouter phrase bouclier dans natation
@@ -72,6 +77,4 @@ public class Combat {
 		}
 		return(res);
 	}
-}
-
 }
