@@ -15,51 +15,52 @@ import javax.swing.JLabel;
 
 public class BarreAction extends ImagePanel{
 	
-	private JButton cap1;
-	private JButton cap2;
-	private JButton cap3;
-	private JButton cap4;
+	private Competence cap1;
+	private Competence cap2;
+	private Competence cap3;
+	private Competence cap4;
 	private int pvie;
 	private int parmure;
 	
-	
-	public BarreAction(BufferedImage img, Fenetre f, Parchemin par, PanneauAdv padv){
+	public BarreAction(BufferedImage img, Fenetre f, Parchemin par, Individu i, PanneauAdv padv){
 		super(img);
 		ImageIcon bouton=new ImageIcon("Autre/images/bouton.png");
 		Dimension dimBouton=new Dimension(bouton.getIconWidth(), bouton.getIconHeight());
+		Combat c=new Combat();
 		
 		//Boutons de capacite
-		cap1=new JButton(new ImageIcon("Autre/images/coupS.png"));
-		cap1.setBorder(BorderFactory.createEmptyBorder());
-		cap1.setContentAreaFilled(false);
-		cap1.setSize(dimBouton);
-		cap1.setBounds(50, 27, bouton.getIconWidth(), bouton.getIconHeight());
-		cap1.addActionListener(new ActionListener(){
+		JButton capBouton1=new JButton(cap1.nom);
+		capBouton1.setBorder(BorderFactory.createEmptyBorder());
+		capBouton1.setContentAreaFilled(false);
+		capBouton1.setSize(dimBouton);
+		capBouton1.setBounds(50, 27, bouton.getIconWidth(), bouton.getIconHeight());
+		capBouton1.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
 				//Ta methode
 				par.getTextArea().append("\n Comp Simple");
+				c.combat(i, padv.getMonster(), cap1);
 				System.out.println("Coup Simple");
 			}
 		});
 		
-		cap2=new JButton(new ImageIcon("Autre/images/estoc.png"));
-		cap2.setBorder(BorderFactory.createEmptyBorder());
-		cap2.setContentAreaFilled(false);
-		cap2.setSize(dimBouton);
-		cap2.setBounds(320, 27, bouton.getIconWidth(), bouton.getIconHeight());
+		JButton capBouton2=new JButton(new ImageIcon("Autre/images/estoc.png"));
+		capBouton2.setBorder(BorderFactory.createEmptyBorder());
+		capBouton2.setContentAreaFilled(false);
+		capBouton2.setSize(dimBouton);
+		capBouton2.setBounds(320, 27, bouton.getIconWidth(), bouton.getIconHeight());
 		
-		cap3=new JButton(new ImageIcon("Autre/images/attaqueD.png"));
-		cap3.setBorder(BorderFactory.createEmptyBorder());
-		cap3.setContentAreaFilled(false);
-		cap3.setSize(dimBouton);
-		cap3.setBounds(50, 117, bouton.getIconWidth(), bouton.getIconHeight());
+		JButton capBouton3=new JButton(new ImageIcon("Autre/images/attaqueD.png"));
+		capBouton3.setBorder(BorderFactory.createEmptyBorder());
+		capBouton3.setContentAreaFilled(false);
+		capBouton3.setSize(dimBouton);
+		capBouton3.setBounds(50, 117, bouton.getIconWidth(), bouton.getIconHeight());
 		
-		cap4=new JButton(new ImageIcon("Autre/images/attaqueT.png"));
-		cap4.setBorder(BorderFactory.createEmptyBorder());
-		cap4.setContentAreaFilled(false);
-		cap4.setSize(dimBouton);
-		cap4.setBounds(320, 117, bouton.getIconWidth(), bouton.getIconHeight());
+		JButton capBouton4=new JButton(new ImageIcon("Autre/images/attaqueT.png"));
+		capBouton4.setBorder(BorderFactory.createEmptyBorder());
+		capBouton4.setContentAreaFilled(false);
+		capBouton4.setSize(dimBouton);
+		capBouton4.setBounds(320, 117, bouton.getIconWidth(), bouton.getIconHeight());
 		
 		//Etat personnage
 		Font caligraphie=new Font("Nine By Five NBP", Font.PLAIN, 40);
@@ -142,10 +143,10 @@ public class BarreAction extends ImagePanel{
 		//Reglages et ajout des composant
 		this.setLayout(null);
 		this.setBackground(Color.black);
-		this.add(cap1);
-		this.add(cap2);
-		this.add(cap3);
-		this.add(cap4);
+		this.add(capBouton1);
+		this.add(capBouton2);
+		this.add(capBouton3);
+		this.add(capBouton4);
 		this.add(vie);
 		this.add(armure);
 		this.add(barre);

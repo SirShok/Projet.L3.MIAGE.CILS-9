@@ -11,6 +11,7 @@ public class MenuPrincipal extends JPanel{
 	private JButton lgame;
 	private JButton options;
 	private JButton quit;
+	private boolean premierepartie=true;
 	
 	//TODO TEST DELETE LATER
 	int cpt=0;
@@ -27,9 +28,12 @@ public class MenuPrincipal extends JPanel{
 		ngame.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
+            	if(premierepartie){
+            		premierepartie=false;
+            		f.switchToCreation();
+            	}
             	cpt++;
-				nbClic.setText("Nb de boutons cliqué : "+cpt);
-            	f.swicthToGame();
+        		nbClic.setText("Nb de boutons cliqué : "+cpt);
             }
         });
 		ngame.setBorder(BorderFactory.createEmptyBorder());
@@ -37,37 +41,23 @@ public class MenuPrincipal extends JPanel{
 		ngame.setSize(jou.getIconWidth(), jou.getIconHeight());
 		ngame.setBounds(574, 250, jou.getIconWidth(), jou.getIconHeight());
 		
-		//Bouton "Charger partie"
-		ImageIcon loa=new ImageIcon("Autre/images/charger.png");
+		//Bouton "Continuer"
+		ImageIcon loa=new ImageIcon("Autre/images/continuer.png");
 		lgame=new JButton(loa);
 		lgame.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
+            	if(!premierepartie){
+            		f.swicthToGame();
+            	}
             	cpt++;
 				nbClic.setText("Nb de boutons cliqué : "+cpt);
-            	f.swicthToGame();
             }
         });
 		lgame.setBorder(BorderFactory.createEmptyBorder());
 		lgame.setContentAreaFilled(false);
 		lgame.setSize(loa.getIconWidth(), loa.getIconHeight());
 		lgame.setBounds(574, 350, loa.getIconWidth(), loa.getIconHeight());
-		
-		//Bouton "Options"
-		ImageIcon opt=new ImageIcon("Autre/images/options.png");
-		options=new JButton(opt);
-		options.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e){
-				cpt++;
-				nbClic.setText("Nb de boutons cliqué : "+cpt);
-				System.out.println("\"Options\" cliqué WIP");
-			}
-		});
-		options.setBorder(BorderFactory.createEmptyBorder());
-		options.setContentAreaFilled(false);
-		options.setSize(jou.getIconWidth(), jou.getIconHeight());
-		options.setBounds(574, 450, opt.getIconWidth(), opt.getIconHeight());
 		
 		//Bouton "Quitter"
 		ImageIcon qui=new ImageIcon("Autre/images/quit.png");
@@ -81,7 +71,7 @@ public class MenuPrincipal extends JPanel{
 		quit.setBorder(BorderFactory.createEmptyBorder());
 		quit.setContentAreaFilled(false);
 		quit.setSize(jou.getIconWidth(), jou.getIconHeight());
-		quit.setBounds(574, 550, jou.getIconWidth(), jou.getIconHeight());
+		quit.setBounds(574, 450, jou.getIconWidth(), jou.getIconHeight());
 		
 		//TEST
 		nbClic=new JLabel("Nb de boutons cliqué :");
@@ -93,7 +83,6 @@ public class MenuPrincipal extends JPanel{
 		this.add(titre);
 		this.add(ngame);
 		this.add(lgame);
-		this.add(options);
 		this.add(quit);
 		this.add(nbClic);
 	}
