@@ -176,11 +176,11 @@ public class Individu {
 		return l;
 	}
 	
-	public static Equipement[] armeEquip(Individu ind){
+	public Equipement[] armeEquip(){
 		Equipement[] res = new Equipement[2];
 		int i = 0;
-		for(Equipement e: ind.equipement){
-			if(e.type == "arme"){
+		for(Equipement e: equipement){
+			if((e != null)&&(e.type == "arme")){
 				res[i++] = e;
 			}
 		}
