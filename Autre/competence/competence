@@ -159,7 +159,7 @@ déluge glacial;7;SAG;7;2;999;envoie 7 projectiles glaçant, inflige SAG/2 dég�
 projectile de glace;8;SAG;1;1;999;envoie un projectile glaçant, inflige SAGx4 dégâts, coûte 40 PM;degat;15;glace;
 bouclier de glace;8;SAG;1;1;0;créer un bouclier protégeant le lanceur contre un maximum de SAGx4 dégâts, coûte 40 PM;bouclier;17;glace;
 déluge glacial;8;SAG;8;2;999;envoie 8 projectiles glaçant, inflige SAG/2 dégâts, coûte 40 PM;degat;16;glace;
-projectile de glace;9;SAG;1;1;999;envoie un projectile glaçant, inflige SAGx4.5 dégâts, coûte 45 PM;degat;15;
+projectile de glace;9;SAG;1;1;999;envoie un projectile glaçant, inflige SAGx4.5 dégâts, coûte 45 PM;degat;15;glace;
 bouclier de glace;9;SAG;1;1;0;créer un bouclier protégeant le lanceur contre un maximum de SAGx4.5 dégâts, coûte 45 PM;bouclier;17;glace;
 déluge glacial;9;SAG;9;2;999;envoie 9 projectiles glaçant, inflige SAG/2 dégâts, coûte 45 PM;degat;16;glace;
 sacralisation;1;SAG;1;1;999;fais appel à la puissance de la lumière pour purifier l'ennemi, inflige SAG/2 dégâts, coûte 5 PM;degat;17;lumiere;
