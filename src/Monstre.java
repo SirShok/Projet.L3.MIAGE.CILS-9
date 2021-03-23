@@ -39,11 +39,11 @@ public class Monstre implements Serializable {
 		this.HP = this.HP - degat;
 	}
 	
-	public void PrintMonstre(){
-		System.out.print(this.Nom+" ");
-		System.out.print(this.HP+" ");
-		System.out.println(this.PA);
-		System.out.println(this.PD);
-		System.out.println(this.Affinite);
+	public void PrintMonstre() {
+		System.out.println(this.Nom+" ");
+		System.out.println(this.HP+" HP");
+		System.out.println(this.PA+" PA");
+		System.out.println(this.PD+" PD");
+		System.out.println(this.Affinite+" Type");
 	}
 }
