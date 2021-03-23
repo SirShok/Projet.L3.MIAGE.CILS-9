@@ -31,9 +31,10 @@ public class Monstre implements Serializable {
 	public int getPD(){
 		return PD;
 	}
-	print String getAffinite(){
+	public String getAffinite(){
 		retun Affinite;
 	}
+	
 	
 	
 	public void PrintMonstre(){
