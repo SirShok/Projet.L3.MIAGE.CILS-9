@@ -76,7 +76,7 @@ public class Combat {
 			ind.pv = ind.pv-(m.PD-ind.armure);	//rajouter phrase attaque monstre dans natation
 		}
 		if (ind.pv <= 0){
-			res = res+"\n"+Narration.affiche(ind.nom, defaite, degat);	//rajouter phrase defaite dans natation
+			res = res+"\n"+Narration.affiche(ind.nom, "defaite", degat);	//rajouter phrase defaite dans natation
 		}
 		return(res);
 	}
