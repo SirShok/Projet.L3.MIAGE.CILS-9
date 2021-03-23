@@ -35,13 +35,15 @@ public class Monstre implements Serializable {
 		return Affinite;
 	}
 	
-	
+	public void appliquerDegat(int degat){
+		this.HP = this.HP - degat;
+	}
 	
 	public void PrintMonstre(){
-		System.out.print(Nom+" ");
-		System.out.print(HP+" ");
-		System.out.println(PA);
-		System.out.println(PD);
-		System.out.println(Affinite);
+		System.out.print(this.Nom+" ");
+		System.out.print(this.HP+" ");
+		System.out.println(this.PA);
+		System.out.println(this.PD);
+		System.out.println(this.Affinite);
 	}
 }
