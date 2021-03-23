@@ -7,6 +7,7 @@ public class Individu {
 	public String nom;
 	public int pv, mana, armure = 0, agilite, force, constitution, sagesse, perception, charisme, chance;
 	private Equipement[] equipement = new Equipement[tailleEquipement]; int nbMainL = 2; 	//désigne l'équipement et le nombre de main libres restantes
+	private Competence[] competence = new Competence[4];
 	private boolean equipArmure = false;	//indique si l'individu porte une armure
 	
 	public Individu(String n, int ag, int f, int co, int s, int p, int ca, int ch) {

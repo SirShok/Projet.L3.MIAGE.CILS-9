@@ -18,7 +18,6 @@ public class Main {
 		while((ind.pv >= 0)&&(nbCombat < 12)) {
 			Monstre m = SelectM(bestiaire, nbCombat);
 			//selection compétence
-			f.getParchemin().getTextArea().append(Combat.combat(ind, m, c));
-		}*/
+			f.getParchemin().getTextArea().append(Combat.combat(ind, m, c))*/
+		}
 	}
-}
