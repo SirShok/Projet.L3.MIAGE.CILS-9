@@ -1,12 +1,12 @@
-Animorph_1_Singe 30 10
-Animorph_2_Tigre 20 20
-Animorph_3_Tortue 10 30
-Animorph_4_Ours 25 15
-Animorph_5_Phénix 35 5
-Udyr 90 90
-Chevalier 40 20
-Archer 40 5
-Lord_Snork 120 80
-Micro 40 10
-Webcam 20 20
-Seigeur_Laciopa 160 90
+Animorph_1_Singe 30 10 Vent
+Animorph_2_Tigre 20 20 Lumiere
+Animorph_3_Tortue 10 30 Terre
+Animorph_4_Ours 25 15 Eau
+Animorph_5_Phénix 35 5 Feu
+Udyr 90 90 Tenebres
+Chevalier 40 20 Lumiere
+Archer 40 5 Vent
+Lord_Snork 120 80 Feu
+Micro 40 10 Eau
+Webcam 20 20 Vent
+Seigeur_Laciopa 160 90 Tenebres
