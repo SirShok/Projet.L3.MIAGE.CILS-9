@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.Serializable;
 
 public class Competence implements Serializable{
     /**
