@@ -187,7 +187,8 @@ public class Individu {
 		return res;
 	}
 	
-	public Individu(int n){
+		public Individu(int n){
+		equipArmure = true;
 		switch (n){
 			case 1:
 				nom = "Chevalier";
@@ -201,7 +202,9 @@ public class Individu {
 				pv = pvMax();
 				mana = manaMax();
 				equiper(Equipement("epee a 2 mains rouille;8;0;0;0;2;1;arme;"));
-				equper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				equiper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence.add(Competence("Coup simple;1;FOR;1;1;0;coup infligeant des dégat normaux.;degat;2;physique;"));
+				competence.add(Competence("Estoc;1;FOR;1;1;5;Coup précis attaquant avec la pointe de la lame ignore 5 point d'armure.;degat;1;physique;"));
 				break;
 			case 2:
 				nom = "Archer";
@@ -215,7 +218,9 @@ public class Individu {
 				pv = pvMax();
 				mana = manaMax();
 				equiper(Equipement("Arc use;6;0;0;2;2;1;arme;"));
-				equper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				equiper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence.add(Competence("tir simple;1;AGI;1;1;0;tir infligeant des dégâts normaux;degat;6;physique;"));
+				competence.add(Competence("tir précis;1;AGI;1;1;5;tir ignorant 5 points d'armure;degat;5;physique;"));
 				break;
 			case 3:
 				nom = "Pretre";
@@ -230,7 +235,10 @@ public class Individu {
 				mana = manaMax();
 				equiper(Equipement("epee rouille;4;0;0;0;1;1;arme;"));
 				equiper(Equipement("Baguette use;0;2;0;0;1;1;arme;"));
-				equper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				equiper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence.add(Competence("Coup simple;1;FOR;1;1;0;coup infligeant des dégat normaux.;degat;3;physique;"));
+				competence.add(Competence("Boule de feu;1;SAG;1;1;999;envoi une boule de feux brulant l'ennemi, infligeant SAG/2 DM coute 5 PM.;degat;11;feu;"));
+				competence.add(Competence("Soint sacré;1;SAG;1;1;0;fais appels a la puissance de la lumière pour restauré votre corps, soigne SAG/2 PV, cout 5 PM.;soint;18;lumiere;"));
 				break;
 			case 4:
 				nom = "Magicien";
@@ -244,7 +252,9 @@ public class Individu {
 				pv = pvMax();
 				mana = manaMax();
 				equiper(Equipement("Baton use;0;4;0;0;2;1;arme;"));
-				equper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				equiper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence.add(Competence("Boule de feu;1;SAG;1;1;999;envoi une boule de feux brulant l'ennemi, infligeant SAG/2 DM coute 5 PM.;degat;11;feu;"));
+				competence.add(Competence("Sacralisation;1;SAG;1;1;999;fais appels a la puissance de la lumière pour purifier l'ennemis, inflige SAG/2 DM, cout 5 PM.;degat;17;lumiere;"));
 				break;
 		}
 	}
