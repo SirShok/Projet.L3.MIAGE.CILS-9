@@ -1,5 +1,4 @@
 import java.lang.Math;
-import java.util.ArrayList;
 
 public class Combat {
 	//prend deux types et renvoie le facteur de dégâts correspondant
@@ -68,9 +67,9 @@ public class Combat {
 			}								//rajouter phrase soin dans natation
 		}
 		if(c.effet == "bouclier"){
-			ArrayList<Integer> bouclier = new ArrayList<Integer>();
-			bouclier = Competence.Degat(ind,c);
-			ind.pv += bouclier.get(0);			//rajouter phrase bouclier dans natation
+			ArrayList<Integer> soin = new ArrayList<Integer>();
+			soin = Competence.Degat(ind,c);
+			ind.pv += soin.get(0);			//rajouter phrase bouclier dans natation
 		}
 		if(m.PD-ind.armure > 0){
 			ind.pv = ind.pv-(m.PD-ind.armure);	//rajouter phrase attaque monstre dans natation
@@ -79,6 +78,21 @@ public class Combat {
 			res = res+"\n"+Naration.affiche(ind.nom, defaite, degat);	//rajouter phrase defaite dans natation
 		}
 		return(res);
+	}
+	
+	//methode qui selectionne le monstre pour un combat en fonction de
+	//la liste de montres, et le nombres de combats effectué
+	public static Monstre SelectM(ArrayList<Monstre> m, int n) {
+		if (n >= (m.size())-2) {
+			Monstre select = m.get(new Random().nextInt(m.size()));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		} else {
+			Monstre select = m.get(new Random().nextInt(n+2));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		}
+		
 	}
 }
 
