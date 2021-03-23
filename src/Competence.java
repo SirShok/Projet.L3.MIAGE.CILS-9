@@ -37,7 +37,7 @@ public class Competence implements Serializable{
     
     // comme on ne peut pas stocker des fonctions dans un String, on attribue un chiffre à chacune 
     // des fonctions existantes puis via cette fonction on calcule les dégâts en fonction de ce chiffre
- public static ArrayList<Integer> Degat(Individu ind, Competence comp){                    
+    public static ArrayList<Integer> Degat(Individu ind, Competence comp){                    
         ArrayList<Integer> degat = new ArrayList<Integer>(); 
         int d = comp.degat;
         String s = comp.stat;

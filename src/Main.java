@@ -8,7 +8,7 @@ public class Main {
 		ArrayList<Competence> listeCompetence = new ArrayList<Competence>();
 		Fichier.RecuperationConfig(bestiaire);
 		Fichier.LectureCompetence(listeCompetence);
-		
+    
 		Fenetre f=new Fenetre();
 
 	}

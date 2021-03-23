@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 public class Fichier {
 
-	//écrit dans un fichier dit "de sauvegarde" les caractéristiques (juste les stats) de l'individu
+	//�crit dans un fichier dit "de sauvegarde" les caract�ristiques (juste les stats) de l'individu
 	public static void EcrireFichier(Individu i) {
 		Class cl = i.getClass();
 		Field[] fd = cl.getFields();
@@ -31,7 +31,7 @@ public class Fichier {
 			return false;
 		}
 	}
-	//permet de récupérer le fichier de config
+	//permet de r�cup�rer le fichier de config
 	public static void RecuperationConfig(ArrayList<Monstre> bestiaire) throws FileNotFoundException, IOException, ClassNotFoundException{
 		try {
 			File dossierSer = new File("Autre/DossierConfig/ObjetSerializer");
@@ -91,8 +91,7 @@ public class Fichier {
 					ois.close();
 				}
 			} else {
-
-				try{
+			try{
 					File initial = new File("Autre/competence/magique");
 					if (initial.isDirectory()) {   //vérifie si le File est un Directory
 						for (File f : initial.listFiles()) { // Pour chaque fichier dans le dossier
@@ -130,7 +129,6 @@ public class Fichier {
 		}catch(FileNotFoundException Fe) {
 			System.out.println("erreur avec un des fichiers de compétence magique pas de fichier");
 		}
-	
 		// On réalise exactement la même chose pour les compétences de type physique à distance
 		try {
 			File initial = new File ("Autre/competence/physique/distance");
