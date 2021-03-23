@@ -23,7 +23,7 @@ public class BarreAction extends ImagePanel{
 	private int parmure;
 	
 	
-	public BarreAction(BufferedImage img, Fenetre f, Parchemin par){
+	public BarreAction(BufferedImage img, Fenetre f, Parchemin par, PanneauAdv padv){
 		super(img);
 		ImageIcon bouton=new ImageIcon("Autre/images/bouton.png");
 		Dimension dimBouton=new Dimension(bouton.getIconWidth(), bouton.getIconHeight());
@@ -38,7 +38,7 @@ public class BarreAction extends ImagePanel{
 			@Override
 			public void actionPerformed(ActionEvent e){
 				//Ta methode
-				par.getTextArea().append("\n J'ai mal");
+				par.getTextArea().append("\n Comp Simple");
 				System.out.println("Coup Simple");
 			}
 		});

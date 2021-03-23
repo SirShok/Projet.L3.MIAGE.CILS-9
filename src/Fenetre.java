@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import javax.swing.*;
 
 public class Fenetre extends JFrame{
@@ -5,7 +7,7 @@ public class Fenetre extends JFrame{
 	private MenuPrincipal menu;
 	private EcranJeu ingame;
 	
-	public Fenetre(){
+	public Fenetre(ArrayList<Monstre> bestiaire, ArrayList<Competence> competences){
 		//Initialisation de la fenetre
 		this.setSize(1400, 900);
 		this.setResizable(false);

@@ -9,7 +9,7 @@ public class Main {
 		Fichier.RecuperationConfig(bestiaire);
 		Fichier.LectureCompetence(listeCompetence);
     
-		Fenetre f=new Fenetre();
+		Fenetre f=new Fenetre(bestiaire, listeCompetence);
 
 	}
 }

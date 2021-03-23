@@ -44,4 +44,8 @@ public class PanneauAdv extends JPanel{
 	public void monsterIsDead(){
 		this.setVisible(false);
 	}
+	
+	public Monstre getMonster(){
+		return monstre;
+	}
 }
