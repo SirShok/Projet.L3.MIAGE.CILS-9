@@ -186,4 +186,66 @@ public class Individu {
 		}
 		return res;
 	}
+	
+	public Individu(int n){
+		switch (n){
+			case 1:
+				nom = "Chevalier";
+				force = 30;
+				agilite = 5;
+				sagesse = 10;
+				perception = 5;
+				constitution = 30;
+				charisme = 15;
+				chance = 20;
+				pv = pvMax();
+				mana = manaMax();
+				equiper(Equipement("epee a 2 mains rouille;8;0;0;0;2;1;arme;"));
+				equper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				break;
+			case 2:
+				nom = "Archer";
+				force = 5;
+				agilite = 30;
+				sagesse = 5;
+				perception = 30;
+				constitution = 10;
+				charisme = 10;
+				chance = 20;
+				pv = pvMax();
+				mana = manaMax();
+				equiper(Equipement("Arc use;6;0;0;2;2;1;arme;"));
+				equper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				break;
+			case 3:
+				nom = "Pretre";
+				force = 30;
+				agilite = 5;
+				sagesse = 30;
+				perception = 10;
+				constitution = 20;
+				charisme = 10;
+				chance = 20;
+				pv = pvMax();
+				mana = manaMax();
+				equiper(Equipement("epee rouille;4;0;0;0;1;1;arme;"));
+				equiper(Equipement("Baguette use;0;2;0;0;1;1;arme;"));
+				equper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				break;
+			case 4:
+				nom = "Magicien";
+				force = 5;
+				agilite = 10;
+				sagesse = 30;
+				perception = 20;
+				constitution = 15;
+				charisme = 10;
+				chance = 30;
+				pv = pvMax();
+				mana = manaMax();
+				equiper(Equipement("Baton use;0;4;0;0;2;1;arme;"));
+				equper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				break;
+		}
+	}
 }
