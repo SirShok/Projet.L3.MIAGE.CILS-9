@@ -54,7 +54,7 @@ public class Fichier {
 					try {
 						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier a une autre ligne 
 							mot=ligne.split(" "); //on sépare la ligne en mot 
-							Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[1]),Integer.parseInt(mot[2]),mot[4]); //on utilise les mots pour créer un objet de type monstre
+							Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[2]),Integer.parseInt(mot[3]),mot[4]); //on utilise les mots pour créer un objet de type monstre
 							bestiaire.add(m); //ajoute l'objet créé au bestiaire
 						}
 						int i=0;
