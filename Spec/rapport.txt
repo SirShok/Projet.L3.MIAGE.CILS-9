@@ -1,0 +1,20 @@
+ici, on va marquer les tests de chaque personne
+
+Louison Crépin:
+Je me suis occupé de la fonction permettant d'écrire les informations dans un fichier, de pouvoir lire un fichier, et le crée si il n'existe pas, et j'ai également coder (ainsi que des tests pour vérifier qu'il n'y a pas de bugs) la classe Combat, Equipement et Individu. J'ai aussi gérer les erreurs pour la fonction RecupererConfig().
+
+
+Michael Pariche:
+Je me suis principalement occupé de l'interface graphique qui comporte les classes Fenetre, MenuPrincipal, EcranJeu, BarreAction, Parchemin, ImagePanel, PanneauAdv, StatAdv qui se chargent de l'interaction avec l'utilisateur. J'ai réalisé les différents panels pour le menu et l'écran de jeu avec les composants nécessaires pour l'interaction. J'ai également fais en sorte qu'on puisse visualiser ce qui se passe dans le jeu comme par exemple la santé de l'adversaire avec PanneauAdv ou le déroulement des combat avec la classe Parchemin. 
+
+
+Benjamin Combe:
+Je me suis chargé des fonctions permettant de lire un fichier txt, le décomposer et pouvoir créer des objets Java avec les données. J'ai également organisé le travail. J'ai également réalise la fonction RecupCompetence, qui part chercher tous les fichiers txt dans un répertoire et leur applique des fonctions. Quelques corrections de bug dans le fichier Fichier.java. Egalement, une inspection des différents fichiers du projet pour vérifier qu'ils fonctionnent tous de manière indépendante. Je me suis également penché sur la queston de la serialization des objets.
+
+
+Quentin Pavy:
+Je me suis chargé de créer le system de jeux (les differente caractéristique, leur repartition, le calcul des PV/PM,...), j'ai également créer de nombreuse compétence que j'ais encodé dans des fichier texte et j'ai créer la classe compétence permetant notament de prendre un String en entré (String tiré des fichier texte grace aux travaille de Benjamin) et de definir une compétence via se dernier.
+
+
+Maxime Avrillon-Thade
+Je me suis occupé de réalisé la maquette de l'interface graphique du rpg. J'ai également travaillé sur le fichier Narration.java qui a pour but d'interagir avec la console de l'interface graphique permettant d'afficher les évenements tout au long de la partie. De plus j'ai créé les différents monstres et adversaires du jeu dans le fichier config.txt.
