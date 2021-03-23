@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 public class Fichier {
 
-	//�crit dans un fichier dit "de sauvegarde" les caract�ristiques (juste les stats) de l'individu
+	//écrit dans un fichier dit "de sauvegarde" les caractéristiques (juste les stats) de l'individu
 	public static void EcrireFichier(Individu i) {
 		Class cl = i.getClass();
 		Field[] fd = cl.getFields();
@@ -31,7 +31,7 @@ public class Fichier {
 			return false;
 		}
 	}
-	//permet de r�cup�rer le fichier de config
+	//permet de récupérer le fichier de config
 	public static void RecuperationConfig(ArrayList<Monstre> bestiaire) throws FileNotFoundException, IOException, ClassNotFoundException{
 		try {
 			File dossierSer = new File("Autre/DossierConfig/ObjetSerializer");
