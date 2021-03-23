@@ -26,11 +26,13 @@ public class BarreAction extends ImagePanel{
 		super(img);
 		ImageIcon bouton=new ImageIcon("Autre/images/bouton.png");
 		Dimension dimBouton=new Dimension(bouton.getIconWidth(), bouton.getIconHeight());
+		Font caligraphie=new Font("Nine By Five NBP", Font.PLAIN, 40);
 		Combat c=new Combat();
 		
 		//Boutons de capacite
-		JButton capBouton1=new JButton(cap1.nom);
-		capBouton1.setBorder(BorderFactory.createEmptyBorder());
+		JButton capBouton1=new JButton("Estoc");
+		capBouton1.setBorder(BorderFactory.createLineBorder(Color.white));
+		capBouton1.setForeground(Color.white);
 		capBouton1.setContentAreaFilled(false);
 		capBouton1.setSize(dimBouton);
 		capBouton1.setBounds(50, 27, bouton.getIconWidth(), bouton.getIconHeight());
@@ -63,7 +65,6 @@ public class BarreAction extends ImagePanel{
 		capBouton4.setBounds(320, 117, bouton.getIconWidth(), bouton.getIconHeight());
 		
 		//Etat personnage
-		Font caligraphie=new Font("Nine By Five NBP", Font.PLAIN, 40);
 		JLabel vie=new JLabel(new ImageIcon("Autre/images/point_de_vie.png"));
 		vie.setText("100");
 		vie.setFont(caligraphie);
