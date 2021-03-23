@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 public class Fichier {
 
-	//�crit dans un fichier dit "de sauvegarde" les caract�ristiques (juste les stats) de l'individu
+	//écrit dans un fichier dit "de sauvegarde" les caractéristiques (juste les stats) de l'individu
 	public static void EcrireFichier(Individu i) {
 		Class cl = i.getClass();
 		Field[] fd = cl.getFields();
@@ -31,7 +31,7 @@ public class Fichier {
 			return false;
 		}
 	}
-	//permet de r�cup�rer le fichier de config
+	//permet de récupérer le fichier de config
 	public static void RecuperationConfig(ArrayList<Monstre> bestiaire) throws FileNotFoundException, IOException, ClassNotFoundException{
 		try {
 			File dossierSer = new File("Autre/DossierConfig/ObjetSerializer");
@@ -81,7 +81,7 @@ public class Fichier {
 	//permet de récupérer les différents fichier de configuration des Compétences et de les introduire dans la base de donnée Java
 	public static void LectureCompetence(ArrayList<Competence> ListeCompetence) throws ClassNotFoundException, IOException, FileNotFoundException {
 		try {
-			File dossierCompSer = new File("Autre/DossierConfig/competence/competenceSerializer");
+			File dossierCompSer = new File("Autre/competence/competenceSerializer");
 			if( dossierCompSer.exists() && dossierCompSer.isDirectory() && isEmpty(dossierCompSer)) {
 				for (File f : dossierCompSer.listFiles()) {
 					ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
@@ -91,97 +91,42 @@ public class Fichier {
 					ois.close();
 				}
 			} else {
-			try{
-					File initial = new File("Autre/competence/magique");
-					if (initial.isDirectory()) {   //vérifie si le File est un Directory
-						for (File f : initial.listFiles()) { // Pour chaque fichier dans le dossier
-							FileReader fichier = new FileReader(f); 
-							BufferedReader lecteurFichier = new BufferedReader(fichier); //on prend un stream pour lire le fichier
-							String ligne;
-							try {
-								while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier a une autre ligne
-									Competence c = new Competence(ligne); //on renvoie la ligne au constructeur de Competence
-									ListeCompetence.add(c); //on ajoute la competence à la liste des competences
-									System.out.println("lecture d'une compétence serializer "+c.nom);
-								}
-								int i=0;
-								for (Competence b : ListeCompetence) {
-									File fichierSer = new File("Autre/dossierConfig/competence/competenceSerializerMagique"+i);
-									ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichierSer));
-									oos.writeObject(b);
-									System.out.println("Creation d'une competence Serializer :" + b.nom);
-									oos.close();
-									i++;
-								}
-							}catch (IOException Fe) {
-								System.out.println("erreur avec un des fichiers de compétence magique");
-							}
-							
-							//on ferme le stream de lecture
-							lecteurFichier.close();
-						}
-					}
-							
-						}catch (IOException e) {
-							System.out.println("erreur avec un des fichiers de compétence magique");
-						}
-			}
-		}catch(FileNotFoundException Fe) {
-			System.out.println("erreur avec un des fichiers de compétence magique pas de fichier");
-		}
-		// On réalise exactement la même chose pour les compétences de type physique à distance
-		try {
-			File initial = new File ("Autre/competence/physique/distance");
-			if(initial.isDirectory()) {
-				for (File f : initial.listFiles()) {
-					FileReader fichier = new FileReader(f);
-					BufferedReader lecteurFichier = new BufferedReader(fichier);
+				try {
+					String cheminFichier = "Autre/competence/competence";
+					FileReader fichier = new FileReader(cheminFichier); 
+					BufferedReader lecteurFichier = new BufferedReader(fichier); //on prend un stream pour lire le fichier
 					String ligne;
-					while(((ligne = lecteurFichier.readLine()) != null)) {
-						Competence c = new Competence(ligne);
-						ListeCompetence.add(c);
+					String[] mot;
+					try {
+						int j=1;
+
+						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier a une autre ligne
+							mot = ligne.split(";");
+							System.out.println("Print de "+mot[0]+" "+mot[1]);
+							Competence c = new Competence(mot[0],Integer.parseInt(mot[1]),mot[2],Integer.parseInt(mot[3]),Integer.parseInt(mot[4]),Integer.parseInt(mot[5]),mot[6],mot[7],Integer.parseInt(mot[8]),mot[9]); //on renvoie la ligne au constructeur de Competence
+							ListeCompetence.add(c); //on ajoute la competence Ã  la liste des competences
+							System.out.println("lecture d'une compétence "+c.nom+ "ligne : "+j);
+							j++;
+						}
+						int i=0;
+						for (Competence b : ListeCompetence) {
+							File fichierSer = new File("Autre/competence/compteenceSerializer/competenceSerializerMagique"+i);
+							ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichierSer));
+							oos.writeObject(b);
+							System.out.println("Creation d'une competence Serializer :" + b.nom);
+							oos.close();
+							i++;
+						}
+						lecteurFichier.close();
+					} catch(IOException e) {
+						System.out.println("erreur avec le fichier competence");
 					}
-					int i=0;
-					for (Competence b : ListeCompetence) {
-						File fichierSer = new File("Autre/dossierConfig/competence/competenceSerializerDistance"+i);
-						ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichierSer));
-						oos.writeObject(b);
-						System.out.println("Creation d'une competence Serializer :" + b.nom+b.rang);
-						oos.close();
-						i++;
-					}
-					lecteurFichier.close();
+				} catch(FileNotFoundException fe) {
+					System.out.println("erreur: fichier competence introuvable");
 				}
 			}
-		} catch(IOException e) {
-			System.out.println("erreur avec un des fichiers de compétence physique distance");
-		}
-		// On réalise exactement la même chose pour les compétences de type physique à mêlée
-		try {
-			File initial = new File ("Autre/competence/physique/melee");
-			if(initial.isDirectory()) {
-				for (File f : initial.listFiles()) {
-					FileReader fichier = new FileReader(f);
-					BufferedReader lecteurFichier = new BufferedReader(fichier);
-					String ligne;
-					while(((ligne = lecteurFichier.readLine()) != null)) {
-						Competence c = new Competence(ligne);
-						ListeCompetence.add(c);
-					}
-					int i=0;
-					for (Competence b : ListeCompetence) {
-						File fichierSer = new File("Autre/dossierConfig/competence/competenceSerializerMelee"+i);
-						ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichierSer));
-						oos.writeObject(b);
-						System.out.println("Creation d'une competence Serializer :" + b.nom);
-						oos.close();
-						i++;
-					}
-					lecteurFichier.close();
-				}
-			}
-		} catch(IOException e) {
-			System.out.println("erreur avec un des fichiers de compétence physique mêlée");
+		}catch (ClassNotFoundException Ce) {
+			System.out.println("erreur class pour competence introuvable");
 		}
 	}
 

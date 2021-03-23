@@ -5,7 +5,7 @@ Je me suis occupé de la fonction permettant d'écrire les informations dans un 
 
 
 Michael Pariche:
-Je me suis principalement occupé de l'interface graphique qui comporte les classes Fenetre, MenuPrincipal, EcranJeu, BarreAction, Parchemin, ImagePanel qui se chargent de l'interaction avec l'utilisateur. J'ai réalisé les différents panels pour le menu et l'écran de jeu avec les composants nécessaires pour l'interaction.
+Je me suis principalement occupé de l'interface graphique qui comporte les classes Fenetre, MenuPrincipal, EcranJeu, BarreAction, Parchemin, ImagePanel, PanneauAdv, StatAdv qui se chargent de l'interaction avec l'utilisateur. J'ai réalisé les différents panels pour le menu et l'écran de jeu avec les composants nécessaires pour l'interaction. J'ai également fais en sorte qu'on puisse visualiser ce qui se passe dans le jeu comme par exemple la santé de l'adversaire avec PanneauAdv ou le déroulement des combat avec la classe Parchemin. 
 
 
 Benjamin Combe:

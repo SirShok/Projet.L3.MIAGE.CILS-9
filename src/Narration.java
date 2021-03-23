@@ -51,7 +51,7 @@ public class Narration {
 		if (nomE == "victoire") {
 			List<String> victoire = Arrays.asList(new String[]{
 					"Bravo, " +nom+ " ! \n" + "Vous avez gagné \n",
-					"Damn ! " +nom+  " a éclaté son adversaire !\n" + "Vous etes l'heureux gagnant de ce combat \n"});
+					"Damn ! " +nom+  " a d�fait son adversaire !\n" + "Vous etes l'heureux gagnant de ce combat \n"});
 			String select = victoire.get(new Random().nextInt(victoire.size()));
 			System.out.println("victoire\n");
 			return select;

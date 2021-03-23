@@ -7,7 +7,9 @@ public class Individu {
 	public String nom;
 	public int pv, mana, armure = 0, agilite, force, constitution, sagesse, perception, charisme, chance;
 	private Equipement[] equipement = new Equipement[tailleEquipement]; int nbMainL = 2; 	//désigne l'équipement et le nombre de main libres restantes
+	private Competence[] competence = new Competence[4];
 	private boolean equipArmure = false;	//indique si l'individu porte une armure
+	private Competence[] competence = new Competence(4);
 	
 	public Individu(String n, int ag, int f, int co, int s, int p, int ca, int ch) {
 		nom = n;
@@ -176,14 +178,85 @@ public class Individu {
 		return l;
 	}
 	
-	public static Equipement[] armeEquip(Individu ind){
+	public Equipement[] armeEquip(){
 		Equipement[] res = new Equipement[2];
 		int i = 0;
-		for(Equipement e: ind.equipement){
-			if(e.type == "arme"){
+		for(Equipement e: equipement){
+			if((e != null)&&(e.type == "arme")){
 				res[i++] = e;
 			}
 		}
 		return res;
 	}
-}
+	
+	public Individu(int n){
+		equipArmure = true;
+		switch (n){
+			case 1:
+				nom = "Chevalier";
+				force = 30;
+				agilite = 5;
+				sagesse = 10;
+				perception = 5;
+				constitution = 30;
+				charisme = 15;
+				chance = 20;
+				pv = pvMax();
+				mana = manaMax();
+				equiper(Equipement("epee a 2 mains rouille;8;0;0;0;2;1;arme;"));
+				equiper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence[0] = Competence("Coup simple",1,"FOR",1,1,0,"coup infligeant des dégat normaux.","degat",2,"physique");
+				competence[1] = Competence("Estoc",1,"FOR",1,1,5,"Coup précis attaquant avec la pointe de la lame ignore 5 point d'armure.","degat",1,"physique");
+				break;
+			case 2:
+				nom = "Archer";
+				force = 5;
+				agilite = 30;
+				sagesse = 5;
+				perception = 30;
+				constitution = 10;
+				charisme = 10;
+				chance = 20;
+				pv = pvMax();
+				mana = manaMax();
+				equiper(Equipement("Arc use;6;0;0;2;2;1;arme;"));
+				equiper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence[0] = Competence("tir simple",1,"AGI",1,1,0,"tir infligeant des dégâts normaux","degat",6,"physique");
+				competence[1] = Competence("tir précis",1,"AGI",1,1,5,"tir ignorant 5 points d'armure","degat",5,"physique");
+				break;
+			case 3:
+				nom = "Pretre";
+				force = 30;
+				agilite = 5;
+				sagesse = 30;
+				perception = 10;
+				constitution = 20;
+				charisme = 10;
+				chance = 20;
+				pv = pvMax();
+				mana = manaMax();
+				equiper(Equipement("epee rouille;4;0;0;0;1;1;arme;"));
+				equiper(Equipement("Baguette use;0;2;0;0;1;1;arme;"));
+				equiper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence[0] = Competence("Coup simple",1,"FOR",1,1,0,"coup infligeant des dégat normaux.","degat",3,"physique");
+				competence[1] = Competence("Boule de feu",1,"SAG",1,1,999,"envoi une boule de feux brulant l'ennemi, infligeant SAG/2 DM coute 5 PM.","degat",11,"feu");
+				competence[2] = Competence("Soint sacré",1,"SAG",1,1,0,"fais appels a la puissance de la lumière pour restauré votre corps, soigne SAG/2 PV, cout 5 PM.","soint",18,"lumiere");
+				break;
+			case 4:
+				nom = "Magicien";
+				force = 5;
+				agilite = 10;
+				sagesse = 30;
+				perception = 20;
+				constitution = 15;
+				charisme = 10;
+				chance = 30;
+				pv = pvMax();
+				mana = manaMax();
+				equiper(Equipement("Baton use;0;4;0;0;2;1;arme;"));
+				equiper(Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence[0] = Competence("Boule de feu",1,"SAG",1,1,999,"envoi une boule de feux brulant l'ennemi, infligeant SAG/2 DM coute 5 PM.","degat",11,"feu");
+				competence[1] = Competence("Sacralisation",1,"SAG",1,1,999,"fais appels a la puissance de la lumière pour purifier l'ennemis, inflige SAG/2 DM, cout 5 PM.","degat",17,"lumiere");
+				break;
+		}
+	}

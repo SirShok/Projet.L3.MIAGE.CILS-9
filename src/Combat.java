@@ -1,48 +1,114 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Combat {
 	//prend deux types et renvoie le facteur de dégâts correspondant
-	public static int faiblesse (String type1, String type2) {
-		switch(type1) {
-			case "lumiere":	if(type2.equals("lumiere")||type2.equals("tenebres")||type2.equals("physique")) return 1;
-					return 1/2;
-			case "tenebres":	if(type2.equals("lumiere")||type2.equals("tenebres")||type2.equals("physique")) return 1;
-						return 2;
-			case "feu":	if(type2.equals("vent")||type2.equals("tenebres")) return 2;
-					if(type2.equals("lumiere")||type2.equals("eau")) return 1/2;
-					return 1;
-			case "eau":	if(type2.equals("feu")||type2.equals("tenebres")) return 2;
-					if(type2.equals("lumiere")||type2.equals("terre")) return 1/2;
-					return 1;
-			case "terre":	if(type2.equals("eau")||type2.equals("tenebres")) return 2;
-					if(type2.equals("lumiere")||type2.equals("feu")) return 1/2;
-					return 1;
-			case "vent":	if(type2.equals("terre")||type2.equals("tenebres")) return 2;
-					if(type2.equals("lumiere")||type2.equals("feu")) return 1/2;
-					return 1;
-			case "physique": return 1;
+	//typeO désigne le type de l'attaquant (type offensif)
+	//typeD désigne le type du défenseur (type défensif)
+	public static int faiblesse (String typeO, String typeD) {
+		switch(typeO) {
+		case "lumiere":	if(typeD.equals("lumiere")||typeD.equals("tenebres")||typeD.equals("physique")) return 1;
+		return 1/2;
+		case "tenebres":	if(typeD.equals("lumiere")||typeD.equals("tenebres")||typeD.equals("physique")) return 1;
+		return 2;
+		case "feu":	if(typeD.equals("vent")||typeD.equals("tenebres")) return 2;
+		if(typeD.equals("lumiere")||typeD.equals("eau")) return 1/2;
+		return 1;
+		case "eau":	if(typeD.equals("feu")||typeD.equals("tenebres")) return 2;
+		if(typeD.equals("lumiere")||typeD.equals("terre")) return 1/2;
+		return 1;
+		case "terre":	if(typeD.equals("eau")||typeD.equals("tenebres")) return 2;
+		if(typeD.equals("lumiere")||typeD.equals("feu")) return 1/2;
+		return 1;
+		case "vent":	if(typeD.equals("terre")||typeD.equals("tenebres")) return 2;
+		if(typeD.equals("lumiere")||typeD.equals("feu")) return 1/2;
+		return 1;
+		case "physique": return 1;
 		}
 		System.out.println("erreur avec les types");
 		return 0;
 	}
-	
+
 	// permet de d'appliquer les dégâts subit en un tour (ne prend pas la res élémentaire car les monstre n'en ont pas)
-	public static ArrayList<String> combat(Individu ind, Monstre m, Competence c){
+	public static String combat(Individu ind, Monstre m, Competence c){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(ind,c);
 		int n = DM.size()/2;
-		for(Equipement e: Individu.armeEquip(ind)){
-			for(int i = 0; i<n; i++){
-				if(0 < DM.get(i)-(m.PA-(c.perca+(e.perceArmure)))){
-					m.HP = m.HP-(DM.get(i)-(m.PA-(c.perca+(e.perceArmure))));
-					DM.remove(i);
+		String res;
+		int PA;
+		ind.mana = ind.mana - c.cout;
+		if(c.effet == "degat"){
+			int degat;
+			for(Equipement e: ind.armeEquip()){
+				if(e != null){
+					PA = m.PA-(c.perca+(e.perceArmure));
+					if(PA < 0) PA = 0;
+					for(int i = 0; i<n; i++){
+						if(0 < DM.get(i)-PA){
+							degat = DM.get(i)-PA;
+						}
+						DM.remove(i);
+					}
 				}
 			}
+			degat = degat*faiblesse(c.type,m.Affinite);
+			m.HP = m.HP-degat;
+			res = Narration.affiche(ind.nom, c.nom, degat);
+			if (m.HP <= 0){
+				res = res+"\n"+Narration.affiche(ind.nom, "victoire", degat);
+				return(res);
+			}
+		}
+		if(c.effet == "soin"){
+			ArrayList<Integer> soin = new ArrayList<Integer>();
+			soin = Competence.Degat(ind,c);
+			ind.pv += soin.get(0);
+			if(ind.pv > ind.pvMax()){
+				ind.pv = ind.pvMax();
+			}								//rajouter phrase soin dans natation
+		}
+		if(c.effet == "bouclier"){
+			ArrayList<Integer> soin = new ArrayList<Integer>();
+			soin = Competence.Degat(ind,c);
+			ind.pv += soin.get(0);			//rajouter phrase bouclier dans natation
 		}
 		if(m.PD-ind.armure > 0){
-			ind.pv = ind.pv-(m.PD-ind.armure);
+			ind.pv = ind.pv-(m.PD-ind.armure);	//rajouter phrase attaque monstre dans natation
 		}
-		ArrayList<String> res = new ArrayList<String>();
+		if (ind.pv <= 0){
+			res = res+"\n"+Narration.affiche(ind.nom, "defaite", degat);	//rajouter phrase defaite dans natation
+		}
 		return(res);
 	}
+	
+	//methode qui recupere et retourne un monstre en fonction du nombres
+	//de combat gagne et du nombre de combat maximal
+	public static Monstre SelectM(ArrayList<Monstre> m, int n, int nt) {
+		if (n == nt/2) {
+			Monstre select = m.get(5 + new Random().nextInt(7 - 5));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		}
+		if (n == nt) {
+			Monstre select = m.get(10 + new Random().nextInt(12 - 10));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		}
+		if (n == 1) {
+			Monstre select = m.get(new Random().nextInt(n+2));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		}
+		if (n >= (m.size())-2) {
+			Monstre select = m.get(new Random().nextInt(m.size()));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		} else {
+			Monstre select = m.get(new Random().nextInt(n));
+			System.out.println("Monstre selectionne\n");
+			return select;
+		}
+		
+	}
 }
+

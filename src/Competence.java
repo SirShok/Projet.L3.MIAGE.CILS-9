@@ -22,18 +22,17 @@ public class Competence implements Serializable{
 
     // prend en entrée un string dans le fichier competence.txt et remplie une instance de classe Competence
     //attention! Cette classe ne calculeraa pas les dégâts, elle prendra justes ceux définies par la compétence
-    public Competence (String c){
-        String[] tab = c.split(";");
-        nom = tab[0];
-        rang = Integer.parseInt(tab[1]);
-        stat = tab[2];
-        nbCoup = Integer.parseInt(tab[3]);
-        degat = Integer.parseInt(tab[4]);
-        perca = Integer.parseInt(tab[5]);
-        description = tab[6];
-        effet = tab[7];
-        id = Integer.parseInt(tab[8]);
-        type = tab[9];
+    public Competence (String name0, int rangc1, String statc2, int nbc3,int degatc4,int percac5, String descriptionc6,String effetc7,int idc8,String typec9){
+        nom = name0;
+        rang = rangc1;
+        stat = statc2;
+        nbCoup = nbc3;
+        degat = degatc4;
+        perca = percac5;
+        description = descriptionc6;
+        effet = effetc7;
+        id = idc8;
+        type = typec9;
     }
     
     // comme on ne peut pas stocker des fonctions dans un String, on attribue un chiffre à chacune 

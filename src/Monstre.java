@@ -38,7 +38,7 @@ public class Monstre implements Serializable {
 	public void appliquerDegat(int degat){
 		this.HP = this.HP - degat;
 	}
-	
+
 	public void PrintMonstre() {
 		System.out.println(this.Nom+" ");
 		System.out.println(this.HP+" HP");
