@@ -64,11 +64,14 @@ public class Combat {
 		if(c.effet.equals("soin")){
 			ArrayList<Integer> soin = new ArrayList<Integer>();
 			soin = Competence.Degat(ind,c);
+			int pvA = ind.pv;
 			ind.pv += soin.get(0);
 			if(ind.pv > ind.pvMax()){
 				ind.pv = ind.pvMax();
-				res = res + "\n"+Narration.affiche(ind.nom, "soin", 0,soin.get(0));
-			}								
+			}
+			if(ind.pv > pvA) {
+				res = res + "\n"+Narration.affiche(ind.nom, "soin", 0,ind.pv - pvA);
+			}
 		}
 		if(c.effet.equals("bouclier")){
 			ArrayList<Integer> bouclier = new ArrayList<Integer>();
