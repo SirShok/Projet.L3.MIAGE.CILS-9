@@ -35,7 +35,7 @@ public class Individu {
 	
 	//permet d'equiper un equipement selon plusieurs conditions:
 	//- si c'est un arme, on va verifier qu'il peut la porter
-	//- si c'est une armure, on va verifier qu'il n'en a pas dej�
+	//- si c'est une armure, on va verifier qu'il n'en a pas dejà
 	public void equiper(Equipement e) {
 		System.out.println(e.type);
 		if(e.type.equals("arme")) {
@@ -100,9 +100,9 @@ public class Individu {
 		String r = "";
 		for(int i = 0; i < tailleEquipement; i++) {
 			if(equipement[i] != null) {
-				if(equipement[i].type == "arme") {
+				if(equipement[i].type.equals("arme")) {
 					r = r + "Arme : " + equipement[i].nom + "\n";
-				} else if (equipement[i].type == "armure") {
+				} else if (equipement[i].type.equals("armure")) {
 					r = r + "Armure : " + equipement[i].nom + "\n";
 				} else {
 					System.out.println("type d'equipement incorrect");
@@ -181,7 +181,7 @@ public class Individu {
 		Equipement[] res = new Equipement[2];
 		int i = 0;
 		for(Equipement e: equipement){
-			if((e != null)&&(e.type == "arme")){
+			if((e != null)&&(e.type.equals("arme"))){
 				res[i++] = e;
 			}
 		}
@@ -222,7 +222,7 @@ public class Individu {
 				mana = manaMax();
 				equiper(new Equipement("Arc use",5,0,0,2,2,1,"arme"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
-				competence[0] = new Competence("tir simple",1,"AGI",1,1,0,"tir infligeant des degâts normaux","degat",6,"physique");
+				competence[0] = new Competence("tir simple",1,"AGI",1,1,0,"tir infligeant des degÃ¢ts normaux","degat",6,"physique");
 				competence[1] = new Competence("tir precis",1,"AGI",1,1,5,"tir ignorant 5 points d'armure","degat",5,"physique");
 
 				break;
