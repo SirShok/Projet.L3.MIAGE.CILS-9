@@ -68,7 +68,7 @@ public class Fichier {
 						}
 						lecteurFichier.close();
 					} catch(IOException e) {
-						System.out.println("erreur avec le fichier config");
+						System.out.println("erreur sur la serialization des monstre du fichier config");
 					}
 				} catch(FileNotFoundException fe) {
 					System.out.println("erreur: fichier config introuvable");
