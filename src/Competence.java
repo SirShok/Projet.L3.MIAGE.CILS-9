@@ -198,7 +198,7 @@ public class Competence implements Serializable{
                 for(Competence e: CompetenceBouclier){
                     if(e.rang == 1) competenceB.add(e);
                 }
-                res[1] = competenceS.get(new Random().nextInt(competenceS.size()));
+                res[1] = competenceB.get(new Random().nextInt(competenceB.size()));
 
                 for(Competence e: CompetenceDegat){
                     if(e.rang == 2) competenceMD.add(e);
@@ -214,15 +214,15 @@ public class Competence implements Serializable{
                 }
                 res[0] = competenceMD.get(new Random().nextInt(competenceMD.size()));
                 do{
-                    res[1] = competenceC.get(new Random().nextInt(competenceC.size()));
+                    res[1] = competenceMD.get(new Random().nextInt(competenceMD.size()));
                 }while(res[0] == res[1]);
                 do{
-                    res[2] = competenceC.get(new Random().nextInt(competenceC.size()));
+                    res[2] = competenceMD.get(new Random().nextInt(competenceMD.size()));
                 }while((res[0] == res[2])||(res[1] == res[2]));
                 for(Competence e: CompetenceBouclier){
                     if(e.rang == 1) competenceB.add(e);
                 }
-                res[3] = competenceS.get(new Random().nextInt(competenceS.size()));
+                res[3] = competenceB.get(new Random().nextInt(competenceB.size()));
                 break;
         }
         return res;

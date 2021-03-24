@@ -33,6 +33,10 @@ public class Individu {
 		return sagesse*2;
 	}
 	
+	public Competence getCompetence(int i) {
+		return competence[i];
+	}
+	
 	//permet d'equiper un equipement selon plusieurs conditions:
 	//- si c'est un arme, on va verifier qu'il peut la porter
 	//- si c'est une armure, on va verifier qu'il n'en a pas dejà
