@@ -44,9 +44,9 @@ public class BarreAction extends ImagePanel{
 		capBouton1.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append("\nComp Simple");
+				par.getTextArea().append("\ncompétence HG");
 				//c.combat(i, padv.getMonster(), cap1);
-				System.out.println("Coup Simple");
+				System.out.println("compétence HG");
 			}
 		});
 		
@@ -60,9 +60,9 @@ public class BarreAction extends ImagePanel{
 		capBouton2.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append("\nEstoc");
+				par.getTextArea().append("\ncompétence HD");
 				//c.combat(i, padv.getMonster(), cap2);
-				System.out.println("Estoc");
+				System.out.println("compétence HD");
 			}
 		});
 		
@@ -76,9 +76,9 @@ public class BarreAction extends ImagePanel{
 		capBouton3.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append("\nAttaque double");
+				par.getTextArea().append("\ncompétence BG");
 				//c.combat(i, padv.getMonster(), cap3);
-				System.out.println("Attaque double");
+				System.out.println("compétence BG");
 			}
 		});
 		
@@ -92,9 +92,9 @@ public class BarreAction extends ImagePanel{
 		capBouton4.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append("\nAttaque triple");
+				par.getTextArea().append("\ncompétence BD");
 				//c.combat(i, padv.getMonster(), cap4);
-				System.out.println("Attaque triple");
+				System.out.println("compétence BD");
 			}
 		});
 		
