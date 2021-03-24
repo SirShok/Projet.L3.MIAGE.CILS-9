@@ -14,7 +14,7 @@ public class Main {
 		Fichier.LectureCompetence(listeCompetence);
 		System.out.print(Narration.afficheCompetence("Le joueur ", listeCompetence.get(120).nom, 15));
 		//Fenetre f=new Fenetre(bestiaire, listeCompetence);
-		//Fenetre f=new Fenetre();
+		Fenetre f=new Fenetre();
 		/*int nbCombT = 4; //nombre de combat total
 		Individu ind = null;
 		int nbCombat = 1; //numéro de combat

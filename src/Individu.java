@@ -3,10 +3,10 @@ import java.util.*;
 
 public class Individu {
 	public static int tailleEquipement = 3;
-	//caractéristiques de l'individu
+	//caracteristiques de l'individu
 	public String nom;
 	public int pv, mana, armure = 0, agilite, force, constitution, sagesse, perception, charisme, chance;
-	private Equipement[] equipement = new Equipement[tailleEquipement]; int nbMainL = 2; 	//désigne l'équipement et le nombre de main libres restantes
+	private Equipement[] equipement = new Equipement[tailleEquipement]; int nbMainL = 2; 	//designe l'equipement et le nombre de main libres restantes
 	private Competence[] competence = new Competence[4];
 	private boolean equipArmure = false;	//indique si l'individu porte une armure
 	
@@ -33,11 +33,12 @@ public class Individu {
 		return sagesse*2;
 	}
 	
-	//permet d'équiper un équipement selon plusieurs conditions:
-	//- si c'est un arme, on va vérifier qu'il peut la porter
-	//- si c'est une armure, on va vérifier qu'il n'en a pas déjà
+	//permet d'equiper un equipement selon plusieurs conditions:
+	//- si c'est un arme, on va verifier qu'il peut la porter
+	//- si c'est une armure, on va verifier qu'il n'en a pas dejà
 	public void equiper(Equipement e) {
-		if(e.type == "arme") {
+		System.out.println(e.type);
+		if(e.type.equals("arme")) {
 			if(nbMainL <= e.nbMain) {
 				nbMainL = nbMainL - e.nbMain;
 			}
@@ -47,11 +48,11 @@ public class Individu {
 					return;
 				}
 			}
-			System.out.println("erreur: impossible d'équiper l'équipement");
+			System.out.println("erreur: impossible d'equiper l'equipement");
 			System.exit(-1);
-		}else if(e.type == "armure") {
-			if(equipArmure == true) {
-				System.out.println("erreur: impossible d'équiper l'équipement");
+		}else if(e.type.equals("armure")) {
+			if(equipArmure) {
+				System.out.println("erreur: impossible d'equiper l'equipement");
 				System.exit(-1);
 			} else {
 				equipArmure = true;
@@ -61,18 +62,18 @@ public class Individu {
 						return;
 					}
 				}
-				System.out.println("erreur: impossible d'équiper l'équipement");
+				System.out.println("erreur: impossible d'equiper l'equipement");
 				System.exit(-1);
 			}	
 			
 		} else {
-			System.out.println("type d'équipement incorrect");
+			System.out.println("type d'equipement incorrect");
 			System.exit(-1);
 		}
 
 	}
 	
-	//permet de déséquiper un équipement
+	//permet de desequiper un equipement
 	public void desequiper(Equipement e) {
 		for(int i = 0; i < tailleEquipement; i++) {
 			if((equipement[i] != null)&&(equipement[i].nom == e.nom)) {
@@ -85,16 +86,16 @@ public class Individu {
 					equipArmure = false;
 					return;
 				} else {
-					System.out.println("type d'Ã©quipement incorrect k");
+					System.out.println("type d'equipement incorrect");
 					System.exit(-1);
 				}
 			}
 		}
-		System.out.println("erreur: impossible de déséquiper l'équipement");
+		System.out.println("erreur: impossible de desequiper l'equipement");
 		System.exit(-1);
 	}
 	
-	//permet de voir son équipement ainsi que son type
+	//permet de voir son equipement ainsi que son type
 	public String afficherEquipement() {
 		String r = "";
 		for(int i = 0; i < tailleEquipement; i++) {
@@ -104,7 +105,7 @@ public class Individu {
 				} else if (equipement[i].type == "armure") {
 					r = r + "Armure : " + equipement[i].nom + "\n";
 				} else {
-					System.out.println("type d'Ã©quipement incorrect i");
+					System.out.println("type d'equipement incorrect");
 					System.exit(-1);
 				}
 			}				
@@ -136,7 +137,7 @@ public class Individu {
 		return degat;
 	}
 	
-	//attaque normale avec l'attribut agilité
+	//attaque normale avec l'attribut agilite
 	public int attaqueA(int n) {
 		int degat = 0;
 		for(int i = 0; i < tailleEquipement; i++) {
@@ -189,8 +190,7 @@ public class Individu {
 	
 	public Individu(int n){
 		System.out.println("hello");
-
-		equipArmure = true;
+		
 		switch (n){
 			case 0:
 				nom = "Chevalier";
@@ -205,8 +205,8 @@ public class Individu {
 				mana = manaMax();
 				equiper(new Equipement("epee a 2 mains rouille;8;0;0;0;2;1;arme;"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
-				competence[0] = new Competence("Coup simple",1,"FOR",1,1,0,"coup infligeant des dégat normaux.","degat",2,"physique");
-				competence[1] = new Competence("Estoc",1,"FOR",1,1,5,"Coup précis attaquant avec la pointe de la lame ignore 5 point d'armure.","degat",1,"physique");
+				competence[0] = new Competence("Coup simple",1,"FOR",1,1,0,"coup infligeant des degat normaux.","degat",2,"physique");
+				competence[1] = new Competence("Estoc",1,"FOR",1,1,5,"Coup precis attaquant avec la pointe de la lame ignore 5 point d'armure.","degat",1,"physique");
 
 				break;
 			case 1:
@@ -223,8 +223,8 @@ public class Individu {
 				equiper(new Equipement("Arc use;6;0;0;2;2;1;arme;"));
 				equiper(new Equipement("Arc use",5,0,0,2,2,1,"arme"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
-				competence[0] = new Competence("tir simple",1,"AGI",1,1,0,"tir infligeant des dégÃ¢ts normaux","degat",6,"physique");
-				competence[1] = new Competence("tir précis",1,"AGI",1,1,5,"tir ignorant 5 points d'armure","degat",5,"physique");
+				competence[0] = new Competence("tir simple",1,"AGI",1,1,0,"tir infligeant des degÃ¢ts normaux","degat",6,"physique");
+				competence[1] = new Competence("tir precis",1,"AGI",1,1,5,"tir ignorant 5 points d'armure","degat",5,"physique");
 
 				break;
 			case 2:
@@ -241,9 +241,9 @@ public class Individu {
 				equiper(new Equipement("epee rouille;4;0;0;0;1;1;arme;"));
 				equiper(new Equipement("Baguette use;0;2;0;0;1;1;arme;"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
-				competence[0] = new Competence("Coup simple",1,"FOR",1,1,0,"coup infligeant des dégat normaux.","degat",3,"physique");
+				competence[0] = new Competence("Coup simple",1,"FOR",1,1,0,"coup infligeant des degat normaux.","degat",3,"physique");
 				competence[1] = new Competence("Boule de feu",1,"SAG",1,1,999,"envoi une boule de feux brulant l'ennemi, infligeant SAG/2 DM coute 5 PM.","degat",11,"feu");
-				competence[2] = new Competence("Soint sacré",1,"SAG",1,1,0,"fais appels a la puissance de la lumière pour restauré votre corps, soigne SAG/2 PV, cout 5 PM.","soint",18,"lumiere");
+				competence[2] = new Competence("Soint sacre",1,"SAG",1,1,0,"fais appels a la puissance de la lumiere pour restaure votre corps, soigne SAG/2 PV, cout 5 PM.","soint",18,"lumiere");
 
 				break;
 			case 3:
@@ -260,7 +260,7 @@ public class Individu {
 				equiper(new Equipement("Baton use;0;4;0;0;2;1;arme;"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
 				competence[0] = new Competence("Boule de feu",1,"SAG",1,1,999,"envoi une boule de feux brulant l'ennemi, infligeant SAG/2 DM coute 5 PM.","degat",11,"feu");
-				competence[1] = new Competence("Sacralisation",1,"SAG",1,1,999,"fais appels a la puissance de la lumière pour purifier l'ennemis, inflige SAG/2 DM, cout 5 PM.","degat",17,"lumiere");
+				competence[1] = new Competence("Sacralisation",1,"SAG",1,1,999,"fais appels a la puissance de la lumiere pour purifier l'ennemis, inflige SAG/2 DM, cout 5 PM.","degat",17,"lumiere");
 				
 				break;
 		}
