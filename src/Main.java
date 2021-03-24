@@ -15,15 +15,15 @@ public class Main {
 		
 		//Fenetre f=new Fenetre(bestiaire, listeCompetence);
 		Fenetre f=new Fenetre();
-		/*int nbCombT = 4; //nombre de combat total à laisser?
+		/*int nbCombT = 4; //nombre de combat total
 		Individu ind = null;
 		int nbCombat = 1; //numéro de combat
 		//déroulement du jeu
 		while(nbCombat < 12) {
-			Monstre m = SelectM(bestiaire, nbCombat);
+			Monstre m = SelectM(bestiaire, nbCombat, nbComT);
 			while(ind.pv > 0) {
 				//selection compétence
-				f.getParchemin().getTextArea().append(Combat.combat(ind, m, c))
+				f.getParchemin().getTextArea().append(Combat.combat(ind, m, c));
 			}
 		}*/
 	}
