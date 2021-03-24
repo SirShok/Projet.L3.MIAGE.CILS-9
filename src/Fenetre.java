@@ -56,4 +56,8 @@ public class Fenetre extends JFrame{
 		this.repaint();
 		this.setVisible(true);
 	}
+	
+	public EcranJeu getEcranJeu(){
+		return ingame;
+	}
 }
