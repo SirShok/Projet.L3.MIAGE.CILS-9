@@ -20,7 +20,7 @@ public class Main {
 		int nbCombat = 1; //numéro de combat
 		//déroulement du jeu
 		while(nbCombat < 12) {
-			Monstre m = SelectM(bestiaire, nbCombat, nbCombT);
+			Monstre m = Combat.SelectM(bestiaire, nbCombat, nbCombT);
 			while(ind.pv > 0) {
 				//selection compétence
 				f.getParchemin().getTextArea().append(Combat.combat(ind, m, c));
