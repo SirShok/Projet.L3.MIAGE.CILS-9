@@ -154,7 +154,7 @@ public static Competence[] compDisp(int n){
         switch(n){
             case 0: //chevalier
                 for(Competence e: CompetenceCorpACorp){
-                    if(e.rang == 2) competenceC.add(e);
+                    if((e.rang == 2)&&(e.stat.equals("FOR"))) competenceC.add(e);
                 }
                 res[0] = competenceC.get(new Random().nextInt(competenceC.size()));
                 do{
@@ -192,7 +192,7 @@ public static Competence[] compDisp(int n){
                 break;
             case 2: //pretre
                 for(Competence e: CompetenceCorpACorp){
-                    if(e.rang == 1) competenceC.add(e);
+                    if((e.rang == 1)&&(e.stat.equals("FOR"))) competenceC.add(e);
                 }
                 res[0] = competenceC.get(new Random().nextInt(competenceC.size()));
 
