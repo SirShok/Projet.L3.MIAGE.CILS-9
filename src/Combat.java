@@ -33,7 +33,6 @@ public class Combat {
 	public static String combat(Individu ind, Monstre m, Competence c){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(ind,c);
-		System.out.println(DM.size());
 		String res = null;
 		int PA;
 		ind.mana = ind.mana - c.cout;
@@ -54,21 +53,15 @@ public class Combat {
 				System.out.print("\ndegat0 =" + degat);
 				DM.remove(0);
 			}
-			System.out.print("\ndegat1 =" + degat);
-			System.out.println("faiblesse =" + faiblesse(c.type,m.Affinite));
-			System.out.println("degat2 =" + (((float) degat)*faiblesse(c.type,m.Affinite)));
-			System.out.println("HP m = " + m.HP);
 			degat =(int) (((double) degat)*faiblesse(c.type,m.Affinite));
-			System.out.println("\ndegat3 = " + degat);
 			m.HP = m.HP-degat;
-			System.out.println("HP m = " + m.HP);
 			res = "\n" + Narration.afficheCompetence(ind.nom, c.nom, degat);
 			if (m.HP <= 0){
 				res = res+"\n"+Narration.affiche(ind.nom, "victoire", 0,0);
 				return(res);
 			}
 		}
-		if(c.effet == "soin"){
+		if(c.effet.equals("soin")){
 			ArrayList<Integer> soin = new ArrayList<Integer>();
 			soin = Competence.Degat(ind,c);
 			ind.pv += soin.get(0);
@@ -77,7 +70,7 @@ public class Combat {
 				res = res + "\n"+Narration.affiche(ind.nom, "soin", 0,soin.get(0));
 			}								
 		}
-		if(c.effet == "bouclier"){
+		if(c.effet.equals("bouclier")){
 			ArrayList<Integer> bouclier = new ArrayList<Integer>();
 			bouclier = Competence.Degat(ind,c);
 			ind.pv += bouclier.get(0); 
