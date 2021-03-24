@@ -5,23 +5,23 @@ public class Combat {
 	//prend deux types et renvoie le facteur de dégâts correspondant
 	//typeO désigne le type de l'attaquant (type offensif)
 	//typeD désigne le type du défenseur (type défensif)
-	public static int faiblesse (String typeO, String typeD) {
+	public static double faiblesse (String typeO, String typeD) {
 		switch(typeO) {
 		case "lumiere":	if(typeD.equals("lumiere")||typeD.equals("tenebres")||typeD.equals("physique")) return 1;
-		return 1/2;
+		return 1.0/2;
 		case "tenebres":	if(typeD.equals("lumiere")||typeD.equals("tenebres")||typeD.equals("physique")) return 1;
 		return 2;
 		case "feu":	if(typeD.equals("vent")||typeD.equals("tenebres")) return 2;
-		if(typeD.equals("lumiere")||typeD.equals("eau")) return 1/2;
+		if(typeD.equals("lumiere")||typeD.equals("eau")) return 1.0/2;
 		return 1;
 		case "eau":	if(typeD.equals("feu")||typeD.equals("tenebres")) return 2;
-		if(typeD.equals("lumiere")||typeD.equals("terre")) return 1/2;
+		if(typeD.equals("lumiere")||typeD.equals("terre")) return 1.0/2;
 		return 1;
 		case "terre":	if(typeD.equals("eau")||typeD.equals("tenebres")) return 2;
-		if(typeD.equals("lumiere")||typeD.equals("feu")) return 1/2;
+		if(typeD.equals("lumiere")||typeD.equals("feu")) return 1.0/2;
 		return 1;
 		case "vent":	if(typeD.equals("terre")||typeD.equals("tenebres")) return 2;
-		if(typeD.equals("lumiere")||typeD.equals("feu")) return 1/2;
+		if(typeD.equals("lumiere")||typeD.equals("feu")) return 1.0/2;
 		return 1;
 		case "physique": return 1;
 		}
@@ -33,27 +33,29 @@ public class Combat {
 	public static String combat(Individu ind, Monstre m, Competence c){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(ind,c);
-		int n = DM.size()/2;
 		String res = null;
 		int PA;
 		ind.mana = ind.mana - c.cout;
 		int degat = 0;
+		int j = 0, n = DM.size();
 		if(c.effet.equals("degat")){
-			for(Equipement e: ind.armeEquip()){
-				if(e != null){
-					PA = m.PA-(c.perca+(e.perceArmure));
-					if(PA < 0) PA = 0;
-					for(int i = 0; i<n; i++){
-						if(0 < DM.get(i)-PA){
-							degat = DM.get(i)-PA;
-						}
-						DM.remove(i);
-					}
+			Equipement[] e = ind.armeEquip();
+			PA = m.PA-(c.perca+(e[j].perceArmure));
+			if(PA < 0) PA = 0;
+			while(DM.size() > 0){
+				if(0 < DM.get(0)-PA){
+					degat = degat + DM.get(0)-PA;
+					System.out.print("\ndegat =" + degat);
 				}
+				if((n/2 == DM.size())&&(e[j + 1] != null)){
+					j = j + 1;
+				}
+				System.out.print("\ndegat0 =" + degat);
+				DM.remove(0);
 			}
-			degat = degat*faiblesse(c.type,m.Affinite);
+			degat =(int) (((double) degat)*faiblesse(c.type,m.Affinite));
 			m.HP = m.HP-degat;
-			res = Narration.afficheCompetence(ind.nom, c.nom, degat);
+			res = "\n" + Narration.afficheCompetence(ind.nom, c.nom, degat);
 			if (m.HP <= 0){
 				res = res+"\n"+Narration.affiche(ind.nom, "victoire", 0,0);
 				return(res);
@@ -75,7 +77,9 @@ public class Combat {
 			res = res + "\n"+Narration.affiche(ind.nom, "bouclier", 0,bouclier.get(0)); 
 		}
 		if(m.PD-ind.armure > 0){
+			System.out.println("pv =" + ind.pv);
 			ind.pv = ind.pv-(m.PD-ind.armure);	//rajouter phrase attaque monstre dans natation
+			System.out.println("pv =" + ind.pv);
 			
 		}
 		if (ind.pv <= 0){

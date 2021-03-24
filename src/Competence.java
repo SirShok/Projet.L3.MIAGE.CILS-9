@@ -1,6 +1,7 @@
 import java.util.*;
 import java.io.Serializable;
 import java.util.Random;
+
 public class Competence implements Serializable{
     /**
 	 * 
@@ -41,7 +42,7 @@ public class Competence implements Serializable{
         ArrayList<Integer> degat = new ArrayList<Integer>(); 
         int d = comp.degat;
         String s = comp.stat;
-        int c = comp.cout;
+        int c = comp.nbCoup;
         int rang = comp.rang;
         switch(d){
             case 1:
@@ -68,7 +69,7 @@ public class Competence implements Serializable{
                     degat.add((int)((ind.attaqueA(2))*(((rang-1)*0.2)+1))); 
                 }
                 if(s.equals("SAG")){
-                    for(int i = 0; i<=rang; i++){
+                    for(int i = 0; i<rang; i++){
                         degat.add(ind.sagesse/2);
                     }
                     degat = ind.attaqueM(degat);
@@ -117,7 +118,7 @@ public class Competence implements Serializable{
         comp.DM =  degat;
         return degat;
     }
-    public static Competence[] compDisp(int n){
+public static Competence[] compDisp(int n){
         ArrayList<Competence> CompetencePhysique = new ArrayList<Competence>();
         ArrayList<Competence> CompetenceDistance = new ArrayList<Competence>();
         ArrayList<Competence> CompetenceCorpACorp = new ArrayList<Competence>();
@@ -159,7 +160,7 @@ public class Competence implements Serializable{
                 do{
                     res[1] = competenceC.get(new Random().nextInt(competenceC.size()));
                 }while(res[0] == res[1]);
-               
+
                 for(Competence e: CompetenceSoin){
                     if(e.rang == 1) competenceS.add(e);
                 }
@@ -178,7 +179,7 @@ public class Competence implements Serializable{
                 do{
                     res[1] = competenceD.get(new Random().nextInt(competenceD.size()));
                 }while(res[0] == res[1]);
-               
+
                 for(Competence e: CompetenceSoin){
                     if(e.rang == 1) competenceS.add(e);
                 }
