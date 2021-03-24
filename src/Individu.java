@@ -218,7 +218,6 @@ public class Individu {
 				chance = 20;
 				pv = pvMax();
 				mana = manaMax();
-				equiper(new Equipement("Arc use;6;0;0;2;2;1;arme;"));
 				equiper(new Equipement("Arc use",5,0,0,2,2,1,"arme"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
 				competence[0] = new Competence("tir simple",1,"AGI",1,1,0,"tir infligeant des dégâts normaux","degat",6,"physique");
