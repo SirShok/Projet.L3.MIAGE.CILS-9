@@ -89,14 +89,17 @@ public class Combat {
 	public static Monstre SelectM(ArrayList<Monstre> m, int n, int nt) {
 		if (n == nt/2) {
 			Monstre select = m.get(5 + new Random().nextInt(7 - 5));
+			System.out.println("Monstre selectionne\n");
 			return select;
 		}
 		if (n == nt) {
 			Monstre select = m.get(10 + new Random().nextInt(12 - 10));
+			System.out.println("Monstre selectionne\n");
 			return select;
 		}
 		if (n == 1) {
 			Monstre select = m.get(new Random().nextInt(n+2));
+			System.out.println("Monstre selectionne\n");
 			return select;
 		}
 		if (n >= (m.size())-2) {
