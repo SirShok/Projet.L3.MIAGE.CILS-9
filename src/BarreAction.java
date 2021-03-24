@@ -31,7 +31,6 @@ public class BarreAction extends ImagePanel{
 		ImageIcon bouton=new ImageIcon("Autre/images/bouton.png");
 		Dimension dimBouton=new Dimension(bouton.getIconWidth(), bouton.getIconHeight());
 		Font caligraphie=new Font("Nine By Five NBP", Font.PLAIN, 40);
-		Combat c=new Combat();
 		
 		//Boutons de capacite
 		capBouton1=new JButton("");
@@ -130,37 +129,37 @@ public class BarreAction extends ImagePanel{
 		
 		Font caligraphieSmall=new Font("Nine By Five NBP", Font.PLAIN, 32);
 		
-		JLabel agil=new JLabel("Agilité :"+i.agilite);
+		JLabel agil=new JLabel("Agilité : "+i.agilite);
 		agil.setFont(caligraphieSmall);
 		agil.setForeground(Color.white);
 		agil.setBounds(800, 70, agil.getPreferredSize().width, agil.getPreferredSize().height);
 		
-		JLabel forc=new JLabel("Force :"+i.force);
+		JLabel forc=new JLabel("Force : "+i.force);
 		forc.setFont(caligraphieSmall);
 		forc.setForeground(Color.white);
 		forc.setBounds(800, 110, forc.getPreferredSize().width, forc.getPreferredSize().height);
 		
-		JLabel cons=new JLabel("Constitution :"+i.constitution);
+		JLabel cons=new JLabel("Constitution : "+i.constitution);
 		cons.setFont(caligraphieSmall);
 		cons.setForeground(Color.white);
 		cons.setBounds(800, 150, cons.getPreferredSize().width, cons.getPreferredSize().height);
 		
-		JLabel sage=new JLabel("Sagesse :"+i.sagesse);
+		JLabel sage=new JLabel("Sagesse : "+i.sagesse);
 		sage.setFont(caligraphieSmall);
 		sage.setForeground(Color.white);
 		sage.setBounds(1000, 70, sage.getPreferredSize().width, sage.getPreferredSize().height);
 		
-		JLabel perc=new JLabel("Perception :"+i.perception);
+		JLabel perc=new JLabel("Perception : "+i.perception);
 		perc.setFont(caligraphieSmall);
 		perc.setForeground(Color.white);
 		perc.setBounds(1000, 110, perc.getPreferredSize().width, perc.getPreferredSize().height);
 		
-		JLabel chari=new JLabel("Charisme :"+i.charisme);
+		JLabel chari=new JLabel("Charisme : "+i.charisme);
 		chari.setFont(caligraphieSmall);
 		chari.setForeground(Color.white);
 		chari.setBounds(1000, 150, chari.getPreferredSize().width, chari.getPreferredSize().height);
 		
-		JLabel chan=new JLabel("Chance :"+i.chance);
+		JLabel chan=new JLabel("Chance : "+i.chance);
 		chan.setFont(caligraphieSmall);
 		chan.setForeground(Color.white);
 		chan.setBounds(1200, 70, chan.getPreferredSize().width, chan.getPreferredSize().height);
