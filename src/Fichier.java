@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 public class Fichier {
 
-	//écrit dans un fichier dit "de sauvegarde" les caractéristiques (juste les stats) de l'individu
+	//Ã©crit dans un fichier dit "de sauvegarde" les caractÃ©ristiques (juste les stats) de l'individu
 	public static void EcrireFichier(Individu i) {
 		Class cl = i.getClass();
 		Field[] fd = cl.getFields();
@@ -31,12 +31,12 @@ public class Fichier {
 			return false;
 		}
 	}
-	//permet de récupérer le fichier de config
+	//permet de rÃ©cupÃ©rer le fichier de config
 	public static void RecuperationConfig(ArrayList<Monstre> bestiaire) throws FileNotFoundException, IOException, ClassNotFoundException{
 		try {
 			File dossierSer = new File("Autre/DossierConfig/ObjetSerializer");
 			if( dossierSer.exists() && dossierSer.isDirectory() && isEmpty(dossierSer)) {
-				for (File f : dossierSer.listFiles()) {		//à enlever
+				for (File f : dossierSer.listFiles()) {		//Ã  enlever
 					ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
 					Monstre m = (Monstre)ois.readObject();
 					System.out.println("lecture d'un objet serializer "+m.Nom);
@@ -53,9 +53,9 @@ public class Fichier {
 					String[] mot;
 					try {
 						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier a une autre ligne 
-							mot=ligne.split(" "); //on sépare la ligne en mot 
-							Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[2]),Integer.parseInt(mot[3]),mot[4]); //on utilise les mots pour créer un objet de type monstre
-							bestiaire.add(m); //ajoute l'objet créé au bestiaire
+							mot=ligne.split(" "); //on sÃ©pare la ligne en mot 
+							Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[2]),Integer.parseInt(mot[3]),mot[4]); //on utilise les mots pour crÃ©er un objet de type monstre
+							bestiaire.add(m); //ajoute l'objet crÃ©Ã© au bestiaire
 						}
 						int i=0;
 						for (Monstre b : bestiaire) {
@@ -68,7 +68,7 @@ public class Fichier {
 						}
 						lecteurFichier.close();
 					} catch(IOException e) {
-						System.out.println("erreur avec le fichier config");
+						System.out.println("erreur sur la serialization des monstre du fichier config");
 					}
 				} catch(FileNotFoundException fe) {
 					System.out.println("erreur: fichier config introuvable");
@@ -78,7 +78,7 @@ public class Fichier {
 			System.out.println("erreur class pour monstre introuvable");
 		}
 	}
-	//permet de récupérer les différents fichier de configuration des Compétences et de les introduire dans la base de donnée Java
+	//permet de rÃ©cupÃ©rer les diffÃ©rents fichier de configuration des CompÃ©tences et de les introduire dans la base de donnÃ©e Java
 	public static void LectureCompetence(ArrayList<Competence> ListeCompetence) throws ClassNotFoundException, IOException, FileNotFoundException {
 		try {
 			File dossierCompSer = new File("Autre/competence/competenceSerializer");
@@ -86,7 +86,7 @@ public class Fichier {
 				for (File f : dossierCompSer.listFiles()) {
 					ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
 					Competence m = (Competence)ois.readObject();
-					System.out.println("lecture d'une compétence serializer "+m.nom+m.rang);
+					System.out.println("lecture d'une compÃ©tence serializer "+m.nom+m.rang);
 					ListeCompetence.add(m);
 					ois.close();
 				}
@@ -104,8 +104,8 @@ public class Fichier {
 							mot = ligne.split(";");
 							System.out.println("Print de "+mot[0]+" "+mot[1]);
 							Competence c = new Competence(mot[0],Integer.parseInt(mot[1]),mot[2],Integer.parseInt(mot[3]),Integer.parseInt(mot[4]),Integer.parseInt(mot[5]),mot[6],mot[7],Integer.parseInt(mot[8]),mot[9]); //on renvoie la ligne au constructeur de Competence
-							ListeCompetence.add(c); //on ajoute la competence Ã  la liste des competences
-							System.out.println("lecture d'une compétence "+c.nom+ "ligne : "+j);
+							ListeCompetence.add(c); //on ajoute la competence ÃƒÂ  la liste des competences
+							System.out.println("lecture d'une compÃ©tence "+c.nom+ "ligne : "+j);
 							j++;
 						}
 						int i=0;

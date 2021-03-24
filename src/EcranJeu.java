@@ -56,4 +56,7 @@ public class EcranJeu extends JPanel{
 	public Parchemin getParchemin(){
 		return parchemin;
 	}
+	public BarreAction getBarreAction() {
+		return barreAction;
+	}
 }
