@@ -18,7 +18,7 @@ public class EcranJeu extends JPanel{
 	private BarreAction barreAction;
 	private PanneauAdv misc=new PanneauAdv(new Monstre("Slime", 150, 50, 20, "eau"));
 	
-	public EcranJeu(Fenetre f){
+	public EcranJeu(Fenetre f, Individu i){
 		//Creation de la zone de texte scrollable
 		parchemin=new Parchemin();
 		
@@ -32,7 +32,7 @@ public class EcranJeu extends JPanel{
 			System.out.println("Unable to fetch image.");
 			ioe.printStackTrace();
 		}
-		barreAction=new BarreAction(img, f, parchemin, Main.joueur, misc);
+		barreAction=new BarreAction(img, f, parchemin, i, misc);
 		
 		
 		//Reglages et ajout des composant

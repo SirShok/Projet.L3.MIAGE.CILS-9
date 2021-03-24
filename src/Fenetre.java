@@ -20,7 +20,6 @@ public class Fenetre extends JFrame{
 		
 		
 		menu=new MenuPrincipal(this);
-		ingame=new EcranJeu(this);
 		creation=new ChoixClasse(this);
 		this.getContentPane().add(menu);
 		this.setVisible(true);
@@ -59,5 +58,9 @@ public class Fenetre extends JFrame{
 	
 	public EcranJeu getEcranJeu(){
 		return ingame;
+	}
+	
+	public void setEcranJeu(EcranJeu ej){
+		ingame=ej;
 	}
 }
