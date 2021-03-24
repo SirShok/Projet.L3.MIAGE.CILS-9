@@ -86,4 +86,10 @@ public class Narration {
 		}
 		return null;
 	}
+	
+	public static String afficheCompetence(String Ind, String c,int degat) {
+		String res = null;
+		res = (" Avec son courage, notre héros utilise : "+c+"  et ainsi inflige : "+degat+" à son terrible adversaire.");
+		return res;
+	}
 }

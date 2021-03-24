@@ -37,7 +37,7 @@ public class Combat {
 		String res = null;
 		int PA;
 		ind.mana = ind.mana - c.cout;
-		int degat;
+		int degat = 0;
 		if(c.effet == "degat"){
 			for(Equipement e: ind.armeEquip()){
 				if(e != null){
@@ -53,7 +53,7 @@ public class Combat {
 			}
 			degat = degat*faiblesse(c.type,m.Affinite);
 			m.HP = m.HP-degat;
-			res = Narration.affiche(ind.nom, c.nom, degat, 0);
+			res = Narration.afficheCompetence(ind.nom, c.nom, degat);
 			if (m.HP <= 0){
 				res = res+"\n"+Narration.affiche(ind.nom, "victoire", 0,0);
 				return(res);
