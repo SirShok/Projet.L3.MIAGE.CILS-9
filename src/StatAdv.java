@@ -50,6 +50,9 @@ public class StatAdv extends ImagePanel{
 		this.add(jaugearmure);
 		this.setBackground(Color.black);
 		this.setBorder(null);
+	}
+	
+	public void setMonsterStats(){
 		
 	}
 }

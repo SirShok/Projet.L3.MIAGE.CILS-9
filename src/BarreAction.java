@@ -23,8 +23,8 @@ public class BarreAction extends ImagePanel{
 	private Competence cap2;
 	private Competence cap3;
 	private Competence cap4;
-	private int pvie;
-	private int parmure;
+	private JLabel vie;
+	private JLabel armure;
 	
 	public BarreAction(BufferedImage img, Fenetre f, Parchemin par, Individu i, PanneauAdv padv){
 		super(img);
@@ -102,14 +102,14 @@ public class BarreAction extends ImagePanel{
 		});
 		
 		//Etat personnage
-		JLabel vie=new JLabel(new ImageIcon("Autre/images/point_de_vie.png"));
+		vie=new JLabel(new ImageIcon("Autre/images/point_de_vie.png"));
 		vie.setText(""+i.pv);
 		vie.setFont(caligraphie);
 		vie.setBorder(BorderFactory.createEmptyBorder());
 		vie.setBounds(600, 35, vie.getPreferredSize().width, vie.getPreferredSize().height);
 		vie.setForeground(Color.white);
 		
-		JLabel armure=new JLabel(new ImageIcon("Autre/images/point_armure.png"));
+		armure=new JLabel(new ImageIcon("Autre/images/point_armure.png"));
 		armure.setText("100");
 		armure.setFont(caligraphie);
 		armure.setBorder(BorderFactory.createEmptyBorder());
@@ -164,6 +164,7 @@ public class BarreAction extends ImagePanel{
 		chan.setForeground(Color.white);
 		chan.setBounds(1200, 70, chan.getPreferredSize().width, chan.getPreferredSize().height);
 		
+		//Bouton de retour au menu principal
 		ImageIcon retourMenu=new ImageIcon("Autre/images/menu_principal.png");
 		JButton menuprinc=new JButton(retourMenu);
 		menuprinc.setBorder(BorderFactory.createEmptyBorder());
@@ -174,7 +175,6 @@ public class BarreAction extends ImagePanel{
 			@Override
             public void actionPerformed(ActionEvent e){
             	f.switchToMenu();
-            	System.out.println("Cliqué");
             }
 		});
 		
@@ -200,6 +200,7 @@ public class BarreAction extends ImagePanel{
 		this.setBorder(null);
 	}
 	
+	//Set les compétences et affiche leur nom sur les boutons
 	public void setBoutonHG(Competence c){
 		cap1=c;
 		capBouton1.setText(c.nom);
@@ -218,5 +219,10 @@ public class BarreAction extends ImagePanel{
 	public void setBoutonBD(Competence c){
 		cap4=c;
 		capBouton4.setText(c.nom);
+	}
+	
+	//Actualise la vie du joueur
+	public void actualiseVie(int nvie){
+		vie.setText(""+nvie);
 	}
 }

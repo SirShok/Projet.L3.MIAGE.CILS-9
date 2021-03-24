@@ -30,7 +30,7 @@ public class Combat {
 	}
 
 	// permet de d'appliquer les dégâts subit en un tour (ne prend pas la res élémentaire car les monstre n'en ont pas)
-	public static String combat(Individu ind, Monstre m, Competence c){
+	public static String combat(Individu ind, Monstre m, Competence c, BarreAction ba){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(ind,c);
 		String res = null;
@@ -68,19 +68,21 @@ public class Combat {
 			if(ind.pv > ind.pvMax()){
 				ind.pv = ind.pvMax();
 				res = res + "\n"+Narration.affiche(ind.nom, "soin", 0,soin.get(0));
-			}								
+			}
+			ba.actualiseVie(ind.pv);
 		}
 		if(c.effet.equals("bouclier")){
 			ArrayList<Integer> bouclier = new ArrayList<Integer>();
 			bouclier = Competence.Degat(ind,c);
 			ind.pv += bouclier.get(0); 
-			res = res + "\n"+Narration.affiche(ind.nom, "bouclier", 0,bouclier.get(0)); 
+			res = res + "\n"+Narration.affiche(ind.nom, "bouclier", 0,bouclier.get(0));
+			ba.actualiseVie(ind.pv);
 		}
 		if(m.PD-ind.armure > 0){
 			System.out.println("pv =" + ind.pv);
 			ind.pv = ind.pv-(m.PD-ind.armure);	//rajouter phrase attaque monstre dans natation
 			System.out.println("pv =" + ind.pv);
-			
+			ba.actualiseVie(ind.pv);
 		}
 		if (ind.pv <= 0){
 			res = res+"\n"+Narration.affiche(ind.nom, "defaite", 0,0);	//rajouter phrase defaite dans natation
