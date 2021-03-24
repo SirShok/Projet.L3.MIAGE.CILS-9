@@ -1,5 +1,6 @@
 import java.util.*;
 import java.io.Serializable;
+import java.util.Random;
 
 public class Competence implements Serializable{
     /**
@@ -116,5 +117,115 @@ public class Competence implements Serializable{
         }
         comp.DM =  degat;
         return degat;
+    }
+public static Competence[] compDisp(int n){
+        ArrayList<Competence> CompetencePhysique = new ArrayList<Competence>();
+        ArrayList<Competence> CompetenceDistance = new ArrayList<Competence>();
+        ArrayList<Competence> CompetenceCorpACorp = new ArrayList<Competence>();
+        ArrayList<Competence> CompetenceMagique = new ArrayList<Competence>();
+        ArrayList<Competence> CompetenceDegat = new ArrayList<Competence>();
+        ArrayList<Competence> CompetenceSoin = new ArrayList<Competence>();
+        ArrayList<Competence> CompetenceBouclier = new ArrayList<Competence>();
+        ArrayList<Competence> competenceC = new ArrayList<Competence>();
+        ArrayList<Competence> competenceD = new ArrayList<Competence>();
+        ArrayList<Competence> competenceMD = new ArrayList<Competence>();
+        ArrayList<Competence> competenceS = new ArrayList<Competence>();
+        ArrayList<Competence> competenceB = new ArrayList<Competence>();
+        Competence[] res = new Competence[4];
+        for(Competence e: Main.listeCompetence){
+            if(e.type.equals("physique")){
+                CompetencePhysique.add(e);
+            }else{
+                CompetenceMagique.add(e);
+            }
+        }
+        for(Competence e: CompetencePhysique){
+            if((e.id == 0)||(e.id == 1)||(e.id == 2)||(e.id == 3)){
+                CompetenceCorpACorp.add(e);
+            }else{
+                CompetenceDistance.add(e);
+            }
+        }
+        for(Competence e: CompetenceMagique){
+            if(e.effet.equals("degat")) CompetenceDegat.add(e);
+            if(e.effet.equals("soin")) CompetenceSoin.add(e);
+            if(e.effet.equals("bouclier")) CompetenceBouclier.add(e);
+        }
+        switch(n){
+            case 0: //chevalier
+                for(Competence e: CompetenceCorpACorp){
+                    if(e.rang == 2) competenceC.add(e);
+                }
+                res[0] = competenceC.get(new Random().nextInt(competenceC.size()));
+                do{
+                    res[1] = competenceC.get(new Random().nextInt(competenceC.size()));
+                }while(res[0] == res[1]);
+
+                for(Competence e: CompetenceSoin){
+                    if(e.rang == 1) competenceS.add(e);
+                }
+                res[2] = competenceS.get(new Random().nextInt(competenceS.size()));
+
+                for(Competence e: CompetenceDegat){
+                    if(e.rang == 1) competenceMD.add(e);
+                }
+                res[3] = competenceMD.get(new Random().nextInt(competenceMD.size()));
+                break;
+            case 1: //archer
+                for(Competence e: CompetenceDistance){
+                    if(e.rang == 2) competenceD.add(e);
+                }
+                res[0] = competenceD.get(new Random().nextInt(competenceD.size()));
+                do{
+                    res[1] = competenceD.get(new Random().nextInt(competenceD.size()));
+                }while(res[0] == res[1]);
+
+                for(Competence e: CompetenceSoin){
+                    if(e.rang == 1) competenceS.add(e);
+                }
+                res[2] = competenceS.get(new Random().nextInt(competenceS.size()));
+
+                for(Competence e: CompetenceDegat){
+                    if(e.rang == 1) competenceMD.add(e);
+                }
+                res[3] = competenceMD.get(new Random().nextInt(competenceMD.size()));
+                break;
+            case 2: //pretre
+                for(Competence e: CompetenceCorpACorp){
+                    if(e.rang == 1) competenceC.add(e);
+                }
+                res[0] = competenceC.get(new Random().nextInt(competenceC.size()));
+
+                for(Competence e: CompetenceBouclier){
+                    if(e.rang == 1) competenceB.add(e);
+                }
+                res[1] = competenceB.get(new Random().nextInt(competenceB.size()));
+
+                for(Competence e: CompetenceDegat){
+                    if(e.rang == 2) competenceMD.add(e);
+                }
+                res[2] = competenceMD.get(new Random().nextInt(competenceMD.size()));
+                do{
+                    res[3] = competenceMD.get(new Random().nextInt(competenceMD.size()));
+                }while(res[2] == res[3]);                
+                break;
+            case 3: //mage
+                for(Competence e: CompetenceMagique){
+                    if(e.rang == 2) competenceMD.add(e);
+                }
+                res[0] = competenceMD.get(new Random().nextInt(competenceMD.size()));
+                do{
+                    res[1] = competenceMD.get(new Random().nextInt(competenceMD.size()));
+                }while(res[0] == res[1]);
+                do{
+                    res[2] = competenceMD.get(new Random().nextInt(competenceMD.size()));
+                }while((res[0] == res[2])||(res[1] == res[2]));
+                for(Competence e: CompetenceBouclier){
+                    if(e.rang == 1) competenceB.add(e);
+                }
+                res[3] = competenceB.get(new Random().nextInt(competenceB.size()));
+                break;
+        }
+        return res;
     }
 }
