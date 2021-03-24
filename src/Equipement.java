@@ -21,4 +21,15 @@ public class Equipement {
 		rang = Integer.parseInt(tab[6]);
 		type = tab[7];
 	}
+	
+	public Equipement(String n, int degatP,int degatM,int ar,int perca,int nb,int r,String tp) {
+		nom = n;
+		degatPhysique = degatP;
+		degatMagique = degatM;
+		armure = ar;
+		perceArmure = perca;
+		nbMain = nb;
+		rang = r;
+		type = tp;
+	}
 }
