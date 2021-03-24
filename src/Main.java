@@ -1,7 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Main {
 	public static Individu joueur;
@@ -12,25 +11,8 @@ public class Main {
 		Fichier.RecuperationConfig(bestiaire);
 		Fichier.LectureCompetence(Main.listeCompetence);
 		System.out.print(Narration.afficheCompetence("Le joueur ", Main.listeCompetence.get(120).nom, 15));
-		//Fenetre f=new Fenetre(bestiaire, listeCompetence);
+		
 		Fenetre f=new Fenetre();
-		
-		
-		
-		
-		
-		
-		/*
-		try {
-			Thread.sleep(4000);
-			f.getEcranJeu().getBarreAction().setBoutonHG(joueur.getCompetence(0));
-			f.getEcranJeu().getBarreAction().setBoutonHD(joueur.getCompetence(1));
-			f.getEcranJeu().getBarreAction().setBoutonBG(joueur.getCompetence(2));
-			f.getEcranJeu().getBarreAction().setBoutonBD(joueur.getCompetence(3));
-		}catch (InterruptedException IE) {
-			
-		}
-		*/
 		
 		
 		/*

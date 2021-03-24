@@ -8,7 +8,6 @@ public class Fenetre extends JFrame{
 	private EcranJeu ingame;
 	private ChoixClasse creation;
 	
-	//public Fenetre(ArrayList<Monstre> bestiaire, ArrayList<Competence> competences){
 	public Fenetre(){
 		//Initialisation de la fenetre
 		this.setSize(1400, 900);
