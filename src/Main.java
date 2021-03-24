@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Main {
 	public static Individu joueur;
+	public static ArrayList<Monstre> bestiaire = new ArrayList<Monstre>();
 	public static ArrayList<Competence> listeCompetence = new ArrayList<Competence>();
 	public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, IOException, InterruptedException {
 		
-		ArrayList<Monstre> bestiaire = new ArrayList<Monstre>();
 		Fichier.RecuperationConfig(bestiaire);
 		Fichier.LectureCompetence(Main.listeCompetence);
 		System.out.print(Narration.afficheCompetence("Le joueur ", Main.listeCompetence.get(120).nom, 15));
