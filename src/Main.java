@@ -14,6 +14,7 @@ public class Main {
 		System.out.print(Narration.afficheCompetence("Le joueur ", Main.listeCompetence.get(120).nom, 15));
 		//Fenetre f=new Fenetre(bestiaire, listeCompetence);
 		Fenetre f=new Fenetre();
+		/*s^gfhi<sdfhk*/
 		/*
 		f.getEcranJeu().getParchemin().getTextArea().append("\ntest");
 		int nbCombT = 4; //nombre de combat total
