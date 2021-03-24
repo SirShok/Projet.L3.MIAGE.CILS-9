@@ -15,6 +15,10 @@ import javax.swing.JLabel;
 
 public class BarreAction extends ImagePanel{
 	
+	private JButton capBouton1;
+	private JButton capBouton2;
+	private JButton capBouton3;
+	private JButton capBouton4;
 	private Competence cap1;
 	private Competence cap2;
 	private Competence cap3;
@@ -30,7 +34,7 @@ public class BarreAction extends ImagePanel{
 		Combat c=new Combat();
 		
 		//Boutons de capacite
-		JButton capBouton1=new JButton("Coup simple");
+		capBouton1=new JButton("");
 		capBouton1.setBorder(BorderFactory.createLineBorder(Color.white));
 		capBouton1.setForeground(Color.white);
 		capBouton1.setFont(caligraphie);
@@ -46,7 +50,7 @@ public class BarreAction extends ImagePanel{
 			}
 		});
 		
-		JButton capBouton2=new JButton("Estoc");
+		capBouton2=new JButton("");
 		capBouton2.setBorder(BorderFactory.createLineBorder(Color.white));
 		capBouton2.setForeground(Color.white);
 		capBouton2.setFont(caligraphie);
@@ -62,7 +66,7 @@ public class BarreAction extends ImagePanel{
 			}
 		});
 		
-		JButton capBouton3=new JButton("Attaque double");
+		capBouton3=new JButton("");
 		capBouton3.setBorder(BorderFactory.createLineBorder(Color.white));
 		capBouton3.setForeground(Color.white);
 		capBouton3.setFont(caligraphie);
@@ -78,7 +82,7 @@ public class BarreAction extends ImagePanel{
 			}
 		});
 		
-		JButton capBouton4=new JButton("Attaque triple");
+		capBouton4=new JButton("");
 		capBouton4.setBorder(BorderFactory.createLineBorder(Color.white));
 		capBouton4.setForeground(Color.white);
 		capBouton4.setFont(caligraphie);
@@ -191,5 +195,25 @@ public class BarreAction extends ImagePanel{
 		this.add(chan);
 		this.add(menuprinc);
 		this.setBorder(null);
+	}
+	
+	public void setBoutonHG(Competence c){
+		cap1=c;
+		capBouton1.setText(c.nom);
+	}
+	
+	public void setBoutonHD(Competence c){
+		cap2=c;
+		capBouton2.setText(c.nom);
+	}
+	
+	public void setBoutonBG(Competence c){
+		cap3=c;
+		capBouton3.setText(c.nom);
+	}
+	
+	public void setBoutonBD(Competence c){
+		cap4=c;
+		capBouton4.setText(c.nom);
 	}
 }

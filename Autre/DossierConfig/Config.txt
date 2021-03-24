@@ -1,0 +1,12 @@
+Animorph_1_Singe 30 10 10 vent
+Animorph_2_Tigre 20 20 10 lumiere
+Animorph_3_Tortue 10 30 10 terre
+Animorph_4_Ours 25 15 10 eau
+Animorph_5_Phénix 35 5 15 feu
+Udyr 90 90 25 tenebres
+Chevalier 40 20 20 lumiere
+Archer 40 5 15 vent
+Lord_Snork 120 80 25 feu
+Micro 40 10 20 eau
+Webcam 20 20 20 vent
+Seigeur_Laciopa 160 90 35 tenebres
