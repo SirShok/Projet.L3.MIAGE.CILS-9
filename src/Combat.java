@@ -84,6 +84,8 @@ public class Combat {
 		return(res);
 	}
 	
+	//Methode qui selectionne puis retourne un monstre en
+	//fonction du nombres de combats gagne et nbr de combat total
 	public static Monstre SelectM(ArrayList<Monstre> m, int n, int nt) {
 		if (n == nt/2) {
 			Monstre select = m.get(5 + new Random().nextInt(7 - 5));
