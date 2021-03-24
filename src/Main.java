@@ -10,7 +10,6 @@ public class Main {
 		
 		Fichier.RecuperationConfig(bestiaire);
 		Fichier.LectureCompetence(Main.listeCompetence);
-		System.out.print(Narration.afficheCompetence("Le joueur ", Main.listeCompetence.get(120).nom, 15));
 		
 		Fenetre f=new Fenetre();
 		
