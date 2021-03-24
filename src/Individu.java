@@ -194,7 +194,6 @@ public class Individu {
 	
 	public Individu(int n){
 		competence = Competence.compDisp(n);
-		
 		switch (n){
 			case 0:
 				nom = "Chevalier";
@@ -251,7 +250,7 @@ public class Individu {
 				pv = pvMax();
 				mana = manaMax();
 				equiper(new Equipement("Baton use;0;4;0;0;2;1;arme;"));
-				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));				
+				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
 				break;
 		}
 	}
