@@ -45,12 +45,10 @@ public class Combat {
 			while(DM.size() > 0){
 				if(0 < DM.get(0)-PA){
 					degat = degat + DM.get(0)-PA;
-					System.out.print("\ndegat =" + degat);
 				}
 				if((n/2 == DM.size())&&(e[j + 1] != null)){
 					j = j + 1;
 				}
-				System.out.print("\ndegat0 =" + degat);
 				DM.remove(0);
 			}
 			degat =(int) (((double) degat)*faiblesse(c.type,m.Affinite));
@@ -64,10 +62,14 @@ public class Combat {
 		if(c.effet.equals("soin")){
 			ArrayList<Integer> soin = new ArrayList<Integer>();
 			soin = Competence.Degat(ind,c);
+			int pvA = ind.pv;
 			ind.pv += soin.get(0);
 			if(ind.pv > ind.pvMax()){
 				ind.pv = ind.pvMax();
-				res = res + "\n"+Narration.affiche(ind.nom, "soin", 0,soin.get(0));
+
+			}
+			if(ind.pv > pvA) {
+				res = res + "\n"+Narration.affiche(ind.nom, "soin", 0,ind.pv - pvA);
 			}
 			ba.actualiseVie(ind.pv);
 		}

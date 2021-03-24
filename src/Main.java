@@ -10,7 +10,6 @@ public class Main {
 		
 		Fichier.RecuperationConfig(bestiaire);
 		Fichier.LectureCompetence(Main.listeCompetence);
-		System.out.print(Narration.afficheCompetence("Le joueur ", Main.listeCompetence.get(120).nom, 15));
 		
 		Fenetre f=new Fenetre();
 		
@@ -18,7 +17,6 @@ public class Main {
 		/*
 		f.getEcranJeu().getParchemin().getTextArea().append("\ntest");
 		int nbCombT = 4; //nombre de combat total
-		Individu ind = null;
 		int nbCombat = 1; //numéro de combat
 		//déroulement du jeu
 		while(nbCombat < 12) {

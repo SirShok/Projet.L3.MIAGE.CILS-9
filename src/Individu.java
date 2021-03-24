@@ -173,7 +173,7 @@ public class Individu {
 		
 		for(int i = 0; i < l.size(); i++) {
 			if(f*100 < 5 + chance/5) {
-				l.set(i, (l.get(0))*2);
+				l.set(i, (l.get(i))*2);
 			}
 		}
 		return l;
@@ -190,7 +190,7 @@ public class Individu {
 		return res;
 	}
 	
-public Individu(int n){
+	public Individu(int n){
 		competence = Competence.compDisp(n);
 		switch (n){
 			case 0:
@@ -248,7 +248,7 @@ public Individu(int n){
 				pv = pvMax();
 				mana = manaMax();
 				equiper(new Equipement("Baton use;0;4;0;0;2;1;arme;"));
-				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));		
+				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
 				break;
 		}
 	}
