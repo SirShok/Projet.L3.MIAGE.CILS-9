@@ -26,8 +26,9 @@ public class ChoixClasse extends JPanel{
 		cheva.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-            	//archetype(0);
+            	Main.joueur=new Individu(0);
             	f.beginGame();
+            	System.out.println(Main.joueur.nom);
             }
         });
 		
@@ -40,8 +41,9 @@ public class ChoixClasse extends JPanel{
 		arche.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-            	//archetype(1);
+            	Main.joueur=new Individu(1);
             	f.beginGame();
+            	System.out.println(Main.joueur.nom);
             }
         });
 		
@@ -53,8 +55,9 @@ public class ChoixClasse extends JPanel{
 		pretr.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-            	//archetype(2);
+            	Main.joueur=new Individu(2);
             	f.beginGame();
+            	System.out.println(Main.joueur.nom);
             }
         });
 		
@@ -66,8 +69,9 @@ public class ChoixClasse extends JPanel{
 		magic.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-            	//archetype(3);
+            	Main.joueur=new Individu(3);
             	f.beginGame();
+            	System.out.println(Main.joueur.nom);
             }
         });
 		

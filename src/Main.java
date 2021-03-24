@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
+	public static Individu joueur;
+	
 	public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, IOException {
 		
 		/*
@@ -27,3 +29,4 @@ public class Main {
 			}
 		}*/
 	}
+}
