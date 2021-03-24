@@ -189,19 +189,41 @@ public class Competence implements Serializable{
                 }
                 res[3] = competenceMD.get(new Random().nextInt(competenceMD.size()));
                 break;
-            /*case 2: //pretre
+            case 2: //pretre
                 for(Competence e: CompetenceCorpACorp){
                     if(e.rang == 1) competenceC.add(e);
                 }
                 res[0] = competenceC.get(new Random().nextInt(competenceC.size()));
 
-                for(Competence e: CompetenceSoin){
-                    if(e.rang == 1) competenceS.add(e);
+                for(Competence e: CompetenceBouclier){
+                    if(e.rang == 1) competenceB.add(e);
                 }
                 res[1] = competenceS.get(new Random().nextInt(competenceS.size()));
+
+                for(Competence e: CompetenceDegat){
+                    if(e.rang == 2) competenceMD.add(e);
+                }
+                res[2] = competenceMD.get(new Random().nextInt(competenceMD.size()));
+                do{
+                    res[3] = competenceMD.get(new Random().nextInt(competenceMD.size()));
+                }while(res[2] == res[3]);                
                 break;
             case 3: //mage
-                break;*/
+                for(Competence e: CompetenceMagique){
+                    if(e.rang == 2) competenceMD.add(e);
+                }
+                res[0] = competenceMD.get(new Random().nextInt(competenceMD.size()));
+                do{
+                    res[1] = competenceC.get(new Random().nextInt(competenceC.size()));
+                }while(res[0] == res[1]);
+                do{
+                    res[2] = competenceC.get(new Random().nextInt(competenceC.size()));
+                }while((res[0] == res[2])||(res[1] == res[2]));
+                for(Competence e: CompetenceBouclier){
+                    if(e.rang == 1) competenceB.add(e);
+                }
+                res[3] = competenceS.get(new Random().nextInt(competenceS.size()));
+                break;
         }
         return res;
     }
