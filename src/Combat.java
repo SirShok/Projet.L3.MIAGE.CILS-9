@@ -38,7 +38,7 @@ public class Combat {
 		int PA;
 		ind.mana = ind.mana - c.cout;
 		int degat = 0;
-		if(c.effet == "degat"){
+		if(c.effet.equals("degat")){
 			for(Equipement e: ind.armeEquip()){
 				if(e != null){
 					PA = m.PA-(c.perca+(e.perceArmure));
@@ -59,7 +59,7 @@ public class Combat {
 				return(res);
 			}
 		}
-		if(c.effet == "soin"){
+		if(c.effet.equals("soin")){
 			ArrayList<Integer> soin = new ArrayList<Integer>();
 			soin = Competence.Degat(ind,c);
 			ind.pv += soin.get(0);
@@ -68,7 +68,7 @@ public class Combat {
 				res = res + "\n"+Narration.affiche(ind.nom, "soin", 0,soin.get(0));
 			}								
 		}
-		if(c.effet == "bouclier"){
+		if(c.effet.equals("bouclier")){
 			ArrayList<Integer> bouclier = new ArrayList<Integer>();
 			bouclier = Competence.Degat(ind,c);
 			ind.pv += bouclier.get(0); 
