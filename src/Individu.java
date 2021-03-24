@@ -33,10 +33,6 @@ public class Individu {
 		return sagesse*2;
 	}
 	
-	public Competence getCompetence(int i) {
-		return competence[i];
-	}
-	
 	//permet d'equiper un equipement selon plusieurs conditions:
 	//- si c'est un arme, on va verifier qu'il peut la porter
 	//- si c'est une armure, on va verifier qu'il n'en a pas dejà
@@ -83,10 +79,10 @@ public class Individu {
 			if((equipement[i] != null)&&(equipement[i].nom == e.nom)) {
 				String tmp = equipement[i].type;
 				equipement[i] = null;
-				if(tmp.equals("arme")) {
+				if(tmp == "arme") {
 					nbMainL = nbMainL + e.nbMain;
 					return;
-				} else if(tmp.equals("armure")) {
+				} else if(tmp == "armure") {
 					equipArmure = false;
 					return;
 				} else {
@@ -175,7 +171,7 @@ public class Individu {
 		
 		for(int i = 0; i < l.size(); i++) {
 			if(f*100 < 5 + chance/5) {
-				l.set(i, (l.get(0))*2);
+				l.set(i, (l.get(i))*2);
 			}
 		}
 		return l;
@@ -192,8 +188,9 @@ public class Individu {
 		return res;
 	}
 	
-public Individu(int n){
-		competence = Competence.compDisp(n);
+	public Individu(int n){
+		System.out.println("hello");
+		
 		switch (n){
 			case 0:
 				nom = "Chevalier";
@@ -208,6 +205,9 @@ public Individu(int n){
 				mana = manaMax();
 				equiper(new Equipement("epee a 2 mains rouille;8;0;0;0;2;1;arme;"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence[0] = new Competence("Coup simple",1,"FOR",1,1,0,"coup infligeant des degat normaux.","degat",2,"physique");
+				competence[1] = new Competence("Estoc",1,"FOR",1,1,5,"Coup precis attaquant avec la pointe de la lame ignore 5 point d'armure.","degat",1,"physique");
+
 				break;
 			case 1:
 				nom = "Archer";
@@ -222,6 +222,9 @@ public Individu(int n){
 				mana = manaMax();
 				equiper(new Equipement("Arc use",5,0,0,2,2,1,"arme"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence[0] = new Competence("tir simple",1,"AGI",1,1,0,"tir infligeant des degÃ¢ts normaux","degat",6,"physique");
+				competence[1] = new Competence("tir precis",1,"AGI",1,1,5,"tir ignorant 5 points d'armure","degat",5,"physique");
+
 				break;
 			case 2:
 				nom = "Pretre";
@@ -237,6 +240,10 @@ public Individu(int n){
 				equiper(new Equipement("epee rouille;4;0;0;0;1;1;arme;"));
 				equiper(new Equipement("Baguette use;0;2;0;0;1;1;arme;"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence[0] = new Competence("Coup simple",1,"FOR",1,1,0,"coup infligeant des degat normaux.","degat",3,"physique");
+				competence[1] = new Competence("Boule de feu",1,"SAG",1,1,999,"envoi une boule de feux brulant l'ennemi, infligeant SAG/2 DM coute 5 PM.","degat",11,"feu");
+				competence[2] = new Competence("Soint sacre",1,"SAG",1,1,0,"fais appels a la puissance de la lumiere pour restaure votre corps, soigne SAG/2 PV, cout 5 PM.","soint",18,"lumiere");
+
 				break;
 			case 3:
 				nom = "Magicien";
@@ -250,7 +257,10 @@ public Individu(int n){
 				pv = pvMax();
 				mana = manaMax();
 				equiper(new Equipement("Baton use;0;4;0;0;2;1;arme;"));
-				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));		
+				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
+				competence[0] = new Competence("Boule de feu",1,"SAG",1,1,999,"envoi une boule de feux brulant l'ennemi, infligeant SAG/2 DM coute 5 PM.","degat",11,"feu");
+				competence[1] = new Competence("Sacralisation",1,"SAG",1,1,999,"fais appels a la puissance de la lumiere pour purifier l'ennemis, inflige SAG/2 DM, cout 5 PM.","degat",17,"lumiere");
+				
 				break;
 		}
 	}
