@@ -79,10 +79,10 @@ public class Individu {
 			if((equipement[i] != null)&&(equipement[i].nom == e.nom)) {
 				String tmp = equipement[i].type;
 				equipement[i] = null;
-				if(tmp == "arme") {
+				if(tmp.equals("arme")) {
 					nbMainL = nbMainL + e.nbMain;
 					return;
-				} else if(tmp == "armure") {
+				} else if(tmp.equals("armure")) {
 					equipArmure = false;
 					return;
 				} else {
