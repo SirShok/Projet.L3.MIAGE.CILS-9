@@ -41,7 +41,6 @@ public class Individu {
 	//- si c'est un arme, on va verifier qu'il peut la porter
 	//- si c'est une armure, on va verifier qu'il n'en a pas dejà
 	public void equiper(Equipement e) {
-		System.out.println(e.type);
 		if(e.type.equals("arme")) {
 			if(nbMainL <= e.nbMain) {
 				nbMainL = nbMainL - e.nbMain;
@@ -69,7 +68,6 @@ public class Individu {
 				System.out.println("erreur: impossible d'equiper l'equipement");
 				System.exit(-1);
 			}	
-			
 		} else {
 			System.out.println("type d'equipement incorrect");
 			System.exit(-1);
