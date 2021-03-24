@@ -37,8 +37,8 @@ public class Combat {
 		String res = null;
 		int PA;
 		ind.mana = ind.mana - c.cout;
+		int degat;
 		if(c.effet == "degat"){
-			int degat;
 			for(Equipement e: ind.armeEquip()){
 				if(e != null){
 					PA = m.PA-(c.perca+(e.perceArmure));
