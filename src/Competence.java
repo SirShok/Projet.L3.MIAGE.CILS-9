@@ -45,29 +45,29 @@ public class Competence implements Serializable{
         int rang = comp.rang;
         switch(d){
             case 1:
-                if(s == "FOR"){
+                if(s.equals("FOR")){
                     degat.add(ind.attaqueF(1));
                     degat.add(ind.attaqueF(2));
                 }
-                if(s == "AGI"){
+                if(s.equals("AGI")){
                     degat.add(ind.attaqueA(1));
                     degat.add(ind.attaqueA(2));
                 }
-                if(s == "SAG"){
+                if(s.equals("SAG")){
                     degat.add((int)(ind.sagesse*(rang/2)));
                     degat = ind.attaqueM(degat);
                 }
                 break;
             case 2:
-                if(s == "FOR"){
+                if(s.equals("FOR")){
                     degat.add((int)((ind.attaqueF(1))*(((rang-1)*0.2)+1)));
                     degat.add((int)((ind.attaqueF(2))*(((rang-1)*0.2)+1)));     
                 } 
-                if(s == "AGI"){
+                if(s.equals("AGI")){
                     degat.add((int)((ind.attaqueA(1))*(((rang-1)*0.2)+1))); 
                     degat.add((int)((ind.attaqueA(2))*(((rang-1)*0.2)+1))); 
                 }
-                if(s == "SAG"){
+                if(s.equals("SAG")){
                     for(int i = 0; i<=rang; i++){
                         degat.add(ind.sagesse/2);
                     }
@@ -75,7 +75,7 @@ public class Competence implements Serializable{
                 }
                 break;
             case 3:
-                if(s == "FOR"){
+                if(s.equals("FOR")){
                     while(c-- > 1){
                         degat.add(ind.attaqueF(1));
                         degat.add(ind.attaqueF(2));
@@ -94,7 +94,7 @@ public class Competence implements Serializable{
                     }
                     break;
                 }
-                if(s == "AGI"){
+                if(s.equals("AGI")){
                     while(c-- > 1){
                         degat.add(ind.attaqueA(1));
                         degat.add(ind.attaqueA(2));
