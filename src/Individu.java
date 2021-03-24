@@ -188,7 +188,7 @@ public class Individu {
 		return res;
 	}
 	
-		public Individu(int n){
+	public Individu(int n){
 		equipArmure = true;
 		switch (n){
 			case 1:
