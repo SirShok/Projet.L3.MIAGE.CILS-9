@@ -30,7 +30,7 @@ public class Combat {
 	}
 
 	// permet de d'appliquer les dégâts subit en un tour (ne prend pas la res élémentaire car les monstre n'en ont pas)
-public static String combat( Monstre m, Competence c){
+public static String combat(Monstre m, Competence c){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(Main.joueur,c);
 		String res = null;

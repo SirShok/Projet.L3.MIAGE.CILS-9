@@ -44,9 +44,10 @@ public class BarreAction extends ImagePanel{
 		capBouton1.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append("\ncompetence HG");
-				//c.combat(i, padv.getMonster(), cap1);
+				par.getTextArea().append(Combat.combat(Main.adversaire, cap1));
 				System.out.println("competence HG");
+				vie.setText(""+i.pv);
+				padv.getStatAdv().setMonstreStat(Main.adversaire);
 			}
 		});
 		
