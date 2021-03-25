@@ -222,7 +222,7 @@ public class Individu {
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
 				break;
 			case 2:
-				nom = "kapłan";
+				nom = "kaplan";
 				force = 30;
 				agilite = 5;
 				sagesse = 30;
