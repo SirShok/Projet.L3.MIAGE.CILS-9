@@ -38,7 +38,7 @@ public class Narration {
 		}
 		if (nomE == "victoire") {
 			List<String> victoire = Arrays.asList(new String[]{
-					"Bravo, " +nom+ " ! \n" + "Vous avez gagne \n",
+					"\nBravo, " +nom+ " ! \n" + "Vous avez gagne \n",
 					"Gloire et victoire ! Le hero a occit son adversaire !\n Vous etes l'heureux gagnant de ce combat \n"});
 			String select = victoire.get(new Random().nextInt(victoire.size()));
 			System.out.println("victoire\n");
@@ -80,17 +80,17 @@ public class Narration {
 	
 	public static String afficheCompetence(String Ind, String c,int degat) {
 		String res = null;
-		res = (" Avec son courage, notre heros utilise : "+c+"  et ainsi inflige : "+degat+" a son terrible adversaire.");
+		res = ("\nAvec son courage, notre heros utilise : "+c+"  et ainsi inflige : "+degat+" a son terrible adversaire.");
 		return res;
 	}
 	public static String apparitionMonstre(Individu joueur, Monstre m) {
 		String res =null;
-		res = ("\n Malheur !! Un terrible danger se dresse sur votre route vers la Terre Sainte ! Un "+m.Nom+" souhaite en decoudre avec vous. \nAux armes, triomphez de cet adversaire sans attendre !!!");
+		res = ("\nMalheur !! Un terrible danger se dresse sur votre route vers la Terre Sainte ! Un "+m.Nom+" souhaite en decoudre avec vous. \nAux armes, triomphez de cet adversaire sans attendre !!!");
 		return res;
 	}
 	public static String afficheCompetenceMonstre(Individu joueur, String c,int degat) {
 		String res = null;
-		res = ("Fichtre ! Le monstre attaque et inflige "+degat+" de degats a notre hero !");
+		res = ("\nFichtre ! Le monstre attaque et inflige "+degat+" de degats a notre hero !");
 		return res;
 	}
 }
