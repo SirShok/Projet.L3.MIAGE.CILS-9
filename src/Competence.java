@@ -22,7 +22,7 @@ public class Competence implements Serializable{
 
 
     // prend en entrée un string dans le fichier competence.txt et remplie une instance de classe Competence
-    //attention! Cette classe ne calculera pas les dégâts, elle prendra justes ceux définies par la compétence
+    //attention! Cette classe ne calculeraa pas les dégâts, elle prendra justes ceux définies par la compétence
     public Competence (String name0, int rangc1, String statc2, int nbc3,int degatc4,int percac5, String descriptionc6,String effetc7,int idc8,String typec9){
         nom = name0;
         rang = rangc1;
@@ -210,7 +210,7 @@ public static Competence[] compDisp(int n){
                 }while(res[2] == res[3]);                
                 break;
             case 3: //mage
-                for(Competence e: competenceMD){
+                for(Competence e: CompetenceMagique){
                     if(e.rang == 1) competenceMD.add(e);
                 }
                 res[0] = competenceMD.get(new Random().nextInt(competenceMD.size()));
