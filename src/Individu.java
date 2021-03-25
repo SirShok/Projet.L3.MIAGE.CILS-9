@@ -194,7 +194,7 @@ public class Individu {
 		competence = Competence.compDisp(n);
 		switch (n){
 			case 0:
-				nom = "Chevalier";
+				nom = "Rain";
 				force = 30;
 				agilite = 5;
 				sagesse = 10;
@@ -208,7 +208,7 @@ public class Individu {
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
 				break;
 			case 1:
-				nom = "Archer";
+				nom = "Robin des bois";
 				force = 5;
 				agilite = 30;
 				sagesse = 5;
@@ -222,7 +222,7 @@ public class Individu {
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
 				break;
 			case 2:
-				nom = "Pretre";
+				nom = "kaplan";
 				force = 30;
 				agilite = 5;
 				sagesse = 30;
@@ -237,7 +237,7 @@ public class Individu {
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
 				break;
 			case 3:
-				nom = "Magicien";
+				nom = "Gandalf";
 				force = 5;
 				agilite = 10;
 				sagesse = 30;
