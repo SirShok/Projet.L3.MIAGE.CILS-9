@@ -1,7 +1,7 @@
 Pour l'installation:
 - Télécharger le dossier.zip.
 - Extraire le dossier .zip.
-- Puis cliquez sur le fichier Projet RPG.jar qui se trouve dans le dossier src, qui se trouve dans le dossier que vous venez de décompresser.
+- Puis cliquez sur le fichier Projet RPG CILS groupe 9.jar qui se trouve dans le dossier bin, qui se trouve dans le dossier que vous venez de décompresser.
 
 Pour l'utilisation:
 - Cliquez sur "nouvelle partie" pour commencer une nouvelle partie.
