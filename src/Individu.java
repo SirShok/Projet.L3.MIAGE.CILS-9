@@ -59,6 +59,7 @@ public class Individu {
 				System.exit(-1);
 			} else {
 				equipArmure = true;
+				armure = e.armure;
 				for(int i = 0; i < tailleEquipement; i++) {
 					if(equipement[i] == null) {
 						equipement[i] = e;
