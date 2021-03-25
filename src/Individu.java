@@ -5,32 +5,14 @@ public class Individu {
 	public static int tailleEquipement = 3;
 	//caracteristiques de l'individu
 	public String nom;
-	public int pv, mana, armure = 0, agilite, force, constitution, sagesse, perception, charisme, chance;
+	public int pv, armure = 0, agilite, force, constitution, sagesse, perception, charisme, chance;
 	private Equipement[] equipement = new Equipement[tailleEquipement]; int nbMainL = 2; 	//designe l'equipement et le nombre de main libres restantes
 	private Competence[] competence = new Competence[4];
 	private boolean equipArmure = false;	//indique si l'individu porte une armure
-	
-	public Individu(String n, int ag, int f, int co, int s, int p, int ca, int ch) {
-		nom = n;
-		agilite = ag;
-		force = f;
-		constitution = co;
-		sagesse = s;
-		p = perception;
-		charisme = ca;
-		chance = ch;
-		pv = pvMax();
-		mana = manaMax();
-	}
 
 	//retourne les pv max de l'individu
 	public int pvMax() {
 		return constitution*2;
-	}
-	
-	//retourne les points de mana max de l'individu
-	public int manaMax() {
-		return sagesse*2;
 	}
 	
 	public Competence getCompetence(int i) {
@@ -74,49 +56,6 @@ public class Individu {
 			System.exit(-1);
 		}
 
-	}
-	
-	//permet de desequiper un equipement
-	public void desequiper(Equipement e) {
-		for(int i = 0; i < tailleEquipement; i++) {
-			if((equipement[i] != null)&&(equipement[i].nom == e.nom)) {
-				String tmp = equipement[i].type;
-				equipement[i] = null;
-				if(tmp.equals("arme")) {
-					nbMainL = nbMainL + e.nbMain;
-					return;
-				} else if(tmp.equals("armure")) {
-					equipArmure = false;
-					return;
-				} else {
-					System.out.println("type d'equipement incorrect");
-					System.exit(-1);
-				}
-			}
-		}
-		System.out.println("erreur: impossible de desequiper l'equipement");
-		System.exit(-1);
-	}
-	
-	//permet de voir son equipement ainsi que son type
-	public String afficherEquipement() {
-		String r = "";
-		for(int i = 0; i < tailleEquipement; i++) {
-			if(equipement[i] != null) {
-				if(equipement[i].type.equals("arme")) {
-					r = r + "Arme : " + equipement[i].nom + "\n";
-				} else if (equipement[i].type.equals("armure")) {
-					r = r + "Armure : " + equipement[i].nom + "\n";
-				} else {
-					System.out.println("type d'equipement incorrect");
-					System.exit(-1);
-				}
-			}				
-		}
-		if(r == "") {
-			r = "Vous n'avez ni arme ni armure";
-		}
-		return r;
 	}
 	
 	//attaque normale avec l'attribut force
@@ -204,7 +143,6 @@ public class Individu {
 				charisme = 15;
 				chance = 20;
 				pv = pvMax();
-				mana = manaMax();
 				equiper(new Equipement("epee a 2 mains rouille;8;0;0;0;2;1;arme;"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
 				break;
@@ -218,7 +156,6 @@ public class Individu {
 				charisme = 10;
 				chance = 20;
 				pv = pvMax();
-				mana = manaMax();
 				equiper(new Equipement("Arc use",5,0,0,2,2,1,"arme"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
 				break;
@@ -232,7 +169,6 @@ public class Individu {
 				charisme = 10;
 				chance = 20;
 				pv = pvMax();
-				mana = manaMax();
 				equiper(new Equipement("epee rouille;4;0;0;0;1;1;arme;"));
 				equiper(new Equipement("Baguette use;0;2;0;0;1;1;arme;"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
@@ -247,7 +183,6 @@ public class Individu {
 				charisme = 10;
 				chance = 30;
 				pv = pvMax();
-				mana = manaMax();
 				equiper(new Equipement("Baton use;0;4;0;0;2;1;arme;"));
 				equiper(new Equipement("Armure rouille;0;0;10;0;0;1;armure;"));
 				break;
