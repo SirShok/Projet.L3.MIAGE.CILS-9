@@ -221,7 +221,7 @@ public static Competence[] compDisp(int n){
                     res[2] = competenceMD.get(new Random().nextInt(competenceMD.size()));
                 }while((res[0] == res[2])||(res[1] == res[2]));
                 for(Competence e: CompetenceBouclier){
-                    if(e.rang == 2) competenceB.add(e);
+                    if(e.rang == 1) competenceB.add(e);
                 }
                 res[3] = competenceB.get(new Random().nextInt(competenceB.size()));
                 break;
