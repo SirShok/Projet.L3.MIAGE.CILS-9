@@ -1,16 +1,16 @@
 Cahier des charges- Projet RPG
 
--	Réaliser un jeu de RPG avec une interface graphique pour que l'utilisateur puisse
+-	RÃ©aliser un jeu de RPG avec une interface graphique pour que l'utilisateur puisse
 	interagir facilement
 	
--	Pouvoir récupérer des fichiers de configuration, de monstres ou d'objets et les lire
+-	Pouvoir rÃ©cupÃ©rer des fichiers de configuration, de monstres ou d'objets et les lire
 	pour les afficher dans le jeu
 
--	Créer un système de combat interessant basé sur un système de statistiques du personnage
-	et de résistance/faiblesse à des types de dégats
+-	CrÃ©er un systÃ¨me de combat intÃ©ressant basÃ© sur un systÃ¨me de statistiques du personnage
+	et de rÃ©sistance/faiblesse Ã  des types de dÃ©gats
 	
--	Pouvoir avoir de l'équipement
+-	Pouvoir avoir de l'Ã©quipement
 
--	Pouvoir choisir ses capacités
+-	Pouvoir choisir les capacitÃ©s Ã  utiliser
 
--	Pouvoir choisir ses attributs au début
+-	Pouvoir choisir sa choisir au dÃ©but
