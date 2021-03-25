@@ -94,7 +94,7 @@ public class Narration {
 	}
 	public static String apparitionMonstre(Individu joueur, Monstre m) {
 		String res =null;
-		res = ("\n Malheur !! Un terrible danger se dresse sur votre route vers la Terre Sainte ! Un "+m.Nom+" souhaite en découdre avec vous. \nAux armes, triompher de cet adversaire sans attendre !!!");
+		res = ("\n Malheur !! Un terrible danger se dresse sur votre route vers la Terre Sainte ! Un "+m.Nom+" souhaite en découdre avec vous. \nAux armes, triomphez de cet adversaire sans attendre !!!");
 		return res;
 	}
 	public static String afficheCompetenceMonstre(String Ind, String c,int degat) {
