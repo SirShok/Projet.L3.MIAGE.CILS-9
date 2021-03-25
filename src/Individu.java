@@ -211,9 +211,9 @@ public class Individu {
 				nom = "Robin des bois";
 				force = 5;
 				agilite = 30;
-				sagesse = 5;
-				perception = 30;
-				constitution = 10;
+				sagesse = 15;
+				perception = 15;
+				constitution = 15;
 				charisme = 10;
 				chance = 20;
 				pv = pvMax();
