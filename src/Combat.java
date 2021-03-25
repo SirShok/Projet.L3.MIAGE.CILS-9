@@ -40,60 +40,54 @@ public class Combat {
 		int j = 0, n = DM.size();
 		if(c.effet.equals("degat")){	//gere l'aplication des degat si la competence untiliser doit en infliger
 			Equipement[] e = ind.armeEquip();
-			PA = mpublic static String combat( Monstre m, Competence c){
-		ArrayList<Integer> DM = new ArrayList<Integer>();
-		DM = Competence.Degat(Main.joueur,c);
-		String res = null;
-		int PA;
-		Main.joueur.mana = Main.joueur.mana - c.cout;
-		int degat = 0;
-		int j = 0, n = DM.size();
-		if(c.effet.equals("degat")){
-			Equipement[] e = Main.joueur.armeEquip();
 			PA = m.PA-(c.perca+(e[j].perceArmure));
-			if(PA < 0) PA = 0;
-			while(DM.size() > 0){
-				if(0 < DM.get(0)-PA){
+			if(PA < 0) PA = 0;	// si le perce armure total depasse l'armure de la cible l'armure passe a 0
+			while(DM.size() > 0){	// aplique tous les degats si l'attaque est a coup multiple
+				if(0 < DM.get(0)-PA){	//si les degat son inferieur a l'armure la variable degat n'est pas incréménter
 					degat = degat + DM.get(0)-PA;
-					System.out.print("\ndegat =" + degat);
 				}
 				if((n/2 == DM.size())&&(e[j + 1] != null)){
 					j = j + 1;
 				}
-				System.out.print("\ndegat0 =" + degat);
 				DM.remove(0);
 			}
-			degat =(int) (((double) degat)*faiblesse(c.type,m.Affinite));
+			degat =(int) (((double) degat)*faiblesse(c.type,m.Affinite));	//recalcul des dégat selont la resistance elementaire
 			m.HP = m.HP-degat;
-			res = "\n" + Narration.afficheCompetence(Main.joueur.nom, c.nom, degat);
-			if (m.HP <= 0){
-				res = res+"\n"+Narration.affiche(Main.joueur.nom, "victoire", 0,0);
+			res = "\n" + Narration.afficheCompetence(ind.nom, c.nom, degat);
+			if (m.HP <= 0){							// si les PV de l'ennemi passe a 0 renvoi le message de victoire
+				res = res+"\n"+Narration.affiche(ind.nom, "victoire", 0,0);
 				return(res);
 			}
 		}
-		if(c.effet.equals("soin")){
+		if(c.effet.equals("soin")){	// rend les pv si la competence est un soin
 			ArrayList<Integer> soin = new ArrayList<Integer>();
-			soin = Competence.Degat(Main.joueur,c);
-			Main.joueur.pv += soin.get(0);
-			if(Main.joueur.pv > Main.joueur.pvMax()){
-				Main.joueur.pv = Main.joueur.pvMax();
-				res = res + "\n"+Narration.affiche(Main.joueur.nom, "soin", 0,soin.get(0));
-			}								
+			soin = Competence.Degat(ind,c);
+			int pvA = ind.pv;
+			ind.pv += soin.get(0);
+			if(ind.pv > ind.pvMax()){	// fais en sorte que le soint ne depasse pas les pv max
+				ind.pv = ind.pvMax();
+
+			}
+			if(ind.pv > pvA) {
+				res = res + "\n"+Narration.affiche(ind.nom, "soin", 0,ind.pv - pvA);
+			}
+			ba.actualiseVie(ind.pv);
 		}
-		if(c.effet.equals("bouclier")){
+		if(c.effet.equals("bouclier")){	// aplique un bouclier
 			ArrayList<Integer> bouclier = new ArrayList<Integer>();
-			bouclier = Competence.Degat(Main.joueur,c);
-			Main.joueur.pv += bouclier.get(0); 
-			res = res + "\n"+Narration.affiche(Main.joueur.nom, "bouclier", 0,bouclier.get(0)); 
+			bouclier = Competence.Degat(ind,c);
+			ind.pv += bouclier.get(0); 
+			res = res + "\n"+Narration.affiche(ind.nom, "bouclier", 0,bouclier.get(0));
+			ba.actualiseVie(ind.pv);
 		}
-		if(m.PD-Main.joueur.armure > 0){
-			System.out.println("pv =" + Main.joueur.pv);
-			Main.joueur.pv = Main.joueur.pv-(m.PD-Main.joueur.armure);	//rajouter phrase attaque monstre dans natation
-			System.out.println("pv =" + Main.joueur.pv);
-			
+		if(m.PD-ind.armure > 0){	// calcul et apliction des degat du monstre
+			System.out.println("pv =" + ind.pv);
+			ind.pv = ind.pv-(m.PD-ind.armure);	//rajouter phrase attaque monstre dans natation
+			System.out.println("pv =" + ind.pv);
+			ba.actualiseVie(ind.pv);
 		}
-		if (Main.joueur.pv <= 0){
-			res = res+"\n"+Narration.affiche(Main.joueur.nom, "defaite", 0,0);	//rajouter phrase defaite dans natation
+		if (ind.pv <= 0){
+			res = res+"\n"+Narration.affiche(ind.nom, "defaite", 0,0);	
 		}
 		return(res);
 	}

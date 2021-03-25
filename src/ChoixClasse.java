@@ -29,6 +29,7 @@ public class ChoixClasse extends JPanel{
             	Main.joueur=new Individu(0);
             	f.setEcranJeu(new EcranJeu(f, Main.joueur));
             	f.beginGame();
+            	f.getEcranJeu().getPanneauAdv().getStatAdv().setMonsterStats(Main.adversaire);
             	System.out.println(Main.joueur.nom);
             }
         });
@@ -45,6 +46,7 @@ public class ChoixClasse extends JPanel{
             	Main.joueur=new Individu(1);
             	f.setEcranJeu(new EcranJeu(f, Main.joueur));
             	f.beginGame();
+            	f.getEcranJeu().getPanneauAdv().getStatAdv().setMonsterStats(Main.adversaire);
             	System.out.println(Main.joueur.nom);
             }
         });
@@ -60,6 +62,7 @@ public class ChoixClasse extends JPanel{
             	Main.joueur=new Individu(2);
             	f.setEcranJeu(new EcranJeu(f, Main.joueur));
             	f.beginGame();
+            	f.getEcranJeu().getPanneauAdv().getStatAdv().setMonsterStats(Main.adversaire);
             	System.out.println(Main.joueur.nom);
             }
         });
@@ -75,6 +78,7 @@ public class ChoixClasse extends JPanel{
             	Main.joueur=new Individu(3);
             	f.setEcranJeu(new EcranJeu(f, Main.joueur));
             	f.beginGame();
+            	f.getEcranJeu().getPanneauAdv().getStatAdv().setMonsterStats(Main.adversaire);
             	System.out.println(Main.joueur.nom);
             }
         });

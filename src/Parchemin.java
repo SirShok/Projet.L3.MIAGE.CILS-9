@@ -27,6 +27,7 @@ public class Parchemin extends JPanel{
 		texte.setLineWrap(true);
 		texte.setFocusable(false);
 		texte.setEditable(false);
+		texte.append(Narration.apparitionMonstre(Main.joueur, Main.adversaire));
 		////Recuperation de la police d'ecriture
 		try {
 		    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();

@@ -15,7 +15,7 @@ public class Main {
 		
 		Fichier.RecuperationConfig(bestiaire);
 		Fichier.LectureCompetence(Main.listeCompetence);
-		adversaire = Combat.SelectM(bestiaire, 0, 3);
+		adversaire = Combat.SelectM(bestiaire, 1, 3);
 		try {
 		    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		    ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Autre/images/nine0.ttf")));
@@ -26,24 +26,5 @@ public class Main {
 		}
 		
 		Fenetre f=new Fenetre();
-		 try{
-			 Thread.sleep(6000);
-			 f.getEcranJeu().getPanneauAdv().getStatAdv().setMonsterStats(Main.bestiaire.get(10));
-		 } catch (InterruptedException IE) {
-			 
-		 }
-		
-		/*
-		f.getEcranJeu().getParchemin().getTextArea().append("\ntest");
-		int nbCombT = 4; //nombre de combat total
-		int nbCombat = 1; //numéro de combat
-		//déroulement du jeu
-		while(nbCombat < 12) {
-			Monstre m = Combat.SelectM(bestiaire, nbCombat, nbCombT);
-			while(ind.pv > 0) {
-				//selection compétence
-				f.getParchemin().getTextArea().append(Combat.combat(ind, m, c));
-			}
-		}*/
 	}
 }

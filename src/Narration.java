@@ -89,17 +89,17 @@ public class Narration {
 	
 	public static String afficheCompetence(String Ind, String c,int degat) {
 		String res = null;
-		res = (" Avec son courage, notre hÃ©ros utilise : "+c+"  et ainsi inflige : "+degat+" Ã  son terrible adversaire.");
+		res = (" Avec son courage, notre héros utilise : "+c+"  et ainsi inflige : "+degat+" à  son terrible adversaire.");
 		return res;
 	}
-	public static String apparitionMonstre(String Ind, Monstre m) {
+	public static String apparitionMonstre(Individu joueur, Monstre m) {
 		String res =null;
-		res = ("Malheur !! Un terrible danger se dresse sur votre route vers la Terre Sainte ! Un "+m.Nom+" souhaite en dÃ©coudre avec vous. \n Aux armes, triompher de cet adversaire sans attendre !!!");
+		res = ("\n Malheur !! Un terrible danger se dresse sur votre route vers la Terre Sainte ! Un "+m.Nom+" souhaite en découdre avec vous. \nAux armes, triompher de cet adversaire sans attendre !!!");
 		return res;
 	}
 	public static String afficheCompetenceMonstre(String Ind, String c,int degat) {
 		String res = null;
-		res = ("Mince ! Le monstre attaque et inflige "+degat+" de dÃ©gats Ã  notre hÃ©ro !");
+		res = ("Mince ! Le monstre attaque et inflige "+degat+" de dégats Ã  notre héro !");
 		return res;
 	}
 }
