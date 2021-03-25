@@ -1,5 +1,4 @@
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +13,6 @@ public class MenuPrincipal extends JPanel{
 	private JLabel titre;
 	private JButton ngame;
 	private JButton lgame;
-	private JButton options;
 	private JButton quit;
 	private boolean premierepartie=true;
 	
