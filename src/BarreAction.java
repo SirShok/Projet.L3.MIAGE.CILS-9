@@ -110,7 +110,7 @@ public class BarreAction extends ImagePanel{
 		vie.setForeground(Color.white);
 		
 		armure=new JLabel(new ImageIcon("Autre/images/point_armure.png"));
-		armure.setText("100");
+		armure.setText("10");
 		armure.setFont(caligraphie);
 		armure.setBorder(BorderFactory.createEmptyBorder());
 		armure.setBounds(600, 90, armure.getPreferredSize().width, armure.getPreferredSize().height);
