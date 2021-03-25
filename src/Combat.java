@@ -81,8 +81,10 @@ public static String combat( Monstre m, Competence c){
 		if(m.PD-Main.joueur.armure > 0){	// calcul et apliction des degat du monstre
 			System.out.println("pv =" + Main.joueur.pv);
 			Main.joueur.pv = Main.joueur.pv-(m.PD-Main.joueur.armure);
-			res = res +"\n"+ Narration.afficheCompetenceMonstre(Main.joueur, m.Nom,m.PD);//rajouter phrase attaque monstre dans natation
+			res = res +"\n"+ Narration.afficheCompetenceMonstre(Main.joueur, m.Nom,m.PD-Main.joueur.armure);//rajouter phrase attaque monstre dans natation
 			System.out.println("pv =" + Main.joueur.pv);
+		}else{
+			res = res +"\n"+ Narration.afficheCompetenceMonstre(Main.joueur, m.Nom,0);//rajouter phrase attaque monstre dans natation
 		}
 		if (Main.joueur.pv <= 0){
 			Main.joueur.pv = 0;
