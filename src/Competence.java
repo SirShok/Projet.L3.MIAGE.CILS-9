@@ -211,7 +211,7 @@ public static Competence[] compDisp(int n){
                 break;
             case 3: //mage
                 for(Competence e: CompetenceMagique){
-                    if(e.rang == 2) competenceMD.add(e);
+                    if(e.rang == 1) competenceMD.add(e);
                 }
                 res[0] = competenceMD.get(new Random().nextInt(competenceMD.size()));
                 do{
