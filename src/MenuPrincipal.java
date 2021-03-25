@@ -7,6 +7,10 @@ import javax.swing.*;
 
 public class MenuPrincipal extends JPanel{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -511007971738628908L;
 	private JLabel titre;
 	private JButton ngame;
 	private JButton lgame;
