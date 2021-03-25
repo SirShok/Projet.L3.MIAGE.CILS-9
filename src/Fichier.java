@@ -125,46 +125,4 @@ public class Fichier {
 			System.out.println("erreur class pour competence introuvable");
 		}
 	}
-
-	public static void recuperationEquipement(ArrayList<Equipement> ListeEquipement) throws IOException {
-		try {
-			File dossierSer = new File("Autre/DossierConfig/equipementSerializer");
-			if( dossierSer.exists() && dossierSer.isDirectory() && isEmpty(dossierSer)) {
-				for (File f : dossierSer.listFiles()) {
-					ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
-					Equipement m = (Equipement)ois.readObject();
-					System.out.println("lecture d'un equipement serializer "+m.nom);
-					ListeEquipement.add(m);
-					ois.close();
-				}
-			} else {
-				File initial = new File ("Autre/competence/physique/melee");
-				if(initial.isDirectory()) {
-					for (File f : initial.listFiles()) {
-						FileReader fichier = new FileReader(f);
-						BufferedReader lecteurFichier = new BufferedReader(fichier);
-						String ligne;
-						while(((ligne = lecteurFichier.readLine()) != null)) {
-							Equipement c = new Equipement(ligne);
-							ListeEquipement.add(c);
-						}
-						int i=0;
-						for (Equipement b : ListeEquipement) {
-							File fichierSer = new File("Autre/dossierConfig/equipementSerializer"+i);
-							ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichierSer));
-							oos.writeObject(b);
-							System.out.println("Creation d'un equipement Serializer :" + b.nom);
-							oos.close();
-							i++;
-						}
-						lecteurFichier.close();
-					}
-				}
-			}
-		} catch(IOException e) {
-			System.out.println("erreur avec le fichier d'equipement");
-		} catch (ClassNotFoundException e) {
-			System.out.println("erreur avec une classe du fichier d'equipement");
-		}
-	}
 }
