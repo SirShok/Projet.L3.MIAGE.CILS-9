@@ -71,9 +71,7 @@ public static String combat( Monstre m, Competence c){
 			if(Main.joueur.pv > Main.joueur.pvMax()){	// fais en sorte que le soin ne depasse pas les pv max
 				Main.joueur.pv = Main.joueur.pvMax();
 			}
-			if(Main.joueur.pv > pvA) {
-				res = res + "\n"+Narration.affiche(Main.joueur.nom, "soin", 0,Max(0,Main.joueur.pv - pvA));
-			}
+			res = res + "\n"+Narration.affiche(Main.joueur.nom, "soin", 0,Max(0,Main.joueur.pv - pvA));
 		}
 		if(c.effet.equals("bouclier")){	// aplique un bouclier
 			ArrayList<Integer> bouclier = new ArrayList<Integer>();
