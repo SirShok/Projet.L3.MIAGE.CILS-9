@@ -88,7 +88,7 @@ public class Narration {
 		res = ("\n Malheur !! Un terrible danger se dresse sur votre route vers la Terre Sainte ! Un "+m.Nom+" souhaite en decoudre avec vous. \nAux armes, triomphez de cet adversaire sans attendre !!!");
 		return res;
 	}
-	public static String afficheCompetenceMonstre(String Ind, String c,int degat) {
+	public static String afficheCompetenceMonstre(Individu joueur, String c,int degat) {
 		String res = null;
 		res = ("Fichtre ! Le monstre attaque et inflige "+degat+" de degats a notre hero !");
 		return res;

@@ -57,6 +57,8 @@ public static String combat( Monstre m, Competence c){
 			if (m.HP <= 0){							// si les PV de l'ennemi passe a 0 renvoi le message de victoire
 				m.HP = 0;
 				res = res+"\n"+Narration.affiche(Main.joueur.nom, "victoire", 0,0);
+				Main.nombreCombat++;
+				Main.adversaire = Combat.SelectM(Main.bestiaire, Main.nombreCombat,3);
 				return(res);
 			}
 		}
@@ -81,7 +83,8 @@ public static String combat( Monstre m, Competence c){
 		}
 		if(m.PD-Main.joueur.armure > 0){	// calcul et apliction des degat du monstre
 			System.out.println("pv =" + Main.joueur.pv);
-			Main.joueur.pv = Main.joueur.pv-(m.PD-Main.joueur.armure);	//rajouter phrase attaque monstre dans natation
+			Main.joueur.pv = Main.joueur.pv-(m.PD-Main.joueur.armure);
+			res = res +"\n"+ Narration.afficheCompetenceMonstre(Main.joueur, m.Nom,m.PD);//rajouter phrase attaque monstre dans natation
 			System.out.println("pv =" + Main.joueur.pv);
 		}
 		if (Main.joueur.pv <= 0){
