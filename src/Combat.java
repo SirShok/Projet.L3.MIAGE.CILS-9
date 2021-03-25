@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Math;
 
 public class Combat {
 	//prend deux types et renvoie le facteur de degats correspondant
@@ -71,7 +70,7 @@ public static String combat( Monstre m, Competence c){
 			if(Main.joueur.pv > Main.joueur.pvMax()){	// fais en sorte que le soin ne depasse pas les pv max
 				Main.joueur.pv = Main.joueur.pvMax();
 			}
-			res = res + "\n"+Narration.affiche(Main.joueur.nom, "soin", 0,Max(0,Main.joueur.pv - pvA));
+			res = res + "\n"+Narration.affiche(Main.joueur.nom, "soin", 0,Math.max(0,Main.joueur.pv - pvA));
 		}
 		if(c.effet.equals("bouclier")){	// aplique un bouclier
 			ArrayList<Integer> bouclier = new ArrayList<Integer>();
