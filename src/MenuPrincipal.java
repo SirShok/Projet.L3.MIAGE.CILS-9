@@ -14,10 +14,6 @@ public class MenuPrincipal extends JPanel{
 	private JButton quit;
 	private boolean premierepartie=true;
 	
-	//TODO TEST DELETE LATER
-	int cpt=0;
-	JLabel nbClic;
-	
 	public MenuPrincipal(Fenetre f){
 		Font caligraphie=new Font("Nine By Five NBP", Font.PLAIN, 54);
 		
@@ -77,10 +73,6 @@ public class MenuPrincipal extends JPanel{
 		quit.setSize(jou.getIconWidth(), jou.getIconHeight());
 		quit.setBounds(574, 450, jou.getIconWidth(), jou.getIconHeight());
 		
-		//TEST
-		nbClic=new JLabel("Nb de boutons clique :");
-		nbClic.setBounds(574, 800, 200, nbClic.getPreferredSize().height);
-		nbClic.setForeground(Color.white);
 		
 		this.setLayout(null);
 		this.setBackground(Color.black);
@@ -88,6 +80,5 @@ public class MenuPrincipal extends JPanel{
 		this.add(ngame);
 		this.add(lgame);
 		this.add(quit);
-		this.add(nbClic);
 	}
 }
