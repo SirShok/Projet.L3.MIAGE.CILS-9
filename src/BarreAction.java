@@ -47,6 +47,7 @@ public class BarreAction extends ImagePanel{
 				par.getTextArea().append(Combat.combat(Main.adversaire, cap1));
 				vie.setText(""+i.pv);
 				padv.getStatAdv().setMonstreStat(Main.adversaire);
+				f.getEcranJeu().getParchemin().getTextArea().setCaretPosition(f.getEcranJeu().getParchemin().getTextArea().getDocument().getLength());
 			}
 		});
 		
@@ -64,6 +65,7 @@ public class BarreAction extends ImagePanel{
 				par.getTextArea().append(Combat.combat(Main.adversaire, cap2));
 				vie.setText(""+i.pv);
 				padv.getStatAdv().setMonstreStat(Main.adversaire);
+				f.getEcranJeu().getParchemin().getTextArea().setCaretPosition(f.getEcranJeu().getParchemin().getTextArea().getDocument().getLength());
 			}
 		});
 		
@@ -81,6 +83,8 @@ public class BarreAction extends ImagePanel{
 				par.getTextArea().append(Combat.combat(Main.adversaire, cap3));
 				vie.setText(""+i.pv);
 				padv.getStatAdv().setMonstreStat(Main.adversaire);
+				f.getEcranJeu().getParchemin().getTextArea().setCaretPosition(f.getEcranJeu().getParchemin().getTextArea().getDocument().getLength());
+
 			}
 		});
 		
@@ -98,6 +102,7 @@ public class BarreAction extends ImagePanel{
 				par.getTextArea().append(Combat.combat(Main.adversaire, cap4));
 				vie.setText(""+i.pv);
 				padv.getStatAdv().setMonstreStat(Main.adversaire);
+				f.getEcranJeu().getParchemin().getTextArea().setCaretPosition(f.getEcranJeu().getParchemin().getTextArea().getDocument().getLength());
 			}
 		});
 		
