@@ -53,7 +53,7 @@ public class StatAdv extends ImagePanel{
 		this.setBorder(null);
 	}
 	
-	public void setMonsterStats(Monstre m){
+	public void setMonstreStat(Monstre m){
 		jaugevie.setText(""+m.HP);
 		jaugevie.setBounds(50, 70,jaugevie.getPreferredSize().width, jaugevie.getPreferredSize().height);
 		jaugearmure.setText(""+m.PA);
