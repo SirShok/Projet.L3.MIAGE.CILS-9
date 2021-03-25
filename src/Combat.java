@@ -33,7 +33,7 @@ public class Combat {
 public static String combat(Monstre m, Competence c, Fenetre f){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(Main.joueur,c);
-		String res = null;
+		String res = "";
 		int PA;
 		Main.joueur.mana = Main.joueur.mana - c.cout;
 		int degat = 0;

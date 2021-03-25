@@ -55,7 +55,7 @@ public class Competence implements Serializable{
                     degat.add(ind.attaqueA(2));
                 }
                 if(s.equals("SAG")){
-                    degat.add((int)(ind.sagesse*(rang/2)));
+                    degat.add((int)((ind.sagesse/2)*rang));
                     degat = ind.attaqueM(degat);
                 }
                 break;
@@ -197,12 +197,12 @@ public static Competence[] compDisp(int n){
                 res[0] = competenceC.get(new Random().nextInt(competenceC.size()));
 
                 for(Competence e: CompetenceBouclier){
-                    if(e.rang == 2) competenceB.add(e);
+                    if(e.rang == 1) competenceB.add(e);
                 }
                 res[1] = competenceB.get(new Random().nextInt(competenceB.size()));
 
                 for(Competence e: CompetenceDegat){
-                    if(e.rang == 2) competenceMD.add(e);
+                    if(e.rang == 1) competenceMD.add(e);
                 }
                 res[2] = competenceMD.get(new Random().nextInt(competenceMD.size()));
                 do{
@@ -210,8 +210,8 @@ public static Competence[] compDisp(int n){
                 }while(res[2] == res[3]);                
                 break;
             case 3: //mage
-                for(Competence e: CompetenceMagique){
-                    if(e.rang == 2) competenceMD.add(e);
+                for(Competence e: competenceMD){
+                    if(e.rang == 1) competenceMD.add(e);
                 }
                 res[0] = competenceMD.get(new Random().nextInt(competenceMD.size()));
                 do{
@@ -221,7 +221,7 @@ public static Competence[] compDisp(int n){
                     res[2] = competenceMD.get(new Random().nextInt(competenceMD.size()));
                 }while((res[0] == res[2])||(res[1] == res[2]));
                 for(Competence e: CompetenceBouclier){
-                    if(e.rang == 2) competenceB.add(e);
+                    if(e.rang == 1) competenceB.add(e);
                 }
                 res[3] = competenceB.get(new Random().nextInt(competenceB.size()));
                 break;
