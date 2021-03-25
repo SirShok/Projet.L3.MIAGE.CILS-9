@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -18,7 +19,10 @@ public class MenuPrincipal extends JPanel{
 	JLabel nbClic;
 	
 	public MenuPrincipal(Fenetre f){
+		Font caligraphie=new Font("Nine By Five NBP", Font.PLAIN, 54);
+		
 		titre=new JLabel("Projet RPG");
+		titre.setFont(caligraphie);
 		titre.setBounds(700-(titre.getPreferredSize().width/2), 150, titre.getPreferredSize().width, titre.getPreferredSize().height);
 		titre.setForeground(Color.white);
 		

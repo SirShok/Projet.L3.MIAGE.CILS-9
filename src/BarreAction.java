@@ -44,7 +44,7 @@ public class BarreAction extends ImagePanel{
 		capBouton1.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append(Combat.combat(Main.adversaire, cap1));
+				par.getTextArea().append(Combat.combat(Main.adversaire, cap1, f));
 				vie.setText(""+i.pv);
 				padv.getStatAdv().setMonstreStat(Main.adversaire);
 			}
@@ -61,7 +61,7 @@ public class BarreAction extends ImagePanel{
 		capBouton2.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append(Combat.combat(Main.adversaire, cap2));
+				par.getTextArea().append(Combat.combat(Main.adversaire, cap2, f));
 				vie.setText(""+i.pv);
 				padv.getStatAdv().setMonstreStat(Main.adversaire);
 			}
@@ -78,7 +78,7 @@ public class BarreAction extends ImagePanel{
 		capBouton3.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append(Combat.combat(Main.adversaire, cap3));
+				par.getTextArea().append(Combat.combat(Main.adversaire, cap3, f));
 				vie.setText(""+i.pv);
 				padv.getStatAdv().setMonstreStat(Main.adversaire);
 			}
@@ -95,7 +95,7 @@ public class BarreAction extends ImagePanel{
 		capBouton4.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append(Combat.combat(Main.adversaire, cap4));
+				par.getTextArea().append(Combat.combat(Main.adversaire, cap4, f));
 				vie.setText(""+i.pv);
 				padv.getStatAdv().setMonstreStat(Main.adversaire);
 			}

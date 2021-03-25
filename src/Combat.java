@@ -30,7 +30,7 @@ public class Combat {
 	}
 
 	// permet de d'appliquer les degats subit en un tour (ne prend pas la res elementaire car les monstre n'en ont pas)
-public static String combat( Monstre m, Competence c){
+public static String combat(Monstre m, Competence c, Fenetre f){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(Main.joueur,c);
 		String res = null;
@@ -59,6 +59,9 @@ public static String combat( Monstre m, Competence c){
 				res = res+"\n"+Narration.affiche(Main.joueur.nom, "victoire", 0,0);
 				Main.nombreCombat++;
 				Main.adversaire = Combat.SelectM(Main.bestiaire, Main.nombreCombat,3);
+				if(Main.nombreCombat==4){ //Annonce la victoire quand le boss est vaincu
+					f.victory();
+				}
 				return(res);
 			}
 		}
@@ -88,7 +91,8 @@ public static String combat( Monstre m, Competence c){
 		}
 		if (Main.joueur.pv <= 0){
 			Main.joueur.pv = 0;
-			res = res+"\n"+Narration.affiche(Main.joueur.nom, "defaite", 0,0);	
+			res = res+"\n"+Narration.affiche(Main.joueur.nom, "defaite", 0,0);
+			f.defeat();
 		}
 		return(res);
 	}
