@@ -1,10 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.FontFormatException;
-import java.awt.GraphicsEnvironment;
-import java.io.File;
-import java.io.IOException;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -12,9 +8,12 @@ import javax.swing.JTextArea;
 
 public class Parchemin extends JPanel{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4452066753732665788L;
 	private JTextArea texte;
 	private JScrollPane scroll;
-	private BarreAction ba;
 	
 	public Parchemin(){
 		//TODO TEST DELETE LATER

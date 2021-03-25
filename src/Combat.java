@@ -94,6 +94,7 @@ public static String combat(Monstre m, Competence c, Fenetre f){
 			res = res+"\n"+Narration.affiche(Main.joueur.nom, "defaite", 0,0);
 			f.defeat();
 		}
+		res = res +"\n";
 		return(res);
 	}
 	

@@ -1,11 +1,14 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class StatAdv extends ImagePanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1246161073095079166L;
 	private Monstre monstre;
 	public JLabel nom;
 	public JLabel jaugevie;

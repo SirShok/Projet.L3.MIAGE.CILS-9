@@ -210,7 +210,7 @@ public static Competence[] compDisp(int n){
                 }while(res[2] == res[3]);                
                 break;
             case 3: //mage
-                for(Competence e: competenceMD){
+                for(Competence e: CompetenceDegat){
                     if(e.rang == 1) competenceMD.add(e);
                 }
                 res[0] = competenceMD.get(new Random().nextInt(competenceMD.size()));

@@ -1,5 +1,4 @@
 import java.io.*;
-import java.lang.reflect.Field;
 import java.util.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -7,22 +6,7 @@ import java.nio.file.Paths;
 
 
 public class Fichier {
-
-	//ecrit dans un fichier dit "de sauvegarde" les caracteristiques (juste les stats) de l'individu
-	public static void EcrireFichier(Individu i) {
-		Class cl = i.getClass();
-		Field[] fd = cl.getFields();
-		try {
-			FileWriter fw = new FileWriter(fd[0].get(i).toString());
-			for(int j = 0; j < fd.length; j++) {
-				fw.write(fd[j].get(i) + "\t");
-			}
-			fw.close();
-		} catch(Exception e) {
-			System.out.println("erreur avec le fichier de sauvegarde");
-		}
-	}
-
+	
 	public static boolean isEmpty(File file) throws IOException {
 		Path path = Paths.get(file.getPath());
 		if(Files.list(path).findAny().isPresent()){

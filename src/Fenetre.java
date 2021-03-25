@@ -1,9 +1,11 @@
-import java.util.ArrayList;
-
 import javax.swing.*;
 
 public class Fenetre extends JFrame{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3710046988878703485L;
 	private MenuPrincipal menu;
 	private EcranJeu ingame;
 	private ChoixClasse creation;

@@ -1,13 +1,9 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -15,6 +11,10 @@ import javax.swing.JLabel;
 
 public class BarreAction extends ImagePanel{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8862996055106769511L;
 	private JButton capBouton1;
 	private JButton capBouton2;
 	private JButton capBouton3;
