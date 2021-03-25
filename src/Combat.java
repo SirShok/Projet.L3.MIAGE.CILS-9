@@ -35,7 +35,6 @@ public static String combat(Monstre m, Competence c, Fenetre f){
 		DM = Competence.Degat(Main.joueur,c);
 		String res = "";
 		int PA;
-		Main.joueur.mana = Main.joueur.mana - c.cout;
 		int degat = 0;
 		int j = 0, n = DM.size();
 		if(c.effet.equals("degat")){
