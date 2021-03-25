@@ -98,22 +98,18 @@ public class Fichier {
 					String ligne;
 					String[] mot;
 					try {
-						int j=1;
-
 						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier a une autre ligne
 							mot = ligne.split(";");
-							System.out.println("Print de "+mot[0]+" "+mot[1]);
 							Competence c = new Competence(mot[0],Integer.parseInt(mot[1]),mot[2],Integer.parseInt(mot[3]),Integer.parseInt(mot[4]),Integer.parseInt(mot[5]),mot[6],mot[7],Integer.parseInt(mot[8]),mot[9]); //on renvoie la ligne au constructeur de Competence
 							ListeCompetence.add(c); //on ajoute la competence ÃƒÂ  la liste des competences
-							System.out.println("lecture d'une compÃ©tence "+c.nom+ "ligne : "+j);
-							j++;
 						}
 						int i=0;
+						System.out.println("Debut serialization");
 						for (Competence b : ListeCompetence) {
-							File fichierSer = new File("Autre/competence/compteenceSerializer/competenceSerializerMagique"+i);
+							File fichierSer = new File("Autre/competence/competenceSerializer/competenceSerializer"+i);
 							ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichierSer));
 							oos.writeObject(b);
-							System.out.println("Creation d'une competence Serializer :" + b.nom);
+							System.out.println("Creation de l'object Serializer :" + b.nom);
 							oos.close();
 							i++;
 						}
