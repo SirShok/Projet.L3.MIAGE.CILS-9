@@ -1,10 +1,11 @@
+package projetrpg;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Combat {
-	//prend deux types et renvoie le facteur de dégats correspondant
-	//typeO désigne le type de l'attaquant (type offensif)
-	//typeD désigne le type du défenseur (type défensif)
+	//prend deux types et renvoie le facteur de degats correspondant
+	//typeO designe le type de l'attaquant (type offensif)
+	//typeD designe le type du defenseur (type defensif)
 	public static double faiblesse (String typeO, String typeD) {
 		switch(typeO) {
 		case "lumiere":	if(typeD.equals("lumiere")||typeD.equals("tenebres")||typeD.equals("physique")) return 1;
@@ -29,7 +30,7 @@ public class Combat {
 		return 0;
 	}
 
-	// permet de d'appliquer les degâts subit en un tour (ne prend pas la res élementaire car les monstre n'en ont pas)
+	// permet de d'appliquer les degats subit en un tour (ne prend pas la res elementaire car les monstre n'en ont pas)
 public static String combat( Monstre m, Competence c){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(Main.joueur,c);
@@ -44,7 +45,7 @@ public static String combat( Monstre m, Competence c){
 			PA = m.PA-(c.perca+(e[j].perceArmure));
 			if(PA < 0) PA = 0;	// si le perce armure total depasse l'armure de la cible l'armure passe a 0
 			while(DM.size() > 0){	// aplique tous les degats si l'attaque est a coup multiple
-				if(0 < DM.get(0)-PA){	//si les degat son inferieur a l'armure la variable degat n'est pas incréménter
+				if(0 < DM.get(0)-PA){	//si les degat son inferieur a l'armure la variable degat n'est pas incrementer
 					degat = degat + DM.get(0)-PA;
 				}
 				if((n/2 == DM.size())&&(e[j + 1] != null)){
@@ -52,11 +53,10 @@ public static String combat( Monstre m, Competence c){
 				}
 				DM.remove(0);
 			}
-			degat =(int) (((double) degat)*faiblesse(c.type,m.Affinite));	//recalcul des dégat selont la resistance elementaire
+			degat =(int) (((double) degat)*faiblesse(c.type,m.Affinite));	//recalcul des degat selont la resistance elementaire
 			m.HP = m.HP-degat;
 			res = "\n" + Narration.afficheCompetence(Main.joueur.nom, c.nom, degat);
 			if (m.HP <= 0){							// si les PV de l'ennemi passe a 0 renvoi le message de victoire
-				m.HP = 0;
 				res = res+"\n"+Narration.affiche(Main.joueur.nom, "victoire", 0,0);
 				return(res);
 			}
@@ -66,7 +66,7 @@ public static String combat( Monstre m, Competence c){
 			soin = Competence.Degat(Main.joueur,c);
 			int pvA = Main.joueur.pv;
 			Main.joueur.pv += soin.get(0);
-			if(Main.joueur.pv > Main.joueur.pvMax()){	// fais en sorte que le soint ne depasse pas les pv max
+			if(Main.joueur.pv > Main.joueur.pvMax()){	// fais en sorte que le soin ne depasse pas les pv max
 				Main.joueur.pv = Main.joueur.pvMax();
 
 			}
@@ -86,7 +86,6 @@ public static String combat( Monstre m, Competence c){
 			System.out.println("pv =" + Main.joueur.pv);
 		}
 		if (Main.joueur.pv <= 0){
-			Main.joueur.pv = 0;
 			res = res+"\n"+Narration.affiche(Main.joueur.nom, "defaite", 0,0);	
 		}
 		return(res);
