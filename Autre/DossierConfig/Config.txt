@@ -1,7 +1,7 @@
-Animorph Singe;30;10;10;vent;
-Animorph Tigre;20;20;10;lumiere;
-Animorph Tortue;10;30;10;terre;
-Animorph Ours;25;15;10;eau;
+Animorph Singe;30;10;15;vent;
+Animorph Tigre;20;20;15;lumiere;
+Animorph Tortue;10;30;15;terre;
+Animorph Ours;25;15;15;eau;
 Animorph Phénix;35;5;15;feu;
 Udyr;90;90;25;tenebres;
 Chevalier Corrompu;40;20;20;lumiere;
