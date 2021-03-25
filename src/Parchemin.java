@@ -18,8 +18,8 @@ public class Parchemin extends JPanel{
 	
 	public Parchemin(){
 		//TODO TEST DELETE LATER
-		String lorem="Nous sommes en l'an de grâce 1269 et la 9ème croisade est en route pour la Terre Sainte. Les hordes de païens et de barbares ont réalisés un rituel visant à fusionner notre monde avec les enfers. De ce fait, divers monstres se sont immiscés sur Terre et joignent leur force aux infidèles. Les croisés munis de leur foi, exorcisent les hérétiques au nom de l’Église. \r\n"
-				+ "  Vous êtes un(e) croisé(e),  vous pouvez faire appel à votre force brute, votre intelligence ou votre foi pour manifester dans ce monde le pouvoir de Dieu. Votre objectif ultime est de parcourir les derniers kilomètres qui vous sépare de Jérusalem et de la libérer des hordes de l'enfer.";
+		String lorem="Nous sommes en l'an de grace 1269 et la 9eme croisade est en route pour la Terre Sainte. Les hordes de paiens et de barbares ont realises un rituel visant Ã  fusionner notre monde avec les enfers. De ce fait, divers monstres se sont immisces sur Terre et joignent leur force aux infideles. Les croises munis de leur foi, exorcisent les heretiques au nom de lâ€™eglise. \r\n"
+				+ "  Vous Ãªtes un(e) croise(e),  vous pouvez faire appel Ã  votre force brute, votre intelligence ou votre foi pour manifester dans ce monde le pouvoir de Dieu. Votre objectif ultime est de parcourir les derniers kilometres qui vous separe de Jerusalem et de la liberer des hordes de l'enfer.";
 		//Ajout et configuration de la zone de texte
 		texte=new JTextArea(lorem, 5, 30);
 		texte.setBorder(BorderFactory.createEmptyBorder(30,20,10,30));
