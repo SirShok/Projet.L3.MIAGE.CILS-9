@@ -197,12 +197,12 @@ public static Competence[] compDisp(int n){
                 res[0] = competenceC.get(new Random().nextInt(competenceC.size()));
 
                 for(Competence e: CompetenceBouclier){
-                    if(e.rang == 2) competenceB.add(e);
+                    if(e.rang == 1) competenceB.add(e);
                 }
                 res[1] = competenceB.get(new Random().nextInt(competenceB.size()));
 
                 for(Competence e: CompetenceDegat){
-                    if(e.rang == 2) competenceMD.add(e);
+                    if(e.rang == 1) competenceMD.add(e);
                 }
                 res[2] = competenceMD.get(new Random().nextInt(competenceMD.size()));
                 do{
