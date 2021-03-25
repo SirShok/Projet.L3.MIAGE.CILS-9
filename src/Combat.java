@@ -40,7 +40,6 @@ public static String combat( Monstre m, Competence c){
 		int j = 0, n = DM.size();
 		if(c.effet.equals("degat")){
 			Equipement[] e = Main.joueur.armeEquip();
-
 			PA = m.PA-(c.perca+(e[j].perceArmure));
 			if(PA < 0) PA = 0;	// si le perce armure total depasse l'armure de la cible l'armure passe a 0
 			while(DM.size() > 0){	// aplique tous les degats si l'attaque est a coup multiple
@@ -54,7 +53,7 @@ public static String combat( Monstre m, Competence c){
 			}
 			degat =(int) (((double) degat)*faiblesse(c.type,m.Affinite));	//recalcul des dégat selont la resistance elementaire
 			m.HP = m.HP-degat;
-			res = "\n" + Narration.afficheCompetence(Main.joueur.nom, c.nom, degat);
+			res = "\n" + Narration.affiche(Main.joueur.nom, c.nom, degat,0);
 			if (m.HP <= 0){							// si les PV de l'ennemi passe a 0 renvoi le message de victoire
 				m.HP = 0;
 				res = res+"\n"+Narration.affiche(Main.joueur.nom, "victoire", 0,0);
