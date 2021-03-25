@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Main {
 	public static Individu joueur;
+	public static int nombreCombat = 1;
 	public static ArrayList<Monstre> bestiaire = new ArrayList<Monstre>();
 	public static Monstre adversaire = null;
 	public static ArrayList<Competence> listeCompetence = new ArrayList<Competence>();
