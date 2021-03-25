@@ -1,4 +1,3 @@
-package projetrpg;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -57,7 +56,7 @@ public static String combat( Monstre m, Competence c){
 			m.HP = m.HP-degat;
 			res = "\n" + Narration.afficheCompetence(Main.joueur.nom, c.nom, degat);
 			if (m.HP <= 0){							// si les PV de l'ennemi passe a 0 renvoi le message de victoire
-				m.HP = 0
+				m.HP = 0;
 				res = res+"\n"+Narration.affiche(Main.joueur.nom, "victoire", 0,0);
 				return(res);
 			}
