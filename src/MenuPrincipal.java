@@ -36,8 +36,6 @@ public class MenuPrincipal extends JPanel{
             		premierepartie=false;
             		f.switchToCreation();
             	}
-            	cpt++;
-        		nbClic.setText("Nb de boutons clique : "+cpt);
             }
         });
 		ngame.setBorder(BorderFactory.createEmptyBorder());
@@ -54,8 +52,6 @@ public class MenuPrincipal extends JPanel{
             	if(!premierepartie){
             		f.swicthToGame();
             	}
-            	cpt++;
-				nbClic.setText("Nb de boutons clique : "+cpt);
             }
         });
 		lgame.setBorder(BorderFactory.createEmptyBorder());
