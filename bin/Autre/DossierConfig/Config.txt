@@ -1,0 +1,12 @@
+Animorph Singe;30;10;15;vent;
+Animorph Tigre;20;20;15;lumiere;
+Animorph Tortue;10;30;15;terre;
+Animorph Ours;25;15;15;eau;
+Animorph Phénix;35;5;15;feu;
+Udyr;90;30;25;tenebres;
+Chevalier Corrompu;40;15;20;lumiere;
+Archer Corrompu;40;5;15;vent;
+Lord Snork;100;20;25;feu;
+Djin;40;10;20;eau;
+Esprit du vent;20;20;20;vent;
+Seigeur Lacio;160;30;35;tenebres;
