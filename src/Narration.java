@@ -1,18 +1,6 @@
 import java.util.*;
 
 public class Narration {
-
-	//main pour tester la fonction afficher
-	public static void main (String [] args)
-	{
-		/*
-		String p = "Patrick";
-		List<String> evenements = Arrays.asList(new String[]{"estoc", "attaque_simple", "attaque_double", "boule_de_feu", "victoire" });
-		String nomAtt = evenements.get(new Random().nextInt(evenements.size()));
-		System.out.println(affiche(p, nomAtt, 10));
-		*/
-		
-    }
 	
 	public static  String affiche (String nom, String nomE, int DM, int SOIN)  {
 		if (nomE == "estoc") {
