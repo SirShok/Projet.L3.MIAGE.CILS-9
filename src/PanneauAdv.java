@@ -10,9 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class PanneauAdv extends JPanel{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 962010017938834110L;
 	private StatAdv statAdv;
 	private Monstre monstre;
@@ -41,11 +39,6 @@ public class PanneauAdv extends JPanel{
 		this.add(statAdv);
 		this.add(barresup);
 		this.setBorder(null);
-	}
-	
-	//fait disparaitre le panneau quand le monstre meurt
-	public void monsterIsDead(){
-		this.setVisible(false);
 	}
 	
 	public Monstre getMonster(){

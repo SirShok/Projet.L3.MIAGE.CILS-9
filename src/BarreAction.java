@@ -11,9 +11,6 @@ import javax.swing.JLabel;
 
 public class BarreAction extends ImagePanel{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8862996055106769511L;
 	private JButton capBouton1;
 	private JButton capBouton2;

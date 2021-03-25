@@ -11,9 +11,6 @@ import javax.swing.JPanel;
 
 public class EcranDefaite extends JPanel{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 930387118867865225L;
 
 	public EcranDefaite(Fenetre f){
