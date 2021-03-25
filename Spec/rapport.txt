@@ -13,7 +13,7 @@ Je me suis chargé des fonctions permettant de lire un fichier txt, le décompos
 
 
 Quentin Pavy:
-Je me suis chargé de créer le system de jeux (les differente caractéristique, leur repartition, le calcul des PV/PM,...), j'ai également créer de nombreuse compétence que j'ais encodé dans des fichier texte et j'ai créer la classe compétence permetant notament de prendre un String en entré (String tiré des fichier texte grace aux travaille de Benjamin) et de definir une compétence via se dernier.
+Je me suis chargé de créer le system de jeux (les differente caractéristique, leur repartition, le calcul des PV/PM,...), j'ai également créer de nombreuse compétence que j'ais encodé dans des fichier texte et j'ai créer la classe compétence permetant notament de prendre un String en entré (String tiré des fichier texte grace aux travaille de Benjamin) et de definir une compétence via se dernier. J'ais aussi fais la fonction combat de la classe Combat (même si d'autre persone l'on retoucher) et j'ais egalement fais la le constructeur d'individu ainssi que la selection aleatoire de competence
 
 
 Maxime Avrillon-Thade
