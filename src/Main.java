@@ -16,6 +16,8 @@ public class Main {
 		Fichier.RecuperationConfig(bestiaire);
 		Fichier.LectureCompetence(Main.listeCompetence);
 		adversaire = Combat.SelectM(bestiaire, 1, 3);
+		
+		////Recuperation de la police d'ecriture
 		try {
 		    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		    ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Autre/images/nine0.ttf")));
