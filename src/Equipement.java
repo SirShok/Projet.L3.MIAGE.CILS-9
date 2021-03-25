@@ -1,7 +1,7 @@
 public class Equipement {
-	//caractéristiques de l'arme
+	//caracteristiques de l'arme
 	public String nom;
-	//0 = pas de bonus; plus de 0: octroie du degat/soin supplémentaire pour certaines capacites
+	//0 = pas de bonus; plus de 0: octroie du degat/soin supplementaire pour certaines capacites
 	public int degatPhysique,degatMagique,armure;
 	//indique le nombre d'armure ignorer par l'arme
 	public int perceArmure;

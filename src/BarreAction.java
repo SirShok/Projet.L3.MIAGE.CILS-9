@@ -44,9 +44,10 @@ public class BarreAction extends ImagePanel{
 		capBouton1.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append("\ncompetence HG");
-				//c.combat(i, padv.getMonster(), cap1);
+				par.getTextArea().append(Combat.combat(Main.adversaire, cap1));
 				System.out.println("competence HG");
+				vie.setText(""+i.pv);
+				padv.getStatAdv().setMonstreStat(Main.adversaire);
 			}
 		});
 		
@@ -200,7 +201,7 @@ public class BarreAction extends ImagePanel{
 		this.setBorder(null);
 	}
 	
-	//Set les compétences et affiche leur nom sur les boutons
+	//Set les competences et affiche leur nom sur les boutons
 	public void setBoutonHG(Competence c){
 		cap1=c;
 		capBouton1.setText(c.nom);
