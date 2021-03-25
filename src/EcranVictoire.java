@@ -11,6 +11,11 @@ import javax.swing.JPanel;
 
 public class EcranVictoire extends JPanel{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3578187050458060213L;
+
 	public EcranVictoire(Fenetre f){
 		Font caligraphie=new Font("Nine By Five NBP", Font.PLAIN, 64);
 		Font caligraphieSmall=new Font("Nine By Five NBP", Font.PLAIN, 40);

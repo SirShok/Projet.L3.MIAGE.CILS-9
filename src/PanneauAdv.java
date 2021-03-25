@@ -10,6 +10,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class PanneauAdv extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 962010017938834110L;
 	private StatAdv statAdv;
 	private Monstre monstre;
 	

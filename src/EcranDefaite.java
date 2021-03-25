@@ -11,6 +11,11 @@ import javax.swing.JPanel;
 
 public class EcranDefaite extends JPanel{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 930387118867865225L;
+
 	public EcranDefaite(Fenetre f){
 		Font caligraphie=new Font("Nine By Five NBP", Font.PLAIN, 64);
 		Font caligraphieSmall=new Font("Nine By Five NBP", Font.PLAIN, 40);

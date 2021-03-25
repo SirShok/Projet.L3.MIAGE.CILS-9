@@ -1,11 +1,5 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.FontFormatException;
-import java.awt.GraphicsEnvironment;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -14,6 +8,10 @@ import javax.swing.*;
 
 public class EcranJeu extends JPanel{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2813799278796918896L;
 	private Parchemin parchemin;
 	private BarreAction barreAction;
 	private PanneauAdv misc=new PanneauAdv(new Monstre("Slime", 150, 50, 20, "eau"));

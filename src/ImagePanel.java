@@ -6,6 +6,10 @@ import javax.swing.JPanel;
 //Classe permettant de creer des JPanel avec une image de fond
 public class ImagePanel extends JPanel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7243722115847020601L;
 	private BufferedImage img;
 	
 	//Constructeur

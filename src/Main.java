@@ -30,5 +30,6 @@ public class Main {
 		}
 		
 		Fenetre f=new Fenetre();
+		System.out.println(f);
 	}
 }

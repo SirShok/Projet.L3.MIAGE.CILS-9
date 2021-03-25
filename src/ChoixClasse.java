@@ -10,6 +10,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class ChoixClasse extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8061808647568804550L;
 	int cpt=0;
 	JLabel nbClic;
 	
