@@ -52,7 +52,7 @@ public class EcranJeu extends JPanel{
 		this.setVisible(true);
 	}
 	
-	//retourne le parchemin (là où est affiché le texte)
+	//retourne le parchemin (la où est affiche le texte)
 	public Parchemin getParchemin(){
 		return parchemin;
 	}
