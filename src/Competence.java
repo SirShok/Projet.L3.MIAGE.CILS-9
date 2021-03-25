@@ -55,7 +55,7 @@ public class Competence implements Serializable{
                     degat.add(ind.attaqueA(2));
                 }
                 if(s.equals("SAG")){
-                    degat.add((int)(ind.sagesse*(rang/2)));
+                    degat.add((int)(ind.sagesse*((rang+1)/2)));
                     degat = ind.attaqueM(degat);
                 }
                 break;
