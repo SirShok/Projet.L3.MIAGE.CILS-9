@@ -92,7 +92,7 @@ public class Fichier {
 				}
 			} else {
 				try {
-					String cheminFichier = "Autre/competence/competence";
+					String cheminFichier = "Autre/competence/competence.txt";
 					FileReader fichier = new FileReader(cheminFichier); 
 					BufferedReader lecteurFichier = new BufferedReader(fichier); //on prend un stream pour lire le fichier
 					String ligne;
