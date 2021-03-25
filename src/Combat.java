@@ -30,17 +30,7 @@ public class Combat {
 	}
 
 	// permet de d'appliquer les dégâts subit en un tour (ne prend pas la res élémentaire car les monstre n'en ont pas)
-	public static String combat(Individu ind, Monstre m, Competence c, BarreAction ba){
-		ArrayList<Integer> DM = new ArrayList<Integer>();
-		DM = Competence.Degat(ind,c);
-		String res = null;
-		int PA;
-		ind.mana = ind.mana - c.cout;
-		int degat = 0;
-		int j = 0, n = DM.size();
-		if(c.effet.equals("degat")){	//gere l'aplication des degat si la competence untiliser doit en infliger
-			Equipement[] e = ind.armeEquip();
-			PA = mpublic static String combat( Monstre m, Competence c){
+public static String combat( Monstre m, Competence c){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(Main.joueur,c);
 		String res = null;
