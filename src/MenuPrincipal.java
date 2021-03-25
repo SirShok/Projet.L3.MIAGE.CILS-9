@@ -33,7 +33,7 @@ public class MenuPrincipal extends JPanel{
             		f.switchToCreation();
             	}
             	cpt++;
-        		nbClic.setText("Nb de boutons cliqué : "+cpt);
+        		nbClic.setText("Nb de boutons clique : "+cpt);
             }
         });
 		ngame.setBorder(BorderFactory.createEmptyBorder());
@@ -51,7 +51,7 @@ public class MenuPrincipal extends JPanel{
             		f.swicthToGame();
             	}
             	cpt++;
-				nbClic.setText("Nb de boutons cliqué : "+cpt);
+				nbClic.setText("Nb de boutons clique : "+cpt);
             }
         });
 		lgame.setBorder(BorderFactory.createEmptyBorder());
@@ -74,7 +74,7 @@ public class MenuPrincipal extends JPanel{
 		quit.setBounds(574, 450, jou.getIconWidth(), jou.getIconHeight());
 		
 		//TEST
-		nbClic=new JLabel("Nb de boutons cliqué :");
+		nbClic=new JLabel("Nb de boutons clique :");
 		nbClic.setBounds(574, 800, 200, nbClic.getPreferredSize().height);
 		nbClic.setForeground(Color.white);
 		

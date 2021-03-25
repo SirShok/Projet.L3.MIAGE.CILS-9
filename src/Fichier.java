@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 public class Fichier {
 
-	//Ã©crit dans un fichier dit "de sauvegarde" les caractÃ©ristiques (juste les stats) de l'individu
+	//ecrit dans un fichier dit "de sauvegarde" les caracteristiques (juste les stats) de l'individu
 	public static void EcrireFichier(Individu i) {
 		Class cl = i.getClass();
 		Field[] fd = cl.getFields();
@@ -31,12 +31,12 @@ public class Fichier {
 			return false;
 		}
 	}
-	//permet de rÃ©cupÃ©rer le fichier de config
+	//permet de recuperer le fichier de config
 	public static void RecuperationConfig(ArrayList<Monstre> bestiaire) throws FileNotFoundException, IOException, ClassNotFoundException{
 		try {
 			File dossierSer = new File("Autre/DossierConfig/ObjetSerializer");
 			if( dossierSer.exists() && dossierSer.isDirectory() && isEmpty(dossierSer)) {
-				for (File f : dossierSer.listFiles()) {		//Ã  enlever
+				for (File f : dossierSer.listFiles()) {		//a  enlever
 					ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
 					Monstre m = (Monstre)ois.readObject();
 					System.out.println("lecture d'un objet serializer "+m.Nom);
@@ -53,9 +53,9 @@ public class Fichier {
 					String[] mot;
 					try {
 						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier a une autre ligne 
-							mot=ligne.split(";"); //on sÃ©pare la ligne en mot 
-							Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[2]),Integer.parseInt(mot[3]),mot[4]); //on utilise les mots pour crÃ©er un objet de type monstre
-							bestiaire.add(m); //ajoute l'objet crÃ©Ã© au bestiaire
+							mot=ligne.split(" "); //on separe la ligne en mot 
+							Monstre m = new Monstre(mot[0],Integer.parseInt(mot[1]),Integer.parseInt(mot[2]),Integer.parseInt(mot[3]),mot[4]); //on utilise les mots pour creer un objet de type monstre
+							bestiaire.add(m); //ajoute l'objet cree au bestiaire
 						}
 						int i=0;
 						for (Monstre b : bestiaire) {
@@ -78,7 +78,7 @@ public class Fichier {
 			System.out.println("erreur class pour monstre introuvable");
 		}
 	}
-	//permet de rÃ©cupÃ©rer les diffÃ©rents fichier de configuration des CompÃ©tences et de les introduire dans la base de donnÃ©e Java
+	//permet de recuperer les differents fichier de configuration des Competences et de les introduire dans la base de donnee Java
 	public static void LectureCompetence(ArrayList<Competence> ListeCompetence) throws ClassNotFoundException, IOException, FileNotFoundException {
 		try {
 			File dossierCompSer = new File("Autre/competence/competenceSerializer");
@@ -86,7 +86,7 @@ public class Fichier {
 				for (File f : dossierCompSer.listFiles()) {
 					ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
 					Competence m = (Competence)ois.readObject();
-					System.out.println("lecture d'une compÃ©tence serializer "+m.nom+m.rang);
+					System.out.println("lecture d'une competence serializer "+m.nom+m.rang);
 					ListeCompetence.add(m);
 					ois.close();
 				}
@@ -98,22 +98,18 @@ public class Fichier {
 					String ligne;
 					String[] mot;
 					try {
-						int j=1;
-
 						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier a une autre ligne
 							mot = ligne.split(";");
-							System.out.println("Print de "+mot[0]+" "+mot[1]);
 							Competence c = new Competence(mot[0],Integer.parseInt(mot[1]),mot[2],Integer.parseInt(mot[3]),Integer.parseInt(mot[4]),Integer.parseInt(mot[5]),mot[6],mot[7],Integer.parseInt(mot[8]),mot[9]); //on renvoie la ligne au constructeur de Competence
 							ListeCompetence.add(c); //on ajoute la competence ÃƒÂ  la liste des competences
-							System.out.println("lecture d'une compÃ©tence "+c.nom+ "ligne : "+j);
-							j++;
 						}
 						int i=0;
+						System.out.println("Debut serialization");
 						for (Competence b : ListeCompetence) {
-							File fichierSer = new File("Autre/competence/compteenceSerializer/competenceSerializerMagique"+i);
+							File fichierSer = new File("Autre/competence/competenceSerializer/competenceSerializer"+i);
 							ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichierSer));
 							oos.writeObject(b);
-							System.out.println("Creation d'une competence Serializer :" + b.nom);
+							System.out.println("Creation de l'object Serializer :" + b.nom);
 							oos.close();
 							i++;
 						}

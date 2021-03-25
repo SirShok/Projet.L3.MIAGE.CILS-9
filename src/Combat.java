@@ -1,8 +1,9 @@
+package projetrpg;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Combat {
-	//prend deux types et renvoie le facteur de dégâts correspondant
+	//prend deux types et renvoie le facteur de dégats correspondant
 	//typeO désigne le type de l'attaquant (type offensif)
 	//typeD désigne le type du défenseur (type défensif)
 	public static double faiblesse (String typeO, String typeD) {
@@ -29,8 +30,8 @@ public class Combat {
 		return 0;
 	}
 
-	// permet de d'appliquer les dégâts subit en un tour (ne prend pas la res élémentaire car les monstre n'en ont pas)
-public static String combat(Monstre m, Competence c){
+	// permet de d'appliquer les degâts subit en un tour (ne prend pas la res élementaire car les monstre n'en ont pas)
+public static String combat( Monstre m, Competence c){
 		ArrayList<Integer> DM = new ArrayList<Integer>();
 		DM = Competence.Degat(Main.joueur,c);
 		String res = null;
@@ -56,6 +57,7 @@ public static String combat(Monstre m, Competence c){
 			m.HP = m.HP-degat;
 			res = "\n" + Narration.afficheCompetence(Main.joueur.nom, c.nom, degat);
 			if (m.HP <= 0){							// si les PV de l'ennemi passe a 0 renvoi le message de victoire
+				m.HP = 0
 				res = res+"\n"+Narration.affiche(Main.joueur.nom, "victoire", 0,0);
 				return(res);
 			}
@@ -85,6 +87,7 @@ public static String combat(Monstre m, Competence c){
 			System.out.println("pv =" + Main.joueur.pv);
 		}
 		if (Main.joueur.pv <= 0){
+			Main.joueur.pv = 0;
 			res = res+"\n"+Narration.affiche(Main.joueur.nom, "defaite", 0,0);	
 		}
 		return(res);
@@ -121,4 +124,3 @@ public static String combat(Monstre m, Competence c){
 	}
 	
 }
-

@@ -39,7 +39,7 @@ public class Individu {
 	
 	//permet d'equiper un equipement selon plusieurs conditions:
 	//- si c'est un arme, on va verifier qu'il peut la porter
-	//- si c'est une armure, on va verifier qu'il n'en a pas dejà
+	//- si c'est une armure, on va verifier qu'il n'en a pas deja
 	public void equiper(Equipement e) {
 		if(e.type.equals("arme")) {
 			if(nbMainL <= e.nbMain) {
