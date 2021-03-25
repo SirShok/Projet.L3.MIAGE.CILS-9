@@ -22,7 +22,7 @@ public class Competence implements Serializable{
 
 
     // prend en entrée un string dans le fichier competence.txt et remplie une instance de classe Competence
-    //attention! Cette classe ne calculeraa pas les dégâts, elle prendra justes ceux définies par la compétence
+    //attention! Cette classe ne calculera pas les dégâts, elle prendra justes ceux définies par la compétence
     public Competence (String name0, int rangc1, String statc2, int nbc3,int degatc4,int percac5, String descriptionc6,String effetc7,int idc8,String typec9){
         nom = name0;
         rang = rangc1;
@@ -55,7 +55,7 @@ public class Competence implements Serializable{
                     degat.add(ind.attaqueA(2));
                 }
                 if(s.equals("SAG")){
-                    degat.add((int)(ind.sagesse*(rang/2)));
+                    degat.add((int)(ind.sagesse*((rang+1)/2)));
                     degat = ind.attaqueM(degat);
                 }
                 break;
