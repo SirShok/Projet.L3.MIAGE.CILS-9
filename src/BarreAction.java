@@ -201,7 +201,7 @@ public class BarreAction extends ImagePanel{
 		this.setBorder(null);
 	}
 	
-	//Set les compétences et affiche leur nom sur les boutons
+	//Set les competences et affiche leur nom sur les boutons
 	public void setBoutonHG(Competence c){
 		cap1=c;
 		capBouton1.setText(c.nom);
