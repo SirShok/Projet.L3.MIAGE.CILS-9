@@ -101,7 +101,7 @@ public class Fichier {
 						while(((ligne = lecteurFichier.readLine()) != null)) { //tant que le fichier a une autre ligne
 							mot = ligne.split(";");
 							Competence c = new Competence(mot[0],Integer.parseInt(mot[1]),mot[2],Integer.parseInt(mot[3]),Integer.parseInt(mot[4]),Integer.parseInt(mot[5]),mot[6],mot[7],Integer.parseInt(mot[8]),mot[9]); //on renvoie la ligne au constructeur de Competence
-							ListeCompetence.add(c); //on ajoute la competence ÃƒÂ  la liste des competences
+							ListeCompetence.add(c); //on ajoute la competence à la liste des competences
 						}
 						int i=0;
 						System.out.println("Debut serialization");
