@@ -54,41 +54,38 @@ public static String combat( Monstre m, Competence c){
 			}
 			degat =(int) (((double) degat)*faiblesse(c.type,m.Affinite));	//recalcul des dégat selont la resistance elementaire
 			m.HP = m.HP-degat;
-			res = "\n" + Narration.afficheCompetence(ind.nom, c.nom, degat);
+			res = "\n" + Narration.afficheCompetence(Main.joueur.nom, c.nom, degat);
 			if (m.HP <= 0){							// si les PV de l'ennemi passe a 0 renvoi le message de victoire
-				res = res+"\n"+Narration.affiche(ind.nom, "victoire", 0,0);
+				res = res+"\n"+Narration.affiche(Main.joueur.nom, "victoire", 0,0);
 				return(res);
 			}
 		}
 		if(c.effet.equals("soin")){	// rend les pv si la competence est un soin
 			ArrayList<Integer> soin = new ArrayList<Integer>();
-			soin = Competence.Degat(ind,c);
-			int pvA = ind.pv;
-			ind.pv += soin.get(0);
-			if(ind.pv > ind.pvMax()){	// fais en sorte que le soint ne depasse pas les pv max
-				ind.pv = ind.pvMax();
+			soin = Competence.Degat(Main.joueur,c);
+			int pvA = Main.joueur.pv;
+			Main.joueur.pv += soin.get(0);
+			if(Main.joueur.pv > Main.joueur.pvMax()){	// fais en sorte que le soint ne depasse pas les pv max
+				Main.joueur.pv = Main.joueur.pvMax();
 
 			}
-			if(ind.pv > pvA) {
-				res = res + "\n"+Narration.affiche(ind.nom, "soin", 0,ind.pv - pvA);
+			if(Main.joueur.pv > pvA) {
+				res = res + "\n"+Narration.affiche(Main.joueur.nom, "soin", 0,Main.joueur.pv - pvA);
 			}
-			ba.actualiseVie(ind.pv);
 		}
 		if(c.effet.equals("bouclier")){	// aplique un bouclier
 			ArrayList<Integer> bouclier = new ArrayList<Integer>();
-			bouclier = Competence.Degat(ind,c);
-			ind.pv += bouclier.get(0); 
-			res = res + "\n"+Narration.affiche(ind.nom, "bouclier", 0,bouclier.get(0));
-			ba.actualiseVie(ind.pv);
+			bouclier = Competence.Degat(Main.joueur,c);
+			Main.joueur.pv += bouclier.get(0); 
+			res = res + "\n"+Narration.affiche(Main.joueur.nom, "bouclier", 0,bouclier.get(0));
 		}
-		if(m.PD-ind.armure > 0){	// calcul et apliction des degat du monstre
-			System.out.println("pv =" + ind.pv);
-			ind.pv = ind.pv-(m.PD-ind.armure);	//rajouter phrase attaque monstre dans natation
-			System.out.println("pv =" + ind.pv);
-			ba.actualiseVie(ind.pv);
+		if(m.PD-Main.joueur.armure > 0){	// calcul et apliction des degat du monstre
+			System.out.println("pv =" + Main.joueur.pv);
+			Main.joueur.pv = Main.joueur.pv-(m.PD-Main.joueur.armure);	//rajouter phrase attaque monstre dans natation
+			System.out.println("pv =" + Main.joueur.pv);
 		}
-		if (ind.pv <= 0){
-			res = res+"\n"+Narration.affiche(ind.nom, "defaite", 0,0);	
+		if (Main.joueur.pv <= 0){
+			res = res+"\n"+Narration.affiche(Main.joueur.nom, "defaite", 0,0);	
 		}
 		return(res);
 	}
