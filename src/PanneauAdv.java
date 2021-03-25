@@ -39,7 +39,7 @@ public class PanneauAdv extends JPanel{
 		this.setBorder(null);
 	}
 	
-	//fait disparaître le panneau quand le monstre meurt
+	//fait disparaitre le panneau quand le monstre meurt
 	public void monsterIsDead(){
 		this.setVisible(false);
 	}
