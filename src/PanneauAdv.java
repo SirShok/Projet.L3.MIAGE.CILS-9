@@ -48,4 +48,7 @@ public class PanneauAdv extends JPanel{
 	public Monstre getMonster(){
 		return monstre;
 	}
+	public StatAdv getStatAdv() {
+		return statAdv;
+	}
 }

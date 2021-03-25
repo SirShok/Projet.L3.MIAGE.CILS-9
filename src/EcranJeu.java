@@ -59,4 +59,7 @@ public class EcranJeu extends JPanel{
 	public BarreAction getBarreAction() {
 		return barreAction;
 	}
+	public PanneauAdv getPanneauAdv() {
+		return misc;
+	}
 }

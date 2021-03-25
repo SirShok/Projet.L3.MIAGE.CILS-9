@@ -1,3 +1,7 @@
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,9 +14,22 @@ public class Main {
 		
 		Fichier.RecuperationConfig(bestiaire);
 		Fichier.LectureCompetence(Main.listeCompetence);
+		try {
+		    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		    ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Autre/images/nine0.ttf")));
+		} catch (IOException e) {
+		    e.printStackTrace();
+		} catch(FontFormatException e) {
+		    e.printStackTrace();
+		}
 		
 		Fenetre f=new Fenetre();
-		
+		 try{
+			 Thread.sleep(6000);
+			 f.getEcranJeu().getPanneauAdv().getStatAdv().setMonsterStats(Main.bestiaire.get(10));
+		 } catch (InterruptedException IE) {
+			 
+		 }
 		
 		/*
 		f.getEcranJeu().getParchemin().getTextArea().append("\ntest");
