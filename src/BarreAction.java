@@ -44,9 +44,9 @@ public class BarreAction extends ImagePanel{
 		capBouton1.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append("\ncompétence HG");
+				par.getTextArea().append("\ncompetence HG");
 				//c.combat(i, padv.getMonster(), cap1);
-				System.out.println("compétence HG");
+				System.out.println("competence HG");
 			}
 		});
 		
@@ -61,9 +61,9 @@ public class BarreAction extends ImagePanel{
 		capBouton2.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append("\ncompétence HD");
+				par.getTextArea().append("\ncompetence HD");
 				//c.combat(i, padv.getMonster(), cap2);
-				System.out.println("compétence HD");
+				System.out.println("competence HD");
 			}
 		});
 		
@@ -78,9 +78,9 @@ public class BarreAction extends ImagePanel{
 		capBouton3.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append("\ncompétence BG");
+				par.getTextArea().append("\ncompetence BG");
 				//c.combat(i, padv.getMonster(), cap3);
-				System.out.println("compétence BG");
+				System.out.println("competence BG");
 			}
 		});
 		
@@ -95,9 +95,9 @@ public class BarreAction extends ImagePanel{
 		capBouton4.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				par.getTextArea().append("\ncompétence BD");
+				par.getTextArea().append("\ncompetence BD");
 				//c.combat(i, padv.getMonster(), cap4);
-				System.out.println("compétence BD");
+				System.out.println("competence BD");
 			}
 		});
 		
@@ -129,7 +129,7 @@ public class BarreAction extends ImagePanel{
 		
 		Font caligraphieSmall=new Font("Nine By Five NBP", Font.PLAIN, 32);
 		
-		JLabel agil=new JLabel("Agilité : "+i.agilite);
+		JLabel agil=new JLabel("Agilite : "+i.agilite);
 		agil.setFont(caligraphieSmall);
 		agil.setForeground(Color.white);
 		agil.setBounds(800, 70, agil.getPreferredSize().width, agil.getPreferredSize().height);
@@ -200,7 +200,7 @@ public class BarreAction extends ImagePanel{
 		this.setBorder(null);
 	}
 	
-	//Set les compétences et affiche leur nom sur les boutons
+	//Set les compÃ©tences et affiche leur nom sur les boutons
 	public void setBoutonHG(Competence c){
 		cap1=c;
 		capBouton1.setText(c.nom);
